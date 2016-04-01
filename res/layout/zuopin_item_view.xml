@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.xy.shuhua.ui.view.FixWidthFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_art_cover_image"
+                android:scaleType="centerCrop"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:text="海边的马"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:layout_marginBottom="9dp"
+                android:layout_marginLeft="9dp"/>
+    </com.xy.shuhua.ui.view.FixWidthFrameLayout>
+</LinearLayout>

@@ -21,5 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.art.ActivityArtTypeInfo"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/StyledIndicators">
+        </activity>
+        <activity android:name=".ui.art.ActivityAuthorArtList"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/StyledIndicators">
+        </activity>
     </application>
 </manifest>

@@ -77,6 +77,7 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
     @Override
     protected void initViews() {
         homeTextView.setSelected(true);
+        homeImageView.setImageResource(R.drawable.icon_home_pressed);
         setDefaultFragment();
     }
 
@@ -118,10 +119,10 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
     private void changeTab(int index) {
         switch (index) {
             case 0: {
-//                homeImageView.setImageResource(R.drawable.home_red);
-//                messageImageView.setImageResource(R.drawable.smart_white);
-//                artImageView.setImageResource(R.drawable.car_white);
-//                myCenterImageView.setImageResource(R.drawable.mine_white);
+                homeImageView.setImageResource(R.drawable.icon_home_pressed);
+                messageImageView.setImageResource(R.drawable.icon_message_normal);
+                artImageView.setImageResource(R.drawable.icon_art_normal);
+                myCenterImageView.setImageResource(R.drawable.icon_mine_normal);
 
                 homeTextView.setSelected(true);
                 messageTextView.setSelected(false);
@@ -135,10 +136,10 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
             }
             break;
             case 1: {
-//                homeImageView.setImageResource(R.drawable.home_white);
-//                messageImageView.setImageResource(R.drawable.smart_red);
-//                artImageView.setImageResource(R.drawable.car_white);
-//                myCenterImageView.setImageResource(R.drawable.mine_white);
+                homeImageView.setImageResource(R.drawable.icon_home_normal);
+                messageImageView.setImageResource(R.drawable.icon_message_normal);
+                artImageView.setImageResource(R.drawable.icon_art_normal);
+                myCenterImageView.setImageResource(R.drawable.icon_mine_normal);
 
                 homeTextView.setSelected(false);
                 messageTextView.setSelected(true);
@@ -152,10 +153,10 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
             }
             break;
             case 2: {
-//                homeImageView.setImageResource(R.drawable.home_white);
-//                messageImageView.setImageResource(R.drawable.smart_white);
-//                artImageView.setImageResource(R.drawable.car_red);
-//                myCenterImageView.setImageResource(R.drawable.mine_white);
+                homeImageView.setImageResource(R.drawable.icon_home_normal);
+                messageImageView.setImageResource(R.drawable.icon_message_normal);
+                artImageView.setImageResource(R.drawable.icon_art_pressed);
+                myCenterImageView.setImageResource(R.drawable.icon_mine_normal);
 
                 homeTextView.setSelected(false);
                 messageTextView.setSelected(false);
@@ -169,10 +170,10 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
             }
             break;
             case 3: {
-//                homeImageView.setImageResource(R.drawable.home_white);
-//                messageImageView.setImageResource(R.drawable.smart_white);
-//                artImageView.setImageResource(R.drawable.car_white);
-//                myCenterImageView.setImageResource(R.drawable.mine_red);
+                homeImageView.setImageResource(R.drawable.icon_home_normal);
+                messageImageView.setImageResource(R.drawable.icon_message_normal);
+                artImageView.setImageResource(R.drawable.icon_art_normal);
+                myCenterImageView.setImageResource(R.drawable.icon_mine_pressed);
 
                 homeTextView.setSelected(false);
                 messageTextView.setSelected(false);

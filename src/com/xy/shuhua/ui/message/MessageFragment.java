@@ -72,7 +72,7 @@ public class MessageFragment extends Fragment implements View.OnClickListener{
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             View view = inflater.inflate(R.layout.message_item_view, viewGroup, false);
-            ArtItemViewHolder viewHolder = new ArtItemViewHolder(context, view);
+            MessageViewHolder viewHolder = new MessageViewHolder(context, view);
             return viewHolder;
         }
 

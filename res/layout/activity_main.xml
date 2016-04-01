@@ -31,6 +31,7 @@
                     android:id="@+id/homeImageView"
                     android:layout_width="23dp"
                     android:layout_height="23dp"
+                    android:src="@drawable/icon_home_normal"
                     android:layout_marginBottom="5dp"/>
             <TextView
                     android:id="@+id/homeTextView"
@@ -52,6 +53,7 @@
                     android:id="@+id/messageImageView"
                     android:layout_width="23dp"
                     android:layout_height="23dp"
+                    android:src="@drawable/icon_message_normal"
                     android:layout_marginBottom="5dp"/>
             <TextView
                     android:id="@+id/messageTextView"
@@ -73,6 +75,7 @@
                     android:id="@+id/artImageView"
                     android:layout_width="23dp"
                     android:layout_height="23dp"
+                    android:src="@drawable/icon_art_normal"
                     android:layout_marginBottom="5dp"/>
             <TextView
                     android:id="@+id/artTextView"
@@ -94,6 +97,7 @@
                     android:id="@+id/myCenterImageView"
                     android:layout_width="23dp"
                     android:layout_height="23dp"
+                    android:src="@drawable/icon_mine_normal"
                     android:layout_marginBottom="5dp"/>
             <TextView
                     android:id="@+id/myCenterTextView"

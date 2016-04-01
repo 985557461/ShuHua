@@ -71,6 +71,7 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/MineFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/DealTouchEventViewPager.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/FixWidthFrameLayout.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/FixWidthImageView.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/SlideShowView.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/StickyScrollView.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/VerticalScrollView.java" charset="GBK" />

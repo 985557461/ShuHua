@@ -14,9 +14,9 @@
             android:paddingLeft="12dp"
             android:paddingRight="12dp">
         <ImageView
-                android:layout_width="32dp"
-                android:layout_height="20dp"
-                android:background="#ff0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_art_white"
                 android:layout_marginRight="7dp"/>
         <LinearLayout
                 android:layout_width="0dp"
@@ -28,7 +28,7 @@
             <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:background="#ff0000"
+                    android:background="@drawable/icon_search"
                     android:layout_marginRight="6dp"/>
             <TextView
                     android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 android:layout_marginLeft="7dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:background="#ff0000"/>
+                android:background="@drawable/icon_camera"/>
     </LinearLayout>
     <com.xy.shuhua.util.ultra_pull_refresh.FixRequestDisallowTouchEventPtrFrameLayout
             android:id="@+id/refreshContainer"

@@ -52,7 +52,7 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/icon_default_avatar"
+                            android:src="@drawable/icon_default_avatar"
                             android:scaleType="centerCrop"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
@@ -76,7 +76,7 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/icon_default_avatar"
+                            android:src="@drawable/icon_default_avatar"
                             android:scaleType="centerCrop"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
@@ -100,7 +100,7 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/icon_default_avatar"
+                            android:src="@drawable/icon_default_avatar"
                             android:scaleType="centerCrop"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
@@ -124,7 +124,7 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/icon_default_avatar"
+                            android:src="@drawable/icon_default_avatar"
                             android:scaleType="centerCrop"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
@@ -148,7 +148,7 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/icon_default_avatar"
+                            android:src="@drawable/icon_default_avatar"
                             android:scaleType="centerCrop"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
@@ -171,7 +171,8 @@
                     <com.xy.shuhua.util.round_image.CircleImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#000000"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icon_more"/>
                 </com.xy.shuhua.ui.view.FixWidthFrameLayout>
                 <TextView
                         android:layout_marginTop="10dp"

@@ -50,7 +50,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerCrop"
-                android:background="#ff0000"
+                android:background="@drawable/icon_like"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/likeNumber"
                 android:layout_marginRight="5dp"/>
