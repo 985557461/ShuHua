@@ -43,6 +43,7 @@
     <file url="file://$PROJECT_DIR$/res/layout/slide_layout.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/space_item_view.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/title_layout.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/values-zh" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/values/attrs.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values/cube_ptr_attrs.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values/cube_ptr_string.xml" charset="UTF-8" />
@@ -65,7 +66,8 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/GoodsItemViewHolder.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeBannerViewPager.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeNewFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/SpaceItemViewHolder.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/message/MessageFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/MineFragment.java" charset="GBK" />

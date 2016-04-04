@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.xy.shuhua.R;
 import com.xy.shuhua.util.recyclerview.DividerGridItemDecoration;
+import com.xy.shuhua.util.recyclerview.DividerListItemDecoration;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrDefaultHandler;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
@@ -46,7 +47,7 @@ public class ArtTypeView extends FrameLayout {
         refreshContainer = (PtrClassicFrameLayout) findViewById(R.id.refreshContainer);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
-        recyclerView.addItemDecoration(new DividerGridItemDecoration(getContext(), R.drawable.goods_list_divider));
+        recyclerView.addItemDecoration(new DividerListItemDecoration(getContext(),DividerListItemDecoration.VERTICAL_LIST, R.drawable.goods_list_divider));
 
         refreshContainer.setLastUpdateTimeRelateObject(this);
         refreshContainer.setPtrHandler(new PtrHandler() {

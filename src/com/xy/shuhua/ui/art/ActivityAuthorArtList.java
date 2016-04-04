@@ -45,7 +45,7 @@ public class ActivityAuthorArtList extends ActivityBaseNoSliding{
     @Override
     protected void initViews() {
         for(int i=0;i<titles.length;i++){
-            views.add(new AuthorArtView(this));
+            views.add(new AuthorArtView(this,i));
         }
 
         artPagerAdapter = new ArtPagerAdapter();
