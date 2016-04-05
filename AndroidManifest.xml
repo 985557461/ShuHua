@@ -16,10 +16,7 @@
                    android:value="GlideModule"/>
         <activity android:name=".ui.ActivityMain"
                   android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.art.ActivityArtTypeInfo"
                   android:screenOrientation="portrait"
@@ -28,6 +25,14 @@
         <activity android:name=".ui.art.ActivityAuthorArtList"
                   android:screenOrientation="portrait"
                   android:theme="@style/StyledIndicators">
+        </activity>
+        <activity android:name=".ui.art.ActivityArtGoodsInfo"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/StyledIndicators">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 </manifest>

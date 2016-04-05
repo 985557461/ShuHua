@@ -1,5 +1,6 @@
 package com.xy.shuhua.ui.home;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.xy.shuhua.R;
+import com.xy.shuhua.ui.art.ActivityArtGoodsInfo;
 import com.xy.shuhua.ui.home.model.HomeArtGoodsModel;
 
 /**
@@ -35,6 +37,8 @@ public class GoodsItemViewHolder extends RecyclerView.ViewHolder implements View
         likeNumber = (TextView) rootView.findViewById(R.id.likeNumber);
         lineLeft = rootView.findViewById(R.id.lineLeft);
         lineRight = rootView.findViewById(R.id.lineRight);
+
+        rootView.setOnClickListener(this);
     }
 
     public void setData(HomeArtGoodsModel homeArtGoodsModel) {
@@ -77,5 +81,6 @@ public class GoodsItemViewHolder extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View view) {
+        ActivityArtGoodsInfo.open((Activity) context);
     }
 }

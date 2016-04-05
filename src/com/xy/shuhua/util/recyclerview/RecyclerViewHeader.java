@@ -41,7 +41,7 @@ import android.widget.RelativeLayout;
  * 31.03.15
  */
 
-/**这个RecyclerView的父布局必须是LinearLayout，RelativeLayout，FrameLayout，否则崩溃！！**/
+/**先保留，不建议使用了，因为bug不少，这个RecyclerView的父布局必须是LinearLayout，RelativeLayout，FrameLayout，否则崩溃！！**/
 public class RecyclerViewHeader extends RelativeLayout {
 
     private RecyclerView mRecycler;
