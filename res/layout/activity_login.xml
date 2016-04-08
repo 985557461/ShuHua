@@ -43,6 +43,7 @@
             android:textColorHint="#c2c2c2"
             android:inputType="number"
             android:textSize="15sp"
+            android:text="18511760826"
             android:textColor="#333333"/>
     <View android:layout_width="match_parent"
           android:layout_height="1px"
@@ -58,7 +59,8 @@
             android:background="@null"
             android:textCursorDrawable="@null"
             android:gravity="left|center_vertical"
-            android:hint="手机号码"
+            android:hint="密码"
+            android:text="656725"
             android:textColorHint="#c2c2c2"
             android:inputType="number"
             android:textSize="15sp"

@@ -16,14 +16,14 @@
                    android:value="GlideModule"/>
         <activity android:name=".ui.ActivityMain"
                   android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".ui.user.ActivityLogin"
                   android:screenOrientation="portrait"
                   android:theme="@style/StyledIndicators">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".ui.user.ActivityRegister"
                   android:screenOrientation="portrait"
