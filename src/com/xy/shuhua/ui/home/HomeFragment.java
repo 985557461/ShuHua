@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         refreshContainer = (PtrClassicFrameLayout) view.findViewById(R.id.refreshContainer);
         recyclerView = (AutoLoadMoreRecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.getRecyclerView().setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-//        recyclerView.getRecyclerView().addItemDecoration(new DividerGridItemDecoration(getContext(), R.drawable.goods_list_divider));
 
         refreshContainer.setLastUpdateTimeRelateObject(this);
         refreshContainer.setPtrHandler(new PtrHandler() {

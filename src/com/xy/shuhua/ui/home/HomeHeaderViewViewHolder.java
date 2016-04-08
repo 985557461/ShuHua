@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,6 +37,8 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
 
     private Context context;
     private View rootView;
+    private int itemWidth = 0;
+    private int itemMargin = 0;
 
     public HomeHeaderViewViewHolder(Context context, View itemView) {
         super(itemView);
@@ -45,6 +48,11 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
         viewPager = (HomeBannerViewPager) rootView.findViewById(R.id.viewPager);
         circlePageIndicator = (CirclePageIndicator) rootView.findViewById(R.id.circlePageIndicator);
         userContainer = (LinearLayout) rootView.findViewById(R.id.userContainer);
+
+        itemMargin = DisplayUtil.dip2px(context, 10);
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        int width = wm.getDefaultDisplay().getWidth();
+        itemWidth = (int) ((width - itemMargin * 5 - DisplayUtil.dip2px(context, 24)) * 1.0f / 6);
     }
 
     public void setEventParent(ViewGroup viewGroup) {
@@ -78,15 +86,13 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
             userContainer.removeAllViews();
             userContainer.setVisibility(View.VISIBLE);
             for (int i = 0; i < count; i++) {
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                params.weight = 1;
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(itemWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
                 params.rightMargin = DisplayUtil.dip2px(context, 10);
                 HomeUserItemView homeUserItemView = new HomeUserItemView(context);
                 homeUserItemView.setData(artUserModels.get(i), false);
                 userContainer.addView(homeUserItemView, params);
             }
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            params.weight = 1;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(itemWidth, ViewGroup.LayoutParams.WRAP_CONTENT);
             HomeUserItemView homeUserItemView = new HomeUserItemView(context);
             homeUserItemView.setData(null, true);
             userContainer.addView(homeUserItemView, params);

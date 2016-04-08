@@ -19,6 +19,9 @@ public class ServerConfig {
         }
     }
 
+    public static final String URL_GET_VER_CODE = "shuhua/api/accounts/register.do";
+    public static final String URL_REGISTER = "shuhua/api/accounts/activate.do";
+    public static final String URL_LOGIN = "shuhua/api/accounts/login.do";
     public static final String QUERY_ARTS = "shuhua/api/artService/queryArts.do";
     public static final String HOME_QUERY_ART = "shuhua/api/artService/queryArt.do";
 }

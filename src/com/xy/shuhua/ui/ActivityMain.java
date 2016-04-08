@@ -1,5 +1,7 @@
 package com.xy.shuhua.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -48,6 +50,11 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
      */
     private long lastTime;
     private static final long TIME_LONG = 3000000;
+
+    public static void open(Activity activity){
+        Intent intent = new Intent(activity,ActivityMain.class);
+        activity.startActivity(intent);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
