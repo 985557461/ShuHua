@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.xy.shuhua.R;
+import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.ActivityMain;
+import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
+import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
@@ -33,6 +36,13 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**判断用户是否登录**/
+        Account account = CustomApplication.getInstance().getAccount();
+        if (!TextUtils.isEmpty(account.userId)) {
+            ActivityMain.open(this);
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_login);
     }
 
@@ -77,12 +87,12 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     }
 
     private void tryToLogin() {
-        String phoneStr = phoneNumber.getText().toString();
+        final String phoneStr = phoneNumber.getText().toString();
         if (TextUtils.isEmpty(phoneStr)) {
             ToastUtil.makeShortText("输入电话号码");
             return;
         }
-        String pwdStr = password.getText().toString();
+        final String pwdStr = password.getText().toString();
         if (TextUtils.isEmpty(pwdStr)) {
             ToastUtil.makeShortText("输入密码");
             return;
@@ -106,9 +116,19 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                     @Override
                     public void onResponse(String response) {
                         Log.d("xiaoyu", response);
-                        ToastUtil.makeShortText("登陆成功");
-                        ActivityMain.open(ActivityLogin.this);
-                        finish();
+                        UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
+                        if ("1".equals(userInfoModel.result)) {
+                            Account account = CustomApplication.getInstance().getAccount();
+                            account.password = pwdStr;
+                            account.phoneNumber = phoneStr;
+                            account.userId = userInfoModel.user_id;
+                            account.saveMeInfoToPreference();
+                            ToastUtil.makeShortText("登陆成功");
+                            ActivityMain.open(ActivityLogin.this);
+                            finish();
+                        } else {
+                            ToastUtil.makeShortText(userInfoModel.message);
+                        }
                     }
                 });
     }

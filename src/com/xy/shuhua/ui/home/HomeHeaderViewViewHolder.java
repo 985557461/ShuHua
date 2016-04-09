@@ -205,6 +205,11 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 } else {
                     Glide.with(getContext()).load("").into(avatar);
                 }
+                if(!TextUtils.isEmpty(artUserModel.username)){
+                    name.setText(artUserModel.username);
+                }else{
+                    name.setText("");
+                }
             }
         }
 

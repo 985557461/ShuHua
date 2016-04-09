@@ -16,6 +16,7 @@ import com.xy.shuhua.ui.mine.ZuoPinItemViewHolder;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
+import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import com.xy.shuhua.util.recyclerview.AutoLoadMoreRecyclerView;
 import com.xy.shuhua.util.recyclerview.DividerGridItemDecoration;
@@ -107,6 +108,8 @@ public class AuthorArtView extends FrameLayout {
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
         params.put("status", status + "");
+        params.put("category", "0");
+        PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS, params);
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)
@@ -147,6 +150,7 @@ public class AuthorArtView extends FrameLayout {
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
         params.put("status", status + "");
+        params.put("category", "0");
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)
