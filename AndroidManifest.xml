@@ -20,10 +20,10 @@
         <activity android:name=".ui.user.ActivityLogin"
                   android:screenOrientation="portrait"
                   android:theme="@style/StyledIndicators">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".ui.user.ActivityRegister"
                   android:screenOrientation="portrait"
@@ -40,6 +40,14 @@
         <activity android:name=".ui.art.ActivityArtGoodsInfo"
                   android:screenOrientation="portrait"
                   android:theme="@style/StyledIndicators">
+        </activity>
+        <activity android:name=".ui.search.ActivitySearch"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/StyledIndicators">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 </manifest>
