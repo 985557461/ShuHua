@@ -17,6 +17,7 @@ import java.util.List;
  * Created by xiaoyu on 2016/3/30.
  */
 public class MineFragment extends Fragment implements View.OnClickListener {
+    private View settingFL;
     private View zuoPinLL;
     private View zuoPinLineView;
     private View zhanLanLL;
@@ -37,6 +38,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initViews(View view) {
+        settingFL = view.findViewById(R.id.settingFL);
         zuoPinLL = view.findViewById(R.id.zuoPinLL);
         zuoPinLineView = view.findViewById(R.id.zuoPinLineView);
         zhanLanLL = view.findViewById(R.id.zhanLanLL);
@@ -45,6 +47,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         wenZhangLineView = view.findViewById(R.id.wenZhangLineView);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
 
+        settingFL.setOnClickListener(this);
         zuoPinLL.setOnClickListener(this);
         zhanLanLL.setOnClickListener(this);
         wenZhangLL.setOnClickListener(this);
@@ -97,6 +100,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.settingFL:
+                ActivitySetting.open(getActivity());
+                break;
             case R.id.zuoPinLL:
                 changedSelectedState(0);
                 viewPager.setCurrentItem(0);

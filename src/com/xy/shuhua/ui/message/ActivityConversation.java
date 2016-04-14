@@ -1,4 +1,4 @@
-package com.xy.shuhua.ui.chat;
+package com.xy.shuhua.ui.message;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,7 +14,7 @@ import java.util.Locale;
 /**
  * Created by liangyu on 2016/4/13.
  */
-public class ConversationActivity extends FragmentActivity {
+public class ActivityConversation extends FragmentActivity {
     /**
      * 目标 Id
      */
@@ -66,11 +66,9 @@ public class ConversationActivity extends FragmentActivity {
     private void enterFragment(Conversation.ConversationType mConversationType, String mTargetId) {
 
         ConversationFragment fragment = (ConversationFragment) getSupportFragmentManager().findFragmentById(R.id.conversation);
-
         Uri uri = Uri.parse("rong://" + getApplicationInfo().packageName).buildUpon()
                 .appendPath("conversation").appendPath(mConversationType.getName().toLowerCase())
                 .appendQueryParameter("targetId", mTargetId).build();
-
         fragment.setUri(uri);
     }
 

@@ -71,6 +71,7 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/SpaceItemViewHolder.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/message/MessageFragment.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/message/RongYunMessageFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/MineFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityRegister.java" charset="GBK" />

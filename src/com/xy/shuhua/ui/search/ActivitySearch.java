@@ -1,5 +1,7 @@
 package com.xy.shuhua.ui.search;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -33,6 +35,11 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
      */
     private static final String SEARCH_STRINGS = "SEARCH_STRINGS";
     private static final String SEARCH_HISTORY = "SEARCH_HISTORY";
+
+    public static void open(Activity activity) {
+        Intent intent = new Intent(activity, ActivitySearch.class);
+        activity.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +99,7 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
                 }
             }
             SharedPreferenceUtil.setStringDataIntoSP(SEARCH_STRINGS, SEARCH_HISTORY, stringBuilder.toString());
-        }else{
+        } else {
             SearchHistoryItemView itemView = new SearchHistoryItemView(this);
             itemView.setData(str);
             historyContainer.addView(itemView);
@@ -111,10 +118,10 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
         searchEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (i == KeyEvent.KEYCODE_ENTER) {
+                if (i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_UP) {
                     tryToSearch();
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -125,6 +132,7 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
             ToastUtil.makeShortText("«Î ‰»ÎÀ—À˜ƒ⁄»›");
             return;
         }
+        ActivitySearchResult.open(this, searchStr);
         tryToAddOne(searchStr);
     }
 

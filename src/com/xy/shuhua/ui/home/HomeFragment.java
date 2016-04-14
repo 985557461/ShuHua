@@ -16,12 +16,12 @@ import com.xy.shuhua.ui.home.model.ArtUserModel;
 import com.xy.shuhua.ui.home.model.BannerModel;
 import com.xy.shuhua.ui.home.model.HomeArtGoodsModel;
 import com.xy.shuhua.ui.home.model.HomeInfoModel;
+import com.xy.shuhua.ui.search.ActivitySearch;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import com.xy.shuhua.util.recyclerview.AutoLoadMoreRecyclerView;
-import com.xy.shuhua.util.recyclerview.DividerGridItemDecoration;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrDefaultHandler;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
@@ -37,6 +37,7 @@ import java.util.Map;
  * Created by xiaoyu on 2016/3/22.
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
+    private View searchView;
     private PtrClassicFrameLayout refreshContainer;
     private AutoLoadMoreRecyclerView recyclerView;
 
@@ -58,10 +59,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initViews(View view) {
+        searchView = view.findViewById(R.id.searchView);
         refreshContainer = (PtrClassicFrameLayout) view.findViewById(R.id.refreshContainer);
         recyclerView = (AutoLoadMoreRecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.getRecyclerView().setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
+        searchView.setOnClickListener(this);
         refreshContainer.setLastUpdateTimeRelateObject(this);
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
@@ -165,7 +168,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
+        switch (view.getId()) {
+            case R.id.searchView:
+                ActivitySearch.open(getActivity());
+                break;
+        }
     }
 
     private class GoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

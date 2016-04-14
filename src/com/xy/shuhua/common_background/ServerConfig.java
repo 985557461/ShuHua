@@ -24,4 +24,7 @@ public class ServerConfig {
     public static final String URL_LOGIN = "shuhua/api/accounts/login.do";
     public static final String QUERY_ARTS = "shuhua/api/artService/queryArts.do";
     public static final String HOME_QUERY_ART = "shuhua/api/artService/queryArt.do";
+    public static final String GET_CHAT_TOKEN = "shuhua/api/accounts/getRmToken.do";
+    public static final String SEARCH_ARTS = "shuhua/api/artService/queryArtsByName.do";
+    public static final String MODIFY_PWD = "shuhua/api/accounts/change_password.do";//oldPassword  newPassword   phoneNum
 }

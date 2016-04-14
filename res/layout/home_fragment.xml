@@ -19,6 +19,7 @@
                 android:background="@drawable/icon_art_white"
                 android:layout_marginRight="7dp"/>
         <LinearLayout
+                android:id="@+id/searchView"
                 android:layout_width="0dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"

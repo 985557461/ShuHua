@@ -14,16 +14,18 @@ public class Account {
     public static final String kUserId = "key_user_id";
     public static final String kAvatar = "key_avatar";
     public static final String kUserName = "key_user_name";
+    public static final String kChatToken = "key_chat_token";
 
-    public String phoneNumber;
-    public String password;
-    public String userId;
-    public String avatar;
-    public String userName;
+    public String phoneNumber="";
+    public String password="";
+    public String userId="";
+    public String avatar="";
+    public String userName="";
+    public String chatToken = "";
 
     // 用户选择照片时需要记住用户的偏好的文件夹的key
     public static String kLastSelectDir = "lastSelectDir";
-    public String lastSelectDir;
+    public String lastSelectDir="";
 
     public static Account loadAccount() {
         String userInfo = CommonPreference.getStringValue(kUsrInfo, "");
@@ -33,12 +35,13 @@ public class Account {
         }
         try {
             JSONObject user = new JSONObject(userInfo);
-            account.phoneNumber = user.optString(kPhoneNumber);
-            account.password = user.optString(kPassword);
-            account.userId = user.optString(kUserId);
-            account.avatar = user.optString(kAvatar);
-            account.userName = user.optString(kUserName);
-            account.lastSelectDir = user.optString(kLastSelectDir);
+            account.phoneNumber = user.optString(kPhoneNumber,"");
+            account.password = user.optString(kPassword,"");
+            account.userId = user.optString(kUserId,"");
+            account.avatar = user.optString(kAvatar,"");
+            account.userName = user.optString(kUserName,"");
+            account.lastSelectDir = user.optString(kLastSelectDir,"");
+            account.chatToken = user.optString(kChatToken,"");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -54,6 +57,7 @@ public class Account {
             info.put(kAvatar, avatar);
             info.put(kUserName, userName);
             info.put(kLastSelectDir, lastSelectDir);
+            info.put(kChatToken,chatToken);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -67,6 +71,7 @@ public class Account {
         avatar = "";
         userName = "";
         lastSelectDir = "";
+        chatToken = "";
         saveMeInfoToPreference();
     }
 }

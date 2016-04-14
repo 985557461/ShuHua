@@ -13,10 +13,11 @@ import com.xy.shuhua.R;
 import com.xy.shuhua.ui.art.ArtFragment;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.HomeFragment;
-import com.xy.shuhua.ui.message.MessageFragment;
+import com.xy.shuhua.ui.message.RongYunMessageFragment;
 import com.xy.shuhua.ui.mine.MineFragment;
 import com.xy.shuhua.util.ActivityManagerUtil;
 import com.xy.shuhua.util.ToastUtil;
+import io.rong.imkit.RongIM;
 
 public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickListener {
     /**
@@ -25,7 +26,7 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
     private Fragment mFragmentCurrent;
 
     private HomeFragment homeFragment;
-    private MessageFragment messageFragment;
+    private RongYunMessageFragment messageFragment;
     private ArtFragment arttFragment;
     private MineFragment mineFragment;
 
@@ -51,8 +52,8 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
     private long lastTime;
     private static final long TIME_LONG = 3000000;
 
-    public static void open(Activity activity){
-        Intent intent = new Intent(activity,ActivityMain.class);
+    public static void open(Activity activity) {
+        Intent intent = new Intent(activity, ActivityMain.class);
         activity.startActivity(intent);
     }
 
@@ -143,6 +144,8 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
             }
             break;
             case 1: {
+//                if (RongIM.getInstance() != null)
+//                    RongIM.getInstance().startConversationList(this);
                 homeImageView.setImageResource(R.drawable.icon_home_normal);
                 messageImageView.setImageResource(R.drawable.icon_message_normal);
                 artImageView.setImageResource(R.drawable.icon_art_normal);
@@ -153,8 +156,8 @@ public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickL
                 artTextView.setSelected(false);
                 myCenterTextView.setSelected(false);
 
-                if(messageFragment == null){
-                    messageFragment = new MessageFragment();
+                if (messageFragment == null) {
+                    messageFragment = new RongYunMessageFragment();
                 }
                 switchContent(mFragmentCurrent, messageFragment);
             }
