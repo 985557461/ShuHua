@@ -144,17 +144,17 @@
             <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="#ff0000"
+                    android:src="@drawable/icon_weixin_login"
                     android:layout_marginRight="50dp"/>
             <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="#ff0000"
+                    android:src="@drawable/icon_qq_login"
                     android:layout_marginRight="50dp"/>
             <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="#ff0000"/>
+                    android:src="@drawable/icon_weibo_login"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.xy.shuhua.ui.user;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -34,6 +36,11 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private TextView forgetPwd;
     private TextView register;
     private TextView login;
+
+    public static void open(Activity activity){
+        Intent intent = new Intent(activity,ActivityLogin.class);
+        activity.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -17,7 +17,6 @@ import com.xy.shuhua.ui.message.RongYunMessageFragment;
 import com.xy.shuhua.ui.mine.MineFragment;
 import com.xy.shuhua.util.ActivityManagerUtil;
 import com.xy.shuhua.util.ToastUtil;
-import io.rong.imkit.RongIM;
 
 public class ActivityMain extends ActivityBaseNoSliding implements View.OnClickListener {
     /**

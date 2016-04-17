@@ -54,4 +54,8 @@
     <item name="id_stickynavlayout_indicator" type="id"/>
     <item name="id_stickynavlayout_viewpager" type="id"/>
     <item name="id_stickynavlayout_innerscrollview" type="id"/>
+
+    <declare-styleable name="FixHeightRadioImageView">
+        <attr name="h_radio" format="float"></attr>
+    </declare-styleable>
 </resources>

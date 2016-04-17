@@ -10,6 +10,7 @@
             android:layout_height="48dp">
         <FrameLayout
                 android:id="@+id/backFL"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingLeft="12dp"
@@ -49,12 +50,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"/>
     <TextView
-            android:text="著名艺术家"
-            android:textColor="#d1d1d1"
+            android:id="@+id/allZuoPin"
+            android:text="全部作品"
+            android:textColor="#333333"
             android:textSize="11sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"/>
+            android:padding="5dp"
+            android:background="@drawable/black_stroken_trans_bg_shape"
+            android:layout_marginBottom="18dp"/>
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

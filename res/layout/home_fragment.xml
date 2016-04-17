@@ -39,6 +39,7 @@
                     android:textSize="14sp"/>
         </LinearLayout>
         <ImageView
+                android:id="@+id/upload"
                 android:layout_marginLeft="7dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"

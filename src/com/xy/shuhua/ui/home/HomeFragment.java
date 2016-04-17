@@ -38,6 +38,7 @@ import java.util.Map;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private View searchView;
+    private View upload;
     private PtrClassicFrameLayout refreshContainer;
     private AutoLoadMoreRecyclerView recyclerView;
 
@@ -60,11 +61,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void initViews(View view) {
         searchView = view.findViewById(R.id.searchView);
+        upload = view.findViewById(R.id.upload);
         refreshContainer = (PtrClassicFrameLayout) view.findViewById(R.id.refreshContainer);
         recyclerView = (AutoLoadMoreRecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.getRecyclerView().setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
         searchView.setOnClickListener(this);
+        upload.setOnClickListener(this);
         refreshContainer.setLastUpdateTimeRelateObject(this);
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
@@ -171,6 +174,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.searchView:
                 ActivitySearch.open(getActivity());
+                break;
+            case R.id.upload:
+                ActivityPublishZuoPin.open(getActivity());
                 break;
         }
     }

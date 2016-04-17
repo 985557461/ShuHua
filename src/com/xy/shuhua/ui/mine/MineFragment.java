@@ -17,6 +17,7 @@ import java.util.List;
  * Created by xiaoyu on 2016/3/30.
  */
 public class MineFragment extends Fragment implements View.OnClickListener {
+    private View allZuoPin;
     private View settingFL;
     private View zuoPinLL;
     private View zuoPinLineView;
@@ -38,6 +39,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initViews(View view) {
+        allZuoPin = view.findViewById(R.id.allZuoPin);
         settingFL = view.findViewById(R.id.settingFL);
         zuoPinLL = view.findViewById(R.id.zuoPinLL);
         zuoPinLineView = view.findViewById(R.id.zuoPinLineView);
@@ -47,13 +49,17 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         wenZhangLineView = view.findViewById(R.id.wenZhangLineView);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
 
+        allZuoPin.setOnClickListener(this);
         settingFL.setOnClickListener(this);
         zuoPinLL.setOnClickListener(this);
         zhanLanLL.setOnClickListener(this);
         wenZhangLL.setOnClickListener(this);
 
-        for (int i = 0; i < 3; i++) {
-            ZuoPinRecyclerView itemView = new ZuoPinRecyclerView(getContext());
+
+        ZuoPinRecyclerView itemView1 = new ZuoPinRecyclerView(getContext());
+        views.add(itemView1);
+        for (int i = 0; i < 2; i++) {
+            WenZhangRecyclerView itemView = new WenZhangRecyclerView(getContext());
             views.add(itemView);
         }
 
@@ -99,7 +105,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
+            case R.id.allZuoPin:
+                ActivityAllZuoPin.open(getActivity());
+                break;
             case R.id.settingFL:
                 ActivitySetting.open(getActivity());
                 break;

@@ -13,6 +13,8 @@ public class CustomApplication extends Application {
     private static CustomApplication instance;
     private Account account;
 
+    public static boolean android_show_filter = false;
+
     @Override
     public void onCreate() {
         super.onCreate();

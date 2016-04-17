@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/libs/gson-2.2.4.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/libs/okhttp-3.2.0.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/libs/okio-1.6.0.jar" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/anim/checkshake.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/color" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/vpi__tab_selected_holo.9.png" charset="UTF-8" />
@@ -27,24 +28,62 @@
     <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/vpi__tab_unselected_focused_holo.9.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/vpi__tab_unselected_holo.9.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-xhdpi/vpi__tab_unselected_pressed_holo.9.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/default_pic_bg.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/goods_ico_delete.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/ico_reload.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/ico_reload_press.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_camera_capture.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_camera_capture_pressed.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_delete.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_dot_blur.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_dot_focus.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_flash_off.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_flash_on.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_normal_round.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_prepose.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_red_dot.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_select_photo_camera.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/icon_selected_round.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/show_btn_add_photo.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/show_btn_add_photo_press.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/show_photo_ico_filter_normal.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable-xxhdpi/show_photo_ico_filter_press.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/bn_camera_capture_selector.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/btn_add_photo.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/btn_photo_checkbox.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/filter_btn.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable/goods_list_divider.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable/home_tab_text_selector.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/myprogressdrawable.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/reload_btn.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable/sliding_back_shadow.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable/sticky_shadow_default.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable/vpi__tab_indicator.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/activity_capture.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/activity_login.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/activity_main.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/activity_photoalbum.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/activity_photoalbum_gridview.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/activity_register.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/cube_ptr_classic_default_header.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/cube_ptr_simple_loading.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/goods_item_view.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/home_header_view.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/layout_header.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/layout_slideshow.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/layout/loading_view.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/photo_choose_view.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/photo_select_footer_view.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/photoalbum_gridview_item.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/photoalbum_item.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/preview_item.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/preview_layout.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/simple_list_item.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/slide_layout.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/space_item_view.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/square_photo_view.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/layout/title_layout.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/menu/main.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values-zh" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/values/attrs.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values/cube_ptr_attrs.xml" charset="UTF-8" />
@@ -123,6 +162,49 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/Exceptions.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/ImageUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/L.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/ActivityCapture.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/BitmapUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CameraCropBorderView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CaptureFocuseView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CaptureSensorsObserver.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/DragGridView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/FileUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/FixHeightRadioImageView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/HackyViewPager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/IntentUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperLinear.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PathManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbumActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbumAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseActicity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseImplActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoGridItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PreviewActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PreviewAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/SimpleTextViewAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/Compat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/DefaultOnDoubleTapListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/HackyDrawerLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/HackyViewPager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/IPhotoView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/PhotoView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/PhotoViewAttacher.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/CupcakeGestureDetector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/EclairGestureDetector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/FroyoGestureDetector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/GestureDetector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/OnGestureListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/gestures/VersionedGestureDetector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/scrollerproxy/GingerScroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/scrollerproxy/IcsScroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/scrollerproxy/PreGingerScroller.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/scrollerproxy/ScrollerProxy.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/recyclerview/DividerGridItemDecoration.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/recyclerview/DividerListItemDecoration.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/recyclerview/HeaderFooterRecyclerAdapter.java" charset="GBK" />

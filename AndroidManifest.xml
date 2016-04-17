@@ -96,6 +96,42 @@
                         android:scheme="rong"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name=".ui.mine.ActivityAllZuoPin"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.home.ActivityPublishZuoPin"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+
+        <!--选择图片相关-->
+        <activity android:name=".util.photo.ActivityCapture"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="landscape"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+        <activity android:name=".util.photo.PhotoActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+        <activity android:name=".util.photo.PhotoAlbumActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+        <activity android:name=".util.photo.PhotoChooseImplActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+        <activity android:name=".util.photo.PreviewActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <!-- rongyun begin -->
         <service
