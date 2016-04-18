@@ -106,7 +106,21 @@
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
-
+        <activity
+                android:name=".ui.user.ActivityModifyPassword"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.user.ActivityModifyNickname"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.user.ActivityMyInfo"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
         <!--选择图片相关-->
         <activity android:name=".util.photo.ActivityCapture"
                   android:theme="@android:style/Theme.NoTitleBar"
