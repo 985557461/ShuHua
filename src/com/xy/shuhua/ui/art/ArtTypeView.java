@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.xy.shuhua.R;
-import com.xy.shuhua.util.recyclerview.DividerGridItemDecoration;
 import com.xy.shuhua.util.recyclerview.DividerListItemDecoration;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrDefaultHandler;

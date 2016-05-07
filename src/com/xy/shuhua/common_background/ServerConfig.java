@@ -5,9 +5,9 @@ package com.xy.shuhua.common_background;
  */
 public class ServerConfig {
     // 测试环境
-    public static String BASE_URL_TEST = "http://101.201.72.28:8080/";
+    public static String BASE_URL_TEST = "http://182.92.67.140:80/";
     // 正式环境
-    public static String BASE_URL_OFFICAL = "http://101.201.72.28:8080/";
+    public static String BASE_URL_OFFICAL = "http://182.92.67.140:80/";
 
     public static String BASE_URL = BASE_URL_OFFICAL;
 
@@ -28,4 +28,8 @@ public class ServerConfig {
     public static final String SEARCH_ARTS = "shuhua/api/artService/queryArtsByName.do";
     public static final String MODIFY_PWD = "shuhua/api/accounts/change_password.do";
     public static final String UPLOAD_FILE = "shuhua/api/export/upload.do";//POST  参数file
+    public static final String MY_ZUOPIN = "shuhua/api/artService/getArtByUserid.do";//我的作品
+    public static final String MY_WENZHANG = "shuhua/api/activity/queryActivitys.do";//我的文章
+    public static final String ZUOPIN_INFO = "shuhua/api/artService/getArtDeatil.do";
+    public static final String PUBLISH_ZUOPIN = "shuhua/api/art/saveArt.do";//发布作品的接口
 }

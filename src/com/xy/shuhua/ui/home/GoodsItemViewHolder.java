@@ -81,6 +81,6 @@ public class GoodsItemViewHolder extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View view) {
-        ActivityArtGoodsInfo.open((Activity) context);
+        ActivityArtGoodsInfo.open((Activity) context,homeArtGoodsModel.id);
     }
 }

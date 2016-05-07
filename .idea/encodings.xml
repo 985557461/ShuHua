@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/libs/android-support-v4.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/libs/android-support-v7-recyclerview.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libs/glide-3.6.1.jar" charset="GBK" />
@@ -249,5 +249,6 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/viewpager_indicator/TabPageIndicator.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/viewpager_indicator/TitlePageIndicator.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/viewpager_indicator/UnderlinePageIndicator.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

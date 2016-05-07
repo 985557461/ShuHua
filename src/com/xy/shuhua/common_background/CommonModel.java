@@ -10,5 +10,5 @@ public class CommonModel {
     public String message;
 
     @SerializedName("result")
-    public int result;
+    public String result;
 }

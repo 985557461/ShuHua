@@ -37,15 +37,14 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private TextView register;
     private TextView login;
 
-    public static void open(Activity activity){
-        Intent intent = new Intent(activity,ActivityLogin.class);
+    public static void open(Activity activity) {
+        Intent intent = new Intent(activity, ActivityLogin.class);
         activity.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /**判断用户是否登录**/
         Account account = CustomApplication.getInstance().getAccount();
         if (!TextUtils.isEmpty(account.userId)) {
             ActivityMain.open(this);
@@ -98,7 +97,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private void tryToLogin() {
         final String phoneStr = phoneNumber.getText().toString();
         if (TextUtils.isEmpty(phoneStr)) {
-            ToastUtil.makeShortText("输入电话号码");
+            ToastUtil.makeShortText("请输入电话号码");
             return;
         }
         final String pwdStr = password.getText().toString();
@@ -164,8 +163,8 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             return;
                         }
                         response = response.replaceAll("\\\\", "");
-                        response = response.substring(1,response.length());
-                        response = response.substring(0,response.length()-1);
+                        response = response.substring(1, response.length());
+                        response = response.substring(0, response.length() - 1);
                         TokenModel tokenModel = GsonUtil.transModel(response, TokenModel.class);
                         if (tokenModel != null && "200".equals(tokenModel.code)) {
                             Account account = CustomApplication.getInstance().getAccount();
@@ -180,45 +179,24 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     }
 
 
-    /**
-     * 建立与融云服务器的连接
-     *
-     * @param token
-     */
     private void connect(String token) {
         if (getApplicationInfo().packageName.equals(CustomApplication.getCurProcessName(getApplicationContext()))) {
-            /**
-             * IMKit SDK调用第二步,建立与服务器的连接
-             */
             RongIM.connect(token, new RongIMClient.ConnectCallback() {
-                /**
-                 * Token 错误，在线上环境下主要是因为 Token 已经过期，您需要向 App Server 重新请求一个新的 Token
-                 */
                 @Override
                 public void onTokenIncorrect() {
                     ToastUtil.makeShortText("登录失败");
                     Log.d("xiaoyu", "--onTokenIncorrect");
                 }
 
-                /**
-                 * 连接融云成功
-                 * @param userid 当前 token
-                 */
                 @Override
                 public void onSuccess(String userid) {
-                    Log.d("xiaoyu", "--onSuccess" + userid);
                     ToastUtil.makeShortText("登陆成功");
                     ActivityMain.open(ActivityLogin.this);
                     finish();
                 }
 
-                /**
-                 * 连接融云失败
-                 * @param errorCode 错误码，可到官网 查看错误码对应的注释
-                 */
                 @Override
                 public void onError(RongIMClient.ErrorCode errorCode) {
-                    Log.d("xiaoyu", "--onError" + errorCode);
                     ToastUtil.makeShortText("登录失败");
                 }
             });

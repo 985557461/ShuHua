@@ -133,7 +133,7 @@ public class ActivityModifyPassword extends ActivityBaseNoSliding implements Vie
                     @Override
                     public void onResponse(String response) {
                         CommonModel commonModel = GsonUtil.transModel(response,CommonModel.class);
-                        if (commonModel != null && commonModel.result == 1) {
+                        if (commonModel != null && "1".equals(commonModel.result)) {
                             account.password = newPwdStr;
                             account.saveMeInfoToPreference();
                             ToastUtil.makeShortText("ÐÞ¸Ä³É¹¦");

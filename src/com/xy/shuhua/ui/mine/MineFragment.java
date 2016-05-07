@@ -58,10 +58,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
         ZuoPinRecyclerView itemView1 = new ZuoPinRecyclerView(getContext());
         views.add(itemView1);
-        for (int i = 0; i < 2; i++) {
-            WenZhangRecyclerView itemView = new WenZhangRecyclerView(getContext());
-            views.add(itemView);
-        }
+        WenZhangRecyclerView itemView2 = new WenZhangRecyclerView(getContext(),0);
+        views.add(itemView2);
+        WenZhangRecyclerView itemView3 = new WenZhangRecyclerView(getContext(),1);
+        views.add(itemView3);
 
         minePagerAdapter = new MinePagerAdapter();
         viewPager.setAdapter(minePagerAdapter);

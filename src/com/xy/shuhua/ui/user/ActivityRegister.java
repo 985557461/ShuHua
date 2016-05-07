@@ -11,9 +11,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.xy.shuhua.R;
+import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.util.CommonUtil;
+import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.WeakHandler;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
@@ -129,8 +131,13 @@ public class ActivityRegister extends ActivityBaseNoSliding implements View.OnCl
                     @Override
                     public void onResponse(String response) {
                         Log.d("xiaoyu", response);
-                        ToastUtil.makeShortText("×¢²á³É¹¦");
-                        finish();
+                        CommonModel commonModel = GsonUtil.transModel(response,CommonModel.class);
+                        if(commonModel != null && "1".equals(commonModel.result)){
+                            ToastUtil.makeShortText("×¢²á³É¹¦");
+                            finish();
+                        }else{
+                            ToastUtil.makeShortText("×¢²áÊ§°Ü");
+                        }
                     }
                 });
     }
