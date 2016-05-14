@@ -1,6 +1,10 @@
 package com.xy.shuhua.util;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.view.inputmethod.InputMethodManager;
+
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,6 +34,10 @@ public class CommonUtil {
             isValid = true;
         }
         return isValid;
+    }
+
+    public static void hideSoftWindow(Activity context){
+        ((InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     public static void printHttpUrl(String url,Map<String,String> params){

@@ -36,7 +36,7 @@
             android:name=".ui.CustomApplication"
             android:theme="@android:style/Theme.NoTitleBar"
             android:label="@string/app_name"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@drawable/icon_lanuch"
             android:allowBackup="true">
         <meta-data android:name="com.xy.shuhua.util.glide.GlideConfiguration"
                    android:value="GlideModule"/>
@@ -120,6 +120,21 @@
         </activity>
         <activity
                 android:name=".ui.user.ActivityMyInfo"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.home.ActivityAuthorList"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.home.ActivityAuthorHomePage"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.home.ActivityInputContent"
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>

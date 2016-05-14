@@ -1,5 +1,6 @@
 package com.xy.shuhua.ui.home;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.RecyclerView;
@@ -201,23 +202,45 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 name.setText("¸ü¶à");
             } else {
                 if (!TextUtils.isEmpty(artUserModel.imageurl)) {
-                    Glide.with(getContext()).load(artUserModel.imageurl).into(avatar);
+                    Glide.with(getContext()).load(artUserModel.imageurl).error(R.drawable.me_avatar_boy).into(avatar);
                 } else {
-                    Glide.with(getContext()).load("").into(avatar);
+                    avatar.setImageResource(R.drawable.me_avatar_boy);
                 }
-                if(!TextUtils.isEmpty(artUserModel.username)){
-                    name.setText(artUserModel.username);
-                }else{
-                    name.setText("");
+                if (!TextUtils.isEmpty(artUserModel.realname)) {
+                    name.setText(artUserModel.realname);
+                } else {
+                    if (!TextUtils.isEmpty(artUserModel.nickname)) {
+                        name.setText(artUserModel.nickname);
+                    } else {
+                        if (!TextUtils.isEmpty(artUserModel.username)) {
+                            name.setText(artUserModel.username);
+                        } else {
+                            name.setText("");
+                        }
+                    }
                 }
             }
         }
 
-        private void init(Context context) {
+        private void init(final Context context) {
             LayoutInflater inflater = LayoutInflater.from(context);
             inflater.inflate(R.layout.home_user_item_view, this, true);
             avatar = (ImageView) findViewById(R.id.avatar);
             name = (TextView) findViewById(R.id.name);
+
+            setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    if(isMore){
+                        ActivityAuthorList.open((Activity) context);
+                    }else{
+                        String avatar = artUserModel.imageurl;
+                        String nameStr = name.getText().toString();
+                        ActivityAuthorHomePage.open((Activity) context,artUserModel.userid,avatar,nameStr);
+                    }
+                }
+            });
         }
     }
 }

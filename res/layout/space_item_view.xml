@@ -10,14 +10,15 @@
             android:background="#f7f7f7"/>
     <LinearLayout
             android:orientation="vertical"
-            android:background="#0000ff"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:scaleType="centerCrop"/>
+                android:scaleType="center"
+                android:src="@drawable/icon_art_pressed"/>
         <View android:layout_width="match_parent"
               android:layout_height="10dp"
               android:background="#f7f7f7"/>

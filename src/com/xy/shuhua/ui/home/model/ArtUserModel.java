@@ -8,6 +8,24 @@ import com.google.gson.annotations.SerializedName;
 public class ArtUserModel {
     @SerializedName("userid")
     public String userid;
+    @SerializedName("introduce")
+    public String introduce;
+    @SerializedName("telphone")
+    public String telphone;
+    @SerializedName("token")
+    public String token;
+    @SerializedName("age")
+    public String age;
+    @SerializedName("gender")
+    public String gender;
+    @SerializedName("usertype")
+    public String usertype;
+    @SerializedName("address")
+    public String address;
+    @SerializedName("email")
+    public String email;
+    @SerializedName("realname")
+    public String realname;
     @SerializedName("id")
     public String id;
     @SerializedName("username")
@@ -16,4 +34,6 @@ public class ArtUserModel {
     public String imageurl;
     @SerializedName("mobile")
     public String mobile;
+    @SerializedName("nickname")
+    public String nickname;
 }

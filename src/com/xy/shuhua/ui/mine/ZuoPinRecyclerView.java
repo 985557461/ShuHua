@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import com.xy.shuhua.R;
-import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.ServerConfig;
-import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
 import com.xy.shuhua.ui.art.model.ArtGoodsListModel;
 import com.xy.shuhua.util.GsonUtil;
@@ -39,15 +38,18 @@ import java.util.Map;
 public class ZuoPinRecyclerView extends FrameLayout {
     private PtrClassicFrameLayout refreshContainer;
     private AutoLoadMoreRecyclerView recyclerView;
+    private TextView emptyTips;
     private ArtAdapter artAdapter;
     private List<ArtGoodsItemModel> itemModels = new ArrayList<>();
 
     private static final int limit = 20;
     private int start_num = 0;
-    private Account account;
 
-    public ZuoPinRecyclerView(Context context) {
+    private String userId;
+
+    public ZuoPinRecyclerView(Context context,String userId) {
         super(context);
+        this.userId = userId;
         init(context);
     }
 
@@ -62,10 +64,10 @@ public class ZuoPinRecyclerView extends FrameLayout {
     }
 
     private void init(Context context) {
-        account = CustomApplication.getInstance().getAccount();
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.zuopin_recycler_view, this, true);
 
+        emptyTips = (TextView) findViewById(R.id.emptyTips);
         refreshContainer = (PtrClassicFrameLayout) findViewById(R.id.refreshContainer);
         recyclerView = (AutoLoadMoreRecyclerView) findViewById(R.id.recyclerView);
         recyclerView.getRecyclerView().setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
@@ -75,7 +77,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView, header);
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView.getRecyclerView(), header);
             }
 
             @Override
@@ -96,12 +98,24 @@ public class ZuoPinRecyclerView extends FrameLayout {
         recyclerView.setAdapter(artAdapter);
     }
 
+    private void notifyDataChanged(){
+        if(itemModels.size() > 0){
+            refreshContainer.setVisibility(View.VISIBLE);
+            emptyTips.setVisibility(View.GONE);
+            artAdapter.notifyDataSetChanged();
+        }else{
+            refreshContainer.setVisibility(View.GONE);
+            emptyTips.setVisibility(View.VISIBLE);
+            emptyTips.setText("还没有上传作品奥");
+        }
+    }
+
     private void refreshData() {
         start_num = 1;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
-        params.put("userid", account.userId);
+        params.put("userid", userId);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN, params);
         OkHttpUtils.get()
                 .params(params)
@@ -126,7 +140,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
                         if (goodsListModel.artlist != null) {
                             itemModels.clear();
                             itemModels.addAll(goodsListModel.artlist);
-                            artAdapter.notifyDataSetChanged();
+                            notifyDataChanged();
                             if (goodsListModel.artlist.size() < 20) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多
@@ -142,7 +156,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
-        params.put("userid", account.userId);
+        params.put("userid", userId);
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN)
@@ -167,7 +181,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
                         }
                         if (goodsListModel.artlist != null) {
                             itemModels.addAll(goodsListModel.artlist);
-                            artAdapter.notifyDataSetChanged();
+                            notifyDataChanged();
                             if (goodsListModel.artlist.size() < 20) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多

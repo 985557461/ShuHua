@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import com.google.gson.annotations.SerializedName;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.Account;
@@ -41,6 +42,18 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         PhotoSelectView.FooterClickListener, PhotoSelectView.PhotoDeleteListener {
     private View backView;
     private View rightView;
+    private View nameView;
+    private TextView nameTv;
+    private View priceView;
+    private TextView priceTv;
+    private View leiBieView;
+    private TextView leiBieTv;
+    private View caiZhiView;
+    private TextView caiZhiTv;
+    private View chiCunView;
+    private TextView chiCunTv;
+    private View createTimeView;
+    private TextView createTimeTv;
     /**
      * picture about
      * *
@@ -57,6 +70,14 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
      */
     private int pathIndex;
 
+    /**
+     * requestcode*
+     */
+    private static final int request_name = 1001;
+    private static final int request_price = 1002;
+    private static final int request_leibie = 1003;
+    private static final int request_caizhi = 1004;
+    private static final int request_cicun = 1005;
 
     public static void open(Activity activity) {
         Intent intent = new Intent(activity, ActivityPublishZuoPin.class);
@@ -73,6 +94,18 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
     protected void getViews() {
         backView = findViewById(R.id.backView);
         rightView = findViewById(R.id.rightView);
+        nameView = findViewById(R.id.nameView);
+        nameTv = (TextView) findViewById(R.id.nameTv);
+        priceView = findViewById(R.id.priceView);
+        priceTv = (TextView) findViewById(R.id.priceTv);
+        leiBieView = findViewById(R.id.leiBieView);
+        leiBieTv = (TextView) findViewById(R.id.leiBieTv);
+        caiZhiView = findViewById(R.id.caiZhiView);
+        caiZhiTv = (TextView) findViewById(R.id.caiZhiTv);
+        chiCunView = findViewById(R.id.chiCunView);
+        chiCunTv = (TextView) findViewById(R.id.chiCunTv);
+        createTimeView = findViewById(R.id.createTimeView);
+        createTimeTv = (TextView) findViewById(R.id.createTimeTv);
         photoSelectView = (PhotoSelectView) findViewById(R.id.photoSelectView);
     }
 
@@ -86,6 +119,12 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
     protected void setListeners() {
         backView.setOnClickListener(this);
         rightView.setOnClickListener(this);
+        nameView.setOnClickListener(this);
+        priceView.setOnClickListener(this);
+        leiBieView.setOnClickListener(this);
+        caiZhiView.setOnClickListener(this);
+        chiCunView.setOnClickListener(this);
+        createTimeView.setOnClickListener(this);
         photoSelectView.setFooterClickListener(this);
         photoSelectView.setPhotoDeleteListener(this);
     }
@@ -97,16 +136,63 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                 finish();
                 break;
             case R.id.rightView:
-                /**先判断需不需要上传图片**/
-                if (pathsList != null && pathsList.size() <= 0) {
-                    ToastUtil.makeShortText("请选择图片");
-                    return;
-                }
-                serverPaths.clear();
-                pathIndex = 0;
-                uploadImage(pathIndex);
+                tryToUpload();
+                break;
+            case R.id.nameView:
+                ActivityInputContent.openForResult(this, request_name, "作品名称", nameTv.getText().toString());
+                break;
+            case R.id.priceView:
+                ActivityInputContent.openForResult(this, request_price, "价格", priceTv.getText().toString());
+                break;
+            case R.id.leiBieView:
+                ActivityInputContent.openForResult(this, request_leibie, "类别", leiBieTv.getText().toString());
+                break;
+            case R.id.caiZhiView:
+                ActivityInputContent.openForResult(this, request_caizhi, "材质", caiZhiTv.getText().toString());
+                break;
+            case R.id.chiCunView:
+                ActivityInputContent.openForResult(this, request_cicun, "尺寸", chiCunTv.getText().toString());
+                break;
+            case R.id.createTimeView:
+
                 break;
         }
+    }
+
+    private void tryToUpload() {
+        /**先判断需不需要上传图片**/
+        if (pathsList != null && pathsList.size() <= 0) {
+            ToastUtil.makeShortText("请选择图片");
+            return;
+        }
+        String nameStr = nameTv.getText().toString();
+        if (TextUtils.isEmpty(nameStr)) {
+            ToastUtil.makeShortText("请输入名称");
+            return;
+        }
+        String priceStr = priceTv.getText().toString();
+        if (TextUtils.isEmpty(priceStr)) {
+            ToastUtil.makeShortText("请输入价格");
+            return;
+        }
+        String leibieStr = leiBieTv.getText().toString();
+        if (TextUtils.isEmpty(leibieStr)) {
+            ToastUtil.makeShortText("请输入类别");
+            return;
+        }
+        String caizhiStr = caiZhiTv.getText().toString();
+        if (TextUtils.isEmpty(caizhiStr)) {
+            ToastUtil.makeShortText("请输入材质");
+            return;
+        }
+        String chicunStr = chiCunTv.getText().toString();
+        if (TextUtils.isEmpty(chicunStr)) {
+            ToastUtil.makeShortText("请输入尺寸");
+            return;
+        }
+        serverPaths.clear();
+        pathIndex = 0;
+        uploadImage(pathIndex);
     }
 
     private void uploadImage(int index) {
@@ -133,7 +219,6 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                             } else {
                                 uploadImage(pathIndex);
                             }
-                            ToastUtil.makeShortText("图片上传成功");
                         } else {
                             ToastUtil.makeShortText("图片上传失败");
                         }
@@ -150,26 +235,23 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
 
     private void publishZuoPin() {
         StringBuilder stringBuilder = new StringBuilder();
-        int realCount = serverPaths.size();
-        int serverCount = 6;
-        if (realCount < serverCount) {
-            int addCount = serverCount - realCount;
-            for (int i = 0; i < addCount; i++) {
-                serverPaths.add("\"\"");
-            }
-        }
-        for (int i = 0; i < serverCount; i++) {
+        for (int i = 0; i < serverPaths.size(); i++) {
             stringBuilder.append(serverPaths.get(i));
             if (i != serverPaths.size() - 1) {
                 stringBuilder.append(",");
             }
         }
+        String nameStr = nameTv.getText().toString();
+        String priceStr = priceTv.getText().toString();
+        String leibieStr = leiBieTv.getText().toString();
+        String caizhiStr = caiZhiTv.getText().toString();
+        String chicunStr = chiCunTv.getText().toString();
         Map<String, String> params = new HashMap<>();
-        params.put("artname", "test");
-        params.put("price", "100");
-        params.put("category", "1");
-        params.put("caizhi", "砂纸");
-        params.put("artsize", "100");
+        params.put("artname", nameStr);
+        params.put("price", priceStr);
+        params.put("category", leibieStr);
+        params.put("caizhi",caizhiStr);
+        params.put("artsize", chicunStr);
         params.put("imageurl", stringBuilder.toString());
         Account account = CustomApplication.getInstance().getAccount();
         params.put("userid", account.userId);
@@ -200,7 +282,17 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == kActivitySettingSelectPicRequest && resultCode == RESULT_OK) {
+        if (requestCode == request_name && resultCode == RESULT_OK) {
+            nameTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == request_price && resultCode == RESULT_OK) {
+            priceTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == request_leibie && resultCode == RESULT_OK) {
+            leiBieTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == request_caizhi && resultCode == RESULT_OK) {
+            caiZhiTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == request_cicun && resultCode == RESULT_OK) {
+            chiCunTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == kActivitySettingSelectPicRequest && resultCode == RESULT_OK) {
             String[] paths = data.getStringArrayExtra(PhotoAlbumActivity.Key_SelectPaths);
             if (paths != null && paths.length <= 0) {
                 return;

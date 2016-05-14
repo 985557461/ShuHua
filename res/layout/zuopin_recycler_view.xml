@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res/com.xy.shuhua"
-              android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:paddingTop="23dp"
               android:paddingLeft="15dp"
               android:paddingRight="15dp">
     <com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout
@@ -22,4 +20,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
     </com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout>
-</LinearLayout>
+    <TextView
+            android:id="@+id/emptyTips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="#dddddd"
+            android:visibility="gone"/>
+</FrameLayout>

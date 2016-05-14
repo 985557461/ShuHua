@@ -22,6 +22,7 @@ import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import com.xy.shuhua.util.recyclerview.AutoLoadMoreRecyclerView;
+import com.xy.shuhua.util.recyclerview.LoadMoreInterface;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrDefaultHandler;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView, header);
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView.getRecyclerView(), header);
             }
 
             @Override
@@ -81,6 +82,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
         refreshContainer.autoRefresh();
+
+        recyclerView.setLoadMoreInterface(new LoadMoreInterface() {
+            @Override
+            public void loadMore() {
+                loadMoreData();
+            }
+        });
 
         goodsAdapter = new GoodsAdapter(getContext());
         recyclerView.setAdapter(goodsAdapter);

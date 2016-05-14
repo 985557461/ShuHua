@@ -36,14 +36,16 @@
         </FrameLayout>
     </RelativeLayout>
     <com.xy.shuhua.util.round_image.CircleImageView
+            android:id="@+id/avatar"
             android:layout_width="74.66dp"
             android:layout_height="74.66dp"
-            android:src="@drawable/icon_default_avatar"
+            android:src="@drawable/me_avatar_boy"
             android:scaleType="centerCrop"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"/>
     <TextView
-            android:text="梁文山"
+            android:id="@+id/name"
+            android:text="去设置"
             android:textColor="#333333"
             android:textSize="15sp"
             android:layout_width="wrap_content"

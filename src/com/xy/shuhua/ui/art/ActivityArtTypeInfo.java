@@ -17,13 +17,14 @@ import java.util.List;
 /**
  * Created by xiaoyu on 2016/4/1.
  */
-public class ActivityArtTypeInfo extends ActivityBaseNoSliding{
+public class ActivityArtTypeInfo extends ActivityBaseNoSliding implements View.OnClickListener{
+    private View backView;
     private TabPageIndicator indicator;
     private ViewPager viewPager;
     private ArtPagerAdapter artPagerAdapter;
     private List<ArtTypeView> views = new ArrayList<>();
 
-    private String[] titles = new String[]{"全部","字画","书画","瓷器","古玩"};
+    private String[] titles = new String[]{"当代","书画"};
 
     public static void open(Activity activity){
         Intent intent = new Intent(activity,ActivityArtTypeInfo.class);
@@ -38,6 +39,7 @@ public class ActivityArtTypeInfo extends ActivityBaseNoSliding{
 
     @Override
     protected void getViews() {
+        backView = findViewById(R.id.backView);
         indicator = (TabPageIndicator) findViewById(R.id.indicator);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
     }
@@ -55,7 +57,14 @@ public class ActivityArtTypeInfo extends ActivityBaseNoSliding{
 
     @Override
     protected void setListeners() {
+        backView.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.backView){
+            finish();
+        }
     }
 
     private class ArtPagerAdapter extends PagerAdapter{

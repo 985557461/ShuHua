@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
@@ -39,6 +40,7 @@ import java.util.Map;
  */
 public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnClickListener {
     private View backView;
+    private TextView emptyTips;
     private View searchView;
     private PtrClassicFrameLayout refreshContainer;
     private AutoLoadMoreRecyclerView recyclerView;
@@ -49,13 +51,18 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
     private static final int limit = 20;
     private int start_num = 0;
 
-    public static void open(Activity activity) {
+    public static final String Kuserid = "key_userid";
+    private String userid;
+
+    public static void open(Activity activity,String userid) {
         Intent intent = new Intent(activity, ActivityAllZuoPin.class);
+        intent.putExtra(Kuserid,userid);
         activity.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        userid = getIntent().getStringExtra(Kuserid);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_zuopin);
     }
@@ -63,6 +70,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
     @Override
     protected void getViews() {
         backView = findViewById(R.id.backView);
+        emptyTips = (TextView) findViewById(R.id.emptyTips);
         searchView = findViewById(R.id.searchView);
 
         refreshContainer = (PtrClassicFrameLayout) findViewById(R.id.refreshContainer);
@@ -78,12 +86,12 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView, header);
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView.getRecyclerView(), header);
             }
 
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-
+                refreshData();
             }
         });
         refreshContainer.autoRefresh();
@@ -91,7 +99,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         recyclerView.setLoadMoreInterface(new LoadMoreInterface() {
             @Override
             public void loadMore() {
-
+                loadMoreData();
             }
         });
 
@@ -103,6 +111,18 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
     protected void setListeners() {
         backView.setOnClickListener(this);
         searchView.setOnClickListener(this);
+    }
+
+    private void notifyDataChanged(){
+        if(itemModels.size() > 0){
+            refreshContainer.setVisibility(View.VISIBLE);
+            emptyTips.setVisibility(View.GONE);
+            artAdapter.notifyDataSetChanged();
+        }else{
+            refreshContainer.setVisibility(View.GONE);
+            emptyTips.setVisibility(View.VISIBLE);
+            emptyTips.setText("还没有上传作品奥");
+        }
     }
 
     @Override
@@ -122,10 +142,11 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
-        PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS, params);
+        params.put("userid", userid);
+        PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN, params);
         OkHttpUtils.get()
                 .params(params)
-                .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)
+                .url(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN)
                 .tag(this)
                 .build()
                 .execute(new StringCallback() {
@@ -146,7 +167,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
                         if (goodsListModel.artlist != null) {
                             itemModels.clear();
                             itemModels.addAll(goodsListModel.artlist);
-                            artAdapter.notifyDataSetChanged();
+                            notifyDataChanged();
                             if (goodsListModel.artlist.size() < 20) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多
@@ -162,9 +183,10 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
+        params.put("userid", userid);
         OkHttpUtils.get()
                 .params(params)
-                .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)
+                .url(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN)
                 .tag(this)
                 .build()
                 .execute(new StringCallback() {
@@ -186,7 +208,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
                         }
                         if (goodsListModel.artlist != null) {
                             itemModels.addAll(goodsListModel.artlist);
-                            artAdapter.notifyDataSetChanged();
+                            notifyDataChanged();
                             if (goodsListModel.artlist.size() < 20) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多
@@ -215,13 +237,12 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
 
         @Override
         public void onBindViewHolder(ZuoPinItemViewHolder viewHolder, int i) {
-//            viewHolder.setData(itemModels.get(i));
+            viewHolder.setData(itemModels.get(i));
         }
 
         @Override
         public int getItemCount() {
-//            return itemModels.size();
-            return 20;
+            return itemModels.size();
         }
     }
 }

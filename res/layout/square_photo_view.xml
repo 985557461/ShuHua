@@ -16,7 +16,7 @@
     <ImageView
             android:id="@+id/delete"
             android:layout_width="24dp"
-            android:layout_height="18dp"
+            android:layout_height="24dp"
             android:layout_gravity="top|right"
-            android:src="@drawable/icon_delete"/>
+            android:src="@drawable/channel_cell_btn_delete"/>
 </FrameLayout>
