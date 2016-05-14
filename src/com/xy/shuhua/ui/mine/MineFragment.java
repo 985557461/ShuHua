@@ -1,8 +1,13 @@
 package com.xy.shuhua.ui.mine;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
@@ -14,6 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.Account;
+import com.xy.shuhua.common_background.AllActions;
 import com.xy.shuhua.ui.CustomApplication;
 
 import java.util.ArrayList;
@@ -39,6 +45,13 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private MinePagerAdapter minePagerAdapter;
 
     private Account account = CustomApplication.getInstance().getAccount();
+
+    private BroadcastReceiver refreshMyZuopin = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            ((ZuoPinRecyclerView)(views.get(0))).refreshData();
+        }
+    };
 
     @Nullable
     @Override
@@ -93,12 +106,32 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             }
         });
         initUserData();
+        registerReceiver();
+    }
+
+    private void registerReceiver() {
+        IntentFilter intentFilter = new IntentFilter(AllActions.key_refresh_my_zuopin_list);
+        LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(getActivity());
+        localBroadcastManager.registerReceiver(refreshMyZuopin, intentFilter);
+    }
+
+    private void unRegisterReceiver() {
+        if (refreshMyZuopin != null) {
+            LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(getActivity());
+            localBroadcastManager.unregisterReceiver(refreshMyZuopin);
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
         initUserData();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unRegisterReceiver();
     }
 
     private void initUserData() {
@@ -142,7 +175,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.allZuoPin:
-                ActivityAllZuoPin.open(getActivity(),account.userId);
+                ActivityAllZuoPin.open(getActivity(), account.userId);
                 break;
             case R.id.settingFL:
                 ActivitySetting.open(getActivity());

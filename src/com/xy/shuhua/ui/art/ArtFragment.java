@@ -10,10 +10,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.xy.shuhua.R;
+import com.xy.shuhua.common_background.ServerConfig;
+import com.xy.shuhua.ui.art.model.HomeArtItemModel;
+import com.xy.shuhua.ui.art.model.HomeArtListModel;
+import com.xy.shuhua.util.GsonUtil;
+import com.xy.shuhua.util.ToastUtil;
+import com.xy.shuhua.util.okhttp.OkHttpUtils;
+import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrDefaultHandler;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrHandler;
+import okhttp3.Call;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by xiaoyu on 2016/3/29.
@@ -22,6 +35,7 @@ public class ArtFragment extends Fragment implements View.OnClickListener {
     private PtrClassicFrameLayout refreshContainer;
     private RecyclerView recyclerView;
     private ArtAdapter artAdapter;
+    private List<HomeArtItemModel> homeArtItemModels = new ArrayList<>();
 
     @Nullable
     @Override
@@ -45,13 +59,44 @@ public class ArtFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                refreshContainer.refreshComplete();
+                refreshData();
             }
         });
         refreshContainer.autoRefresh();
 
         artAdapter = new ArtAdapter(getContext());
         recyclerView.setAdapter(artAdapter);
+    }
+
+    private void refreshData() {
+        Map<String, String> params = new HashMap<>();
+        OkHttpUtils.get()
+                .params(params)
+                .url(ServerConfig.BASE_URL + ServerConfig.GET_MOUREN)
+                .tag(this)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e) {
+                        refreshContainer.refreshComplete();
+                        ToastUtil.makeShortText("网络连接失败了");
+                    }
+
+                    @Override
+                    public void onResponse(String response) {
+                        refreshContainer.refreshComplete();
+                        HomeArtListModel homeArtListModel = GsonUtil.transModel(response, HomeArtListModel.class);
+                        if (homeArtListModel == null || !"1".equals(homeArtListModel.result)) {
+                            ToastUtil.makeShortText("网络连接失败了");
+                            return;
+                        }
+                        if (homeArtListModel.list != null) {
+                            homeArtItemModels.clear();
+                            homeArtItemModels.addAll(homeArtListModel.list);
+                            artAdapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     @Override
@@ -76,11 +121,12 @@ public class ArtFragment extends Fragment implements View.OnClickListener {
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+            ((ArtItemViewHolder)viewHolder).setData(homeArtItemModels.get(i));
         }
 
         @Override
         public int getItemCount() {
-            return 10;
+            return homeArtItemModels.size();
         }
     }
 }

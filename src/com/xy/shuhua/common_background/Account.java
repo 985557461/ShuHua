@@ -14,18 +14,24 @@ public class Account {
     public static final String kUserId = "key_user_id";
     public static final String kAvatar = "key_avatar";
     public static final String kUserName = "key_user_name";
+    public static final String kAddress = "key_user_address";
+    public static final String kUserAge = "key_user_age";
+    public static final String kUserIntroduce = "key_user_introduce";
     public static final String kChatToken = "key_chat_token";
 
-    public String phoneNumber="";
-    public String password="";
-    public String userId="";
-    public String avatar="";
-    public String userName="";
+    public String phoneNumber = "";
+    public String password = "";
+    public String userId = "";
+    public String avatar = "";
+    public String userName = "";
+    public String address = "";
+    public String age = "";
+    public String introduce = "";
     public String chatToken = "";
 
     // 用户选择照片时需要记住用户的偏好的文件夹的key
     public static String kLastSelectDir = "lastSelectDir";
-    public String lastSelectDir="";
+    public String lastSelectDir = "";
 
     public static Account loadAccount() {
         String userInfo = CommonPreference.getStringValue(kUsrInfo, "");
@@ -35,13 +41,16 @@ public class Account {
         }
         try {
             JSONObject user = new JSONObject(userInfo);
-            account.phoneNumber = user.optString(kPhoneNumber,"");
-            account.password = user.optString(kPassword,"");
-            account.userId = user.optString(kUserId,"");
-            account.avatar = user.optString(kAvatar,"");
-            account.userName = user.optString(kUserName,"");
-            account.lastSelectDir = user.optString(kLastSelectDir,"");
-            account.chatToken = user.optString(kChatToken,"");
+            account.phoneNumber = user.optString(kPhoneNumber, "");
+            account.password = user.optString(kPassword, "");
+            account.userId = user.optString(kUserId, "");
+            account.avatar = user.optString(kAvatar, "");
+            account.userName = user.optString(kUserName, "");
+            account.address = user.optString(kAddress, "");
+            account.age = user.optString(kUserAge, "");
+            account.introduce = user.optString(kUserIntroduce, "");
+            account.lastSelectDir = user.optString(kLastSelectDir, "");
+            account.chatToken = user.optString(kChatToken, "");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -56,8 +65,11 @@ public class Account {
             info.put(kUserId, userId);
             info.put(kAvatar, avatar);
             info.put(kUserName, userName);
+            info.put(kUserAge, age);
+            info.put(kAddress, address);
+            info.put(kUserIntroduce, introduce);
             info.put(kLastSelectDir, lastSelectDir);
-            info.put(kChatToken,chatToken);
+            info.put(kChatToken, chatToken);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -70,6 +82,9 @@ public class Account {
         userId = "";
         avatar = "";
         userName = "";
+        address = "";
+        age = "";
+        introduce = "";
         lastSelectDir = "";
         chatToken = "";
         saveMeInfoToPreference();

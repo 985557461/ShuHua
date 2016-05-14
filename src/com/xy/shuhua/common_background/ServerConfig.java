@@ -34,4 +34,6 @@ public class ServerConfig {
     public static final String PUBLISH_ZUOPIN = "shuhua/api/art/saveArt.do";//发布作品的接口
     public static final String ALL_AUTHOR = "shuhua/api/accounts/getArtist.do";//所有艺术家接口
     public static final String GET_MOUREN = "shuhua/api/artService/getMouren.do";//主页面某人艺术接口
+    public static final String MODIFY_AVATAR = "shuhua/api/accounts/setImage2.do";//修改头像
+    public static final String MODIFY_OTHER_INFO = "shuhua/api/accounts/setUserinfo.do";//修改用户其他信息
 }

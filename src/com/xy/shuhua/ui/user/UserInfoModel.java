@@ -12,6 +12,12 @@ public class UserInfoModel {
     public String result;
     @SerializedName("nickname")
     public String nickname;
+    @SerializedName("address")
+    public String address;
+    @SerializedName("age")
+    public String age;
+    @SerializedName("introduce")
+    public String introduce;
     @SerializedName("user_id")
     public String user_id;
     @SerializedName("imageurl")

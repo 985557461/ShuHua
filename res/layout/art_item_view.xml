@@ -16,17 +16,17 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center">
         <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
-                android:text="艺术名家"
                 android:textColor="#ffffff"
                 android:layout_marginBottom="12dp"/>
         <TextView
+                android:id="@+id/count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:text="4000位艺术家"
                 android:textColor="#ffffff"/>
     </LinearLayout>
 </FrameLayout>

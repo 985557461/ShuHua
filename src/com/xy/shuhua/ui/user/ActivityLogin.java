@@ -128,6 +128,10 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             account.password = pwdStr;
                             account.phoneNumber = phoneStr;
                             account.userId = userInfoModel.user_id;
+                            account.userName = userInfoModel.nickname;
+                            account.address = userInfoModel.address;
+                            account.age = userInfoModel.age;
+                            account.introduce = userInfoModel.introduce;
                             account.saveMeInfoToPreference();
                             getChatToken();
                         } else {
