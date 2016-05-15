@@ -18,6 +18,7 @@ public class Account {
     public static final String kUserAge = "key_user_age";
     public static final String kUserIntroduce = "key_user_introduce";
     public static final String kChatToken = "key_chat_token";
+    public static final String kUserType = "0";//0普通用户；1设计师
 
     public String phoneNumber = "";
     public String password = "";
@@ -28,6 +29,7 @@ public class Account {
     public String age = "";
     public String introduce = "";
     public String chatToken = "";
+    public String userType = "";
 
     // 用户选择照片时需要记住用户的偏好的文件夹的key
     public static String kLastSelectDir = "lastSelectDir";
@@ -51,6 +53,7 @@ public class Account {
             account.introduce = user.optString(kUserIntroduce, "");
             account.lastSelectDir = user.optString(kLastSelectDir, "");
             account.chatToken = user.optString(kChatToken, "");
+            account.userType = user.optString(kUserType, "0");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -70,6 +73,7 @@ public class Account {
             info.put(kUserIntroduce, introduce);
             info.put(kLastSelectDir, lastSelectDir);
             info.put(kChatToken, chatToken);
+            info.put(kUserType, userType);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -87,6 +91,7 @@ public class Account {
         introduce = "";
         lastSelectDir = "";
         chatToken = "";
+        userType = "";
         saveMeInfoToPreference();
     }
 }

@@ -29,9 +29,26 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
 
     <!--APP Key  n19jmcy59gad9-->
     <!--App Secret 4qPALWbjhe5-->
+
+    <!--youmeng appkey 57373319e0f55a75b5004251-->
     <application
             android:name=".ui.CustomApplication"
             android:theme="@android:style/Theme.NoTitleBar"
@@ -115,11 +132,6 @@
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
         <activity
-                android:name=".ui.user.ActivityModifyNickname"
-                android:screenOrientation="portrait"
-                android:windowSoftInputMode="stateHidden|adjustResize">
-        </activity>
-        <activity
                 android:name=".ui.user.ActivityMyInfo"
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
@@ -136,6 +148,21 @@
         </activity>
         <activity
                 android:name=".ui.home.ActivityInputContent"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.user.ActivityForgetPwd"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.mine.ActivityIdentifyShowTips"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+                android:name=".ui.mine.ActivityIdentifyInfo"
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>

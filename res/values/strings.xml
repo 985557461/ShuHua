@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">shuhua</string>
+    <string name="app_name">某人艺术</string>
 
     <!--选择图片相关 开始-->
     <string name="photo_file_delete">照片已被删除</string>

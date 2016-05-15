@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.bumptech.glide.Glide;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.ui.CustomApplication;
@@ -11,20 +12,25 @@ import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.user.ActivityLogin;
 import com.xy.shuhua.ui.user.ActivityModifyPassword;
 import com.xy.shuhua.ui.user.ActivityMyInfo;
+import com.xy.shuhua.util.ToastUtil;
+import com.xy.shuhua.util.photo.FileUtil;
+
+import java.io.File;
 
 /**
  * Created by xiaoyu on 2016/4/14.
  */
-public class ActivitySetting extends ActivityBaseNoSliding implements View.OnClickListener{
+public class ActivitySetting extends ActivityBaseNoSliding implements View.OnClickListener {
     private View backView;
     private View modifyPwd;
     private View modifyInfo;
+    private View shenFenIdentify;
     private View aboutUs;
     private View clearHuanCun;
     private View logout;
 
-    public static void open(Activity activity){
-        Intent intent = new Intent(activity,ActivitySetting.class);
+    public static void open(Activity activity) {
+        Intent intent = new Intent(activity, ActivitySetting.class);
         activity.startActivity(intent);
     }
 
@@ -39,6 +45,7 @@ public class ActivitySetting extends ActivityBaseNoSliding implements View.OnCli
         backView = findViewById(R.id.backView);
         modifyPwd = findViewById(R.id.modifyPwd);
         modifyInfo = findViewById(R.id.modifyInfo);
+        shenFenIdentify = findViewById(R.id.shenFenIdentify);
         aboutUs = findViewById(R.id.aboutUs);
         clearHuanCun = findViewById(R.id.clearHuanCun);
         logout = findViewById(R.id.logout);
@@ -53,6 +60,7 @@ public class ActivitySetting extends ActivityBaseNoSliding implements View.OnCli
     protected void setListeners() {
         backView.setOnClickListener(this);
         modifyInfo.setOnClickListener(this);
+        shenFenIdentify.setOnClickListener(this);
         modifyPwd.setOnClickListener(this);
         aboutUs.setOnClickListener(this);
         clearHuanCun.setOnClickListener(this);
@@ -61,7 +69,7 @@ public class ActivitySetting extends ActivityBaseNoSliding implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.backView:
                 finish();
                 break;
@@ -71,6 +79,15 @@ public class ActivitySetting extends ActivityBaseNoSliding implements View.OnCli
             case R.id.modifyInfo:
                 ActivityMyInfo.open(this);
                 break;
+            case R.id.shenFenIdentify:
+                ActivityIdentifyShowTips.open(this);
+                break;
+            case R.id.clearHuanCun: {
+                File file = Glide.getPhotoCacheDir(this);
+                FileUtil.deleteDirectory(file);
+                ToastUtil.makeShortText("ª∫¥Ê“—«Â¿Ì");
+            }
+            break;
             case R.id.logout:
                 Account account = CustomApplication.getInstance().getAccount();
                 account.clearMeInfo();

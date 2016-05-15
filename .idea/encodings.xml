@@ -116,7 +116,6 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/message/RongYunMessageFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/MineFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityModifyNickname.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityModifyPassword.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityRegister.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/view/DealTouchEventViewPager.java" charset="GBK" />

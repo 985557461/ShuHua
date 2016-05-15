@@ -22,4 +22,6 @@ public class UserInfoModel {
     public String user_id;
     @SerializedName("imageurl")
     public String imageurl;
+    @SerializedName("usertype")
+    public String usertype;
 }

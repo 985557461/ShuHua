@@ -81,6 +81,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.forgetPwd:
+                ActivityForgetPwd.open(this);
                 break;
             case R.id.register:
                 ActivityRegister.open(this);
@@ -132,6 +133,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             account.address = userInfoModel.address;
                             account.age = userInfoModel.age;
                             account.introduce = userInfoModel.introduce;
+                            account.userType = userInfoModel.usertype;
                             account.saveMeInfoToPreference();
                             getChatToken();
                         } else {

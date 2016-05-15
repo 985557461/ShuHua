@@ -43,10 +43,9 @@
                 android:paddingRight="10dp"
                 android:layout_toLeftOf="@id/picView">
             <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="25dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/icon_like_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baichuan_btn_favorites"
                     android:layout_gravity="center"/>
         </FrameLayout>
     </RelativeLayout>
@@ -62,9 +61,8 @@
             <ImageView
                     android:id="@+id/mainIV"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/icon_art_cover_image"/>
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"/>
             <RelativeLayout
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"
@@ -76,7 +74,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/name"
-                        android:text="我听到音乐就看到了色彩"
                         android:textSize="16sp"
                         android:textColor="#333333"
                         android:textStyle="bold"/>
@@ -90,7 +87,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/guiGe"
-                        android:text="120cmx120cm"
                         android:textSize="12sp"
                         android:textColor="#dbdbdb"
                         android:layout_marginTop="16dp"
@@ -100,7 +96,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/price"
-                        android:text="3000"
                         android:textSize="14sp"
                         android:textColor="#f66563"
                         android:layout_marginTop="16dp"
@@ -118,12 +113,13 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userInfoView">
                 <com.xy.shuhua.util.round_image.CircleImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:id="@+id/authorAvatar"
-                        android:src="@drawable/icon_default_avatar"/>
+                        android:src="@drawable/me_avatar_boy"/>
                 <RelativeLayout
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/authorAvatar"
@@ -134,7 +130,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/authorName"
-                            android:text="李争"
                             android:textSize="16sp"
                             android:textColor="#333333"
                             android:textStyle="bold"/>
@@ -142,7 +137,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/zuopinCount"
-                            android:text="12件作品"
                             android:textSize="14sp"
                             android:textColor="#dbdbdb"
                             android:layout_marginTop="10dp"
@@ -151,13 +145,21 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/fensiCount"
-                            android:text="24个粉丝"
                             android:textSize="14sp"
                             android:textColor="#dbdbdb"
                             android:layout_marginLeft="12dp"
                             android:layout_toRightOf="@id/zuopinCount"
-                            android:layout_alignBottom="@id/zuopinCount"/>
+                            android:layout_alignBottom="@id/zuopinCount"
+                            android:visibility="gone"/>
                 </RelativeLayout>
+                <ImageView
+                        android:id="@+id/chatView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:src="@drawable/icon_chat"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"/>
             </RelativeLayout>
             <View android:layout_width="match_parent"
                   android:layout_height="1px"
@@ -175,14 +177,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/time"
-                        android:text="2016/3/23"
                         android:textSize="15sp"
                         android:textColor="#333333"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/bianhao"
-                        android:text="默认艺术 0000043543532"
                         android:textSize="15sp"
                         android:textColor="#333333"
                         android:layout_alignParentRight="true"/>
@@ -197,43 +197,21 @@
                     android:paddingBottom="12dp"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/otherZuoPinView"
+                    android:visibility="gone">
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="相关商品"
+                        android:text="相关作品"
                         android:textSize="16sp"
                         android:textColor="#333333"
                         android:layout_marginBottom="15dp"/>
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
-                    <com.xy.shuhua.ui.art.RelevantItemView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginRight="12dp"/>
-                    <com.xy.shuhua.ui.art.RelevantItemView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
-                </LinearLayout>
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                    <com.xy.shuhua.ui.art.RelevantItemView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginRight="12dp"/>
-                    <com.xy.shuhua.ui.art.RelevantItemView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
-                </LinearLayout>
+                        android:orientation="vertical"
+                        android:id="@+id/zuopinContainer"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

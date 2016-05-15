@@ -15,7 +15,7 @@
                 android:id="@+id/avatarIV"
                 android:layout_width="47dp"
                 android:layout_height="47dp"
-                android:src="@drawable/icon_default_avatar"/>
+                android:src="@drawable/me_avatar_boy"/>
         <TextView
                 android:id="@+id/zuoPinCount"
                 android:layout_width="wrap_content"

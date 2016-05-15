@@ -14,6 +14,12 @@ public class ArtGoodsItemModel {
     public String type;
     @SerializedName("id")
     public String id;
+    @SerializedName("category")
+    public String category;
+    @SerializedName("caizhi")
+    public String caizhi;
+    @SerializedName("artnum")
+    public String artnum;
     @SerializedName("username")
     public String username;
     @SerializedName("price")

@@ -16,7 +16,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/icon_default_avatar"
+                android:src="@drawable/me_avatar_boy"
                 android:layout_centerVertical="true"/>
         <LinearLayout
                 android:layout_toRightOf="@id/avatar"
