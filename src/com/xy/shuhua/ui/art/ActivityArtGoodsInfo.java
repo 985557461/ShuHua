@@ -17,6 +17,7 @@ import com.xy.shuhua.ui.art.model.ArtGoodsInfoModel;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityAuthorHomePage;
+import com.xy.shuhua.ui.photo_look.ActivityPhotoLook;
 import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
@@ -56,7 +57,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private String goodsId;
 
     private ArtGoodsInfoModel artGoodsInfoModel;
-    private List<String> imageUrls = new ArrayList<>();
+    private ArrayList<String> imageUrls = new ArrayList<>();
 
     public static void open(Activity activity, String goodsId) {
         Intent intent = new Intent(activity, ActivityArtGoodsInfo.class);
@@ -200,6 +201,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 praiseZuoPin();
                 break;
             case R.id.picView:
+                ActivityPhotoLook.open(this,imageUrls);
                 break;
             case R.id.chatView:
                 tryToChat();
