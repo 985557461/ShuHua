@@ -22,6 +22,7 @@ import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import com.xy.shuhua.util.recyclerview.AutoLoadMoreRecyclerView;
 import com.xy.shuhua.util.recyclerview.DividerGridItemDecoration;
+import com.xy.shuhua.util.recyclerview.LoadMoreInterface;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrHandler;
@@ -92,6 +93,13 @@ public class ActivitySearchResult extends ActivityBaseNoSliding implements View.
                 refreshContainer.autoRefresh();
             }
         }, 100);
+
+        recyclerView.setLoadMoreInterface(new LoadMoreInterface() {
+            @Override
+            public void loadMore() {
+                loadMoreData();
+            }
+        });
 
         customAdapter = new CustomAdapter(this);
         recyclerView.setAdapter(customAdapter);

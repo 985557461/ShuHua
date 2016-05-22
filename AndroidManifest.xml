@@ -171,6 +171,11 @@
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
+        <activity
+                android:name=".ui.art.ActivitySearchArtByType"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
         <!--选择图片相关-->
         <activity android:name=".util.photo.ActivityCapture"
                   android:theme="@android:style/Theme.NoTitleBar"
