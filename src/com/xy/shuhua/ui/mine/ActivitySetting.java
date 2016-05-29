@@ -12,8 +12,8 @@ import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.user.ActivityLogin;
 import com.xy.shuhua.ui.user.ActivityModifyPassword;
 import com.xy.shuhua.ui.user.ActivityMyInfo;
+import com.xy.shuhua.util.FileUtil;
 import com.xy.shuhua.util.ToastUtil;
-import com.xy.shuhua.util.photo.FileUtil;
 
 import java.io.File;
 

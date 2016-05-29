@@ -14,16 +14,15 @@ import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.CustomApplication;
+import com.xy.shuhua.ui.PhotoChooser.PhotoPickerActivity;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.util.CommonUtil;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
-import com.xy.shuhua.util.photo.IntentUtils;
-import com.xy.shuhua.util.photo.PhotoActivity;
-import com.xy.shuhua.util.photo.PhotoAlbumActivity;
 import okhttp3.Call;
 
 import java.io.File;
@@ -44,7 +43,7 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
     private View phontoView;
     private ImageView cardShow;
 
-    private static final int request_avatar = 1001;
+    private static final int PICK_PHOTO = 101;
     private String avatarPath = "";
     private String serverUrl = "";
 
@@ -122,8 +121,10 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
         } else if (view.getId() == R.id.backView) {
             finish();
         } else if (view.getId() == R.id.phontoView) {
-            Intent intent = IntentUtils.goToAlbumIntent(new ArrayList<String>(), 1, getResources().getString(R.string.confirm), true, this);
-            startActivityForResult(intent, request_avatar);
+            Intent intent = new Intent(ActivityIdentifyInfo.this, PhotoPickerActivity.class);
+            intent.putExtra(PhotoPickerActivity.EXTRA_SHOW_CAMERA, true);
+            intent.putExtra(PhotoPickerActivity.EXTRA_SELECT_MODE, PhotoPickerActivity.MODE_SINGLE);
+            startActivityForResult(intent, PICK_PHOTO);
         }
     }
 
@@ -201,6 +202,7 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
         params.put("mobile", phoneStr);
         params.put("address", addressStr);
         params.put("cardurl", serverUrl);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.IDENTIFY_INFO, params);
         OkHttpUtils.post()
                 .params(params)
@@ -210,11 +212,13 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityIdentifyInfo.this);
                         ToastUtil.makeShortText("认证失败");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityIdentifyInfo.this);
                         CommonModel commonModel = GsonUtil.transModel(response, CommonModel.class);
                         if ("1".equals(commonModel.result)) {
                             ToastUtil.makeShortText("认证成功");
@@ -231,21 +235,14 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == request_avatar && resultCode == RESULT_OK) {
-            String[] paths = data.getStringArrayExtra(PhotoAlbumActivity.Key_SelectPaths);
-            if (paths != null && paths.length <= 0) {
+        if (requestCode == PICK_PHOTO && resultCode == RESULT_OK) {
+            ArrayList<String> result = data.getStringArrayListExtra(PhotoPickerActivity.KEY_RESULT);
+            if (result != null && result.size() <= 0) {
                 return;
             }
-            if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromAlbum)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(cardShow);
-                }
-            } else if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromCamera)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(cardShow);
-                }
+            if (!TextUtils.isEmpty(result.get(0))) {
+                avatarPath = result.get(0);
+                Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(cardShow);
             }
         }
     }

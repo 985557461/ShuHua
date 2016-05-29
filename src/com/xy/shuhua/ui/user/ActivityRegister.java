@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,10 +13,7 @@ import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
-import com.xy.shuhua.util.CommonUtil;
-import com.xy.shuhua.util.GsonUtil;
-import com.xy.shuhua.util.ToastUtil;
-import com.xy.shuhua.util.WeakHandler;
+import com.xy.shuhua.util.*;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
@@ -115,6 +111,7 @@ public class ActivityRegister extends ActivityBaseNoSliding implements View.OnCl
         params.put("phoneNumber", phoneNumberStr);
         params.put("password", pwdStr);
         params.put("activationNumber", verCodeStr);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.URL_REGISTER, params);
         OkHttpUtils.post()
                 .params(params)
@@ -124,13 +121,13 @@ public class ActivityRegister extends ActivityBaseNoSliding implements View.OnCl
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        Log.d("xiaoyu", e.toString());
+                        DialogUtil.getInstance().dismissLoading(ActivityRegister.this);
                         ToastUtil.makeShortText("注册失败");
                     }
 
                     @Override
                     public void onResponse(String response) {
-                        Log.d("xiaoyu", response);
+                        DialogUtil.getInstance().dismissLoading(ActivityRegister.this);
                         CommonModel commonModel = GsonUtil.transModel(response,CommonModel.class);
                         if(commonModel != null && "1".equals(commonModel.result)){
                             ToastUtil.makeShortText("注册成功");
@@ -152,6 +149,7 @@ public class ActivityRegister extends ActivityBaseNoSliding implements View.OnCl
             ToastUtil.makeShortText("电话号码不合法");
             return;
         }
+        DialogUtil.getInstance().showLoading(this);
         Map<String, String> params = new HashMap<>();
         params.put("phoneNumber", phoneStr);
         OkHttpUtils.post()
@@ -162,13 +160,13 @@ public class ActivityRegister extends ActivityBaseNoSliding implements View.OnCl
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        Log.d("xiaoyu", e.toString());
+                        DialogUtil.getInstance().dismissLoading(ActivityRegister.this);
                         ToastUtil.makeShortText("获取验证码失败");
                     }
 
                     @Override
                     public void onResponse(String response) {
-                        Log.d("xiaoyu", response);
+                        DialogUtil.getInstance().dismissLoading(ActivityRegister.this);
                         ToastUtil.makeShortText("验证码已经发送");
                         boolean clickable = getVerCode.isClickable();
                         if (clickable) {

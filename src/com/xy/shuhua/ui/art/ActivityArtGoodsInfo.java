@@ -18,6 +18,7 @@ import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityAuthorHomePage;
 import com.xy.shuhua.ui.photo_look.ActivityPhotoLook;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
@@ -237,6 +238,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private void refreshData() {
         Map<String, String> params = new HashMap<>();
         params.put("id", goodsId);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.ZUOPIN_INFO, params);
         OkHttpUtils.get()
                 .params(params)
@@ -246,11 +248,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityArtGoodsInfo.this);
                         ToastUtil.makeShortText("网络连接失败了");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityArtGoodsInfo.this);
                         ArtGoodsInfoModel model = GsonUtil.transModel(response, ArtGoodsInfoModel.class);
                         if (model != null && "1".equals(model.result)) {
                             artGoodsInfoModel = model;
@@ -265,6 +269,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private void praiseZuoPin() {
         Map<String, String> params = new HashMap<>();
         params.put("id", artGoodsInfoModel.art.id);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.PRAISE_ZUOPIN, params);
         OkHttpUtils.post()
                 .params(params)
@@ -274,11 +279,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityArtGoodsInfo.this);
                         ToastUtil.makeShortText("网络连接失败");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityArtGoodsInfo.this);
                         CommonModel commonModel = GsonUtil.transModel(response, CommonModel.class);
                         if (commonModel != null && "1".equals(commonModel.result)) {
                             ToastUtil.makeShortText("点赞成功");

@@ -12,6 +12,7 @@ import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.util.CommonUtil;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
@@ -92,6 +93,7 @@ public class ActivityForgetPwd extends ActivityBaseNoSliding implements View.OnC
         }
         Map<String, String> params = new HashMap<>();
         params.put("phoneNumber", phoneStr);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.FIND_PWD, params);
         OkHttpUtils.post()
                 .params(params)
@@ -101,11 +103,13 @@ public class ActivityForgetPwd extends ActivityBaseNoSliding implements View.OnC
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityForgetPwd.this);
                         ToastUtil.makeShortText("ÍøÂçÁ¬½ÓÊ§°Ü");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityForgetPwd.this);
                         CommonModel commonModel = GsonUtil.transModel(response, CommonModel.class);
                         if (commonModel != null && "1".equals(commonModel.result)) {
                             ToastUtil.makeLongText("ÄúµÄÃÜÂëÎª£º" + commonModel.message);

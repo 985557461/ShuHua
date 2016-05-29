@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,17 +46,5 @@ public class CommonUtil {
         Matcher m = p.matcher(email);
 
         return m.matches();
-    }
-
-    public static void printHttpUrl(String url,Map<String,String> params){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(url);
-        int count = params.size();
-//        if(count > 0){
-//            Map.Entry<String,String> entries = (Map.Entry<String, String>) params.entrySet();
-//            for(Map.Entry<String,String> entry:entries){
-//
-//            }
-//        }
     }
 }

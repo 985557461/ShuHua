@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/libs/okio-1.6.0.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/anim/checkshake.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/color" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/default_text_color.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/res/color/floder_name_color_selector.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/vpi__tab_selected_holo.9.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png" charset="UTF-8" />

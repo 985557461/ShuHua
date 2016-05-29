@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.xy.shuhua.R;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
-import com.xy.shuhua.util.photo.HackyViewPager;
+import com.xy.shuhua.ui.view.HackyViewPager;
 import com.xy.shuhua.util.photoview.PhotoView;
 
 import java.util.ArrayList;

@@ -14,6 +14,8 @@ import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.ActivityMain;
 import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
+import com.xy.shuhua.util.DialogUtil;
+import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
@@ -109,6 +111,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         Map<String, String> params = new HashMap<>();
         params.put("phoneNum", phoneStr);
         params.put("password", pwdStr);
+        DialogUtil.getInstance().showLoading(this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.URL_LOGIN, params);
         OkHttpUtils.post()
                 .params(params)
@@ -118,11 +121,13 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
                         ToastUtil.makeShortText("µÇÂ¼Ê§°Ü");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
                         UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
                         if ("1".equals(userInfoModel.result)) {
                             Account account = CustomApplication.getInstance().getAccount();

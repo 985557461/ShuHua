@@ -14,6 +14,7 @@ import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
@@ -119,6 +120,7 @@ public class ActivityModifyPassword extends ActivityBaseNoSliding implements Vie
         params.put("phoneNum", account.phoneNumber);
         params.put("oldPassword", oldPwdStr);
         params.put("newPassword", newPwdStr);
+        DialogUtil.getInstance().showLoading(this);
         OkHttpUtils.post()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.MODIFY_PWD)
@@ -127,11 +129,13 @@ public class ActivityModifyPassword extends ActivityBaseNoSliding implements Vie
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityModifyPassword.this);
                         ToastUtil.makeShortText("Õ¯¬Á¡¨Ω” ß∞‹¡À");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityModifyPassword.this);
                         CommonModel commonModel = GsonUtil.transModel(response,CommonModel.class);
                         if (commonModel != null && "1".equals(commonModel.result)) {
                             account.password = newPwdStr;

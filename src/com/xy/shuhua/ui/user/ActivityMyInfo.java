@@ -14,15 +14,14 @@ import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.CustomApplication;
+import com.xy.shuhua.ui.PhotoChooser.PhotoPickerActivity;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityInputContent;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
-import com.xy.shuhua.util.photo.IntentUtils;
-import com.xy.shuhua.util.photo.PhotoActivity;
-import com.xy.shuhua.util.photo.PhotoAlbumActivity;
 import okhttp3.Call;
 
 import java.io.File;
@@ -46,7 +45,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
 
     private Account account;
 
-    private static final int request_avatar = 1001;
+    private static final int PICK_PHOTO = 101;
     private static final int request_name = 1002;
     private static final int request_area = 1003;
     private static final int request_age = 1004;
@@ -114,6 +113,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
     }
 
     private void modifyAvatar() {
+        DialogUtil.getInstance().showLoading(this);
         Map<String, String> params = new HashMap<>();
         params.put("userid", account.userId);
         OkHttpUtils.post()
@@ -125,6 +125,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityMyInfo.this);
                         ToastUtil.makeShortText("Õ¯¬Á¡¨Ω” ß∞‹¡À");
                     }
 
@@ -135,6 +136,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
                             account.avatar = uploadImageModel.result;
                             modifyMyInfo();
                         } else {
+                            DialogUtil.getInstance().dismissLoading(ActivityMyInfo.this);
                             ToastUtil.makeShortText("Õº∆¨…œ¥´ ß∞‹");
                         }
                     }
@@ -149,6 +151,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
     }
 
     private void modifyMyInfo() {
+        DialogUtil.getInstance().showLoading(this);
         Map<String, String> params = new HashMap<>();
         params.put("userid", account.userId);
         params.put("nickname", nameStr);
@@ -163,11 +166,13 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityMyInfo.this);
                         ToastUtil.makeShortText("Õ¯¬Á¡¨Ω” ß∞‹¡À");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityMyInfo.this);
                         CommonModel homeInfoModel = GsonUtil.transModel(response, CommonModel.class);
                         if (homeInfoModel == null || !"1".equals(homeInfoModel.result)) {
                             ToastUtil.makeShortText("Õ¯¬Á¡¨Ω” ß∞‹¡À");
@@ -191,8 +196,10 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
                 finish();
                 break;
             case R.id.modifyAvatar:
-                Intent intent = IntentUtils.goToAlbumIntent(new ArrayList<String>(), 1, getResources().getString(R.string.confirm), true,this);
-                startActivityForResult(intent, request_avatar);
+                Intent intent = new Intent(ActivityMyInfo.this, PhotoPickerActivity.class);
+                intent.putExtra(PhotoPickerActivity.EXTRA_SHOW_CAMERA, true);
+                intent.putExtra(PhotoPickerActivity.EXTRA_SELECT_MODE, PhotoPickerActivity.MODE_SINGLE);
+                startActivityForResult(intent, PICK_PHOTO);
                 break;
             case R.id.modifyName:
                 ActivityInputContent.openForResult(this, request_name, "Í«≥∆", account.userName);
@@ -232,21 +239,14 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
             ageStr = data.getStringExtra(ActivityInputContent.kcontent);
         } else if (requestCode == request_introduce && resultCode == RESULT_OK) {
             introduceStr = data.getStringExtra(ActivityInputContent.kcontent);
-        } else if (requestCode == request_avatar && resultCode == RESULT_OK) {
-            String[] paths = data.getStringArrayExtra(PhotoAlbumActivity.Key_SelectPaths);
-            if (paths != null && paths.length <= 0) {
+        } else if (requestCode == PICK_PHOTO && resultCode == RESULT_OK) {
+            ArrayList<String> result = data.getStringArrayListExtra(PhotoPickerActivity.KEY_RESULT);
+            if (result != null && result.size() <= 0) {
                 return;
             }
-            if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromAlbum)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(avatarImage);
-                }
-            } else if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromCamera)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(avatarImage);
-                }
+            if (!TextUtils.isEmpty(result.get(0))) {
+                avatarPath = result.get(0);
+                Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(avatarImage);
             }
         }
     }

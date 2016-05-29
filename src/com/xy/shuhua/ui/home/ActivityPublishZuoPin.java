@@ -15,18 +15,17 @@ import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.CustomApplication;
+import com.xy.shuhua.ui.PhotoChooser.PhotoPickerActivity;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.photo_choose.PhotoSelectAdapter;
 import com.xy.shuhua.ui.home.photo_choose.PhotoSelectView;
 import com.xy.shuhua.ui.home.photo_choose.SquarePhotoView;
+import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
-import com.xy.shuhua.util.photo.IntentUtils;
-import com.xy.shuhua.util.photo.PhotoActivity;
-import com.xy.shuhua.util.photo.PhotoAlbumActivity;
 import okhttp3.Call;
 
 import java.io.File;
@@ -60,7 +59,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
      */
     private PhotoSelectView photoSelectView;
     private PhotoSelectAdapter adapter;
-    private static final int kActivitySettingSelectPicRequest = 101;
+    private static final int PICK_PHOTO = 101;
     private String avatarPath = "";
     private List<String> pathsList = new ArrayList<String>();
     private List<String> serverPaths = new ArrayList<String>();
@@ -190,6 +189,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
             ToastUtil.makeShortText("请输入尺寸");
             return;
         }
+        DialogUtil.getInstance().showLoading(this);
         serverPaths.clear();
         pathIndex = 0;
         uploadImage(pathIndex);
@@ -204,6 +204,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityPublishZuoPin.this);
                         ToastUtil.makeShortText("网络连接失败了");
                     }
 
@@ -220,6 +221,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                                 uploadImage(pathIndex);
                             }
                         } else {
+                            DialogUtil.getInstance().dismissLoading(ActivityPublishZuoPin.this);
                             ToastUtil.makeShortText("图片上传失败");
                         }
                     }
@@ -250,7 +252,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         params.put("artname", nameStr);
         params.put("price", priceStr);
         params.put("category", leibieStr);
-        params.put("caizhi",caizhiStr);
+        params.put("caizhi", caizhiStr);
         params.put("artsize", chicunStr);
         params.put("imageurl", stringBuilder.toString());
         Account account = CustomApplication.getInstance().getAccount();
@@ -263,11 +265,13 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityPublishZuoPin.this);
                         ToastUtil.makeShortText("网络连接失败了");
                     }
 
                     @Override
                     public void onResponse(String response) {
+                        DialogUtil.getInstance().dismissLoading(ActivityPublishZuoPin.this);
                         CommonModel homeInfoModel = GsonUtil.transModel(response, CommonModel.class);
                         if (homeInfoModel == null || !"1".equals(homeInfoModel.result)) {
                             ToastUtil.makeShortText("网络连接失败了");
@@ -292,37 +296,29 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
             caiZhiTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
         } else if (requestCode == request_cicun && resultCode == RESULT_OK) {
             chiCunTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
-        } else if (requestCode == kActivitySettingSelectPicRequest && resultCode == RESULT_OK) {
-            String[] paths = data.getStringArrayExtra(PhotoAlbumActivity.Key_SelectPaths);
-            if (paths != null && paths.length <= 0) {
+        } else if (requestCode == PICK_PHOTO && resultCode == RESULT_OK) {
+            ArrayList<String> result = data.getStringArrayListExtra(PhotoPickerActivity.KEY_RESULT);
+            if (result != null && result.size() <= 0) {
                 return;
             }
-            if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromAlbum)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    pathsList.add(avatarPath);
-                    photoSelectView.setAdapter(adapter);
-                }
-            } else if (data.getStringExtra(PhotoActivity.kWhereFrom).equals(PhotoActivity.kFromCamera)) {
-                if (!TextUtils.isEmpty(paths[0])) {
-                    avatarPath = paths[0];
-                    pathsList.add(avatarPath);
-                    photoSelectView.setAdapter(adapter);
-                }
+            if (!TextUtils.isEmpty(result.get(0))) {
+                avatarPath = result.get(0);
+                pathsList.add(avatarPath);
+                photoSelectView.setAdapter(adapter);
             }
         }
-//        else if (requestCode == kPhotoCropImageRequest && resultCode == RESULT_OK) {
-//            avatarPath = data.getStringExtra(ActivityCropImage.kCropImagePath);
-//            pathsList.add(avatarPath);
-//            photoSelectView.setAdapter(adapter);
-//            return;
-//        }
     }
 
     @Override
     public void onFooterClicked() {
-        Intent intent = IntentUtils.goToAlbumIntent(new ArrayList<String>(), 1, getResources().getString(R.string.confirm), true, ActivityPublishZuoPin.this);
-        startActivityForResult(intent, kActivitySettingSelectPicRequest);
+        if (pathsList.size() >= 6) {
+            ToastUtil.makeShortText("最多选择6张图片");
+            return;
+        }
+        Intent intent = new Intent(ActivityPublishZuoPin.this, PhotoPickerActivity.class);
+        intent.putExtra(PhotoPickerActivity.EXTRA_SHOW_CAMERA, true);
+        intent.putExtra(PhotoPickerActivity.EXTRA_SELECT_MODE, PhotoPickerActivity.MODE_SINGLE);
+        startActivityForResult(intent, PICK_PHOTO);
     }
 
     @Override
@@ -347,7 +343,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
 
         @Override
         public int getColCount() {
-            return 4;
+            return 3;
         }
 
         @Override

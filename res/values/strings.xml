@@ -5,7 +5,7 @@
     <!--选择图片相关 开始-->
     <string name="photo_file_delete">照片已被删除</string>
     <string name="photo_choose_limit">最多可选择%1$s张图片</string>
-    <string name="loadnetdata">"数据加载中…"</string>
+    <string name="loadnetdata">"加载中…"</string>
     <string name="text_refound_reload">点击屏幕,重新加载</string>
     <string name="photo">照片</string>
     <string name="text_chooce_photo">选择照片</string>
@@ -22,4 +22,12 @@
     <string name="send">发送</string>
     <string name="cancel">取消</string>
     <!--选择图片相关 结束-->
+
+
+    <string name="photos_num">%1$d张</string>
+    <string name="msg_no_camera">没找到摄像头</string>
+    <string name="msg_maxi_capacity">已达到照片选择上限</string>
+    <string name="commit">确定</string>
+    <string name="commit_num">确定(%1$d/%2$d)</string>
+    <string name="zhang">张</string>
 </resources>
