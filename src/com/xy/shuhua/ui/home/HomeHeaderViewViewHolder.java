@@ -202,7 +202,7 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 name.setText("¸ü¶à");
             } else {
                 if (!TextUtils.isEmpty(artUserModel.imageurl)) {
-                    Glide.with(getContext()).load(artUserModel.imageurl).error(R.drawable.me_avatar_boy).into(avatar);
+                    Glide.with(getContext()).load(artUserModel.imageurl).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(avatar);
                 } else {
                     avatar.setImageResource(R.drawable.me_avatar_boy);
                 }

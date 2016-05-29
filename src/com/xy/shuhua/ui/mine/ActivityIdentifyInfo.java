@@ -13,6 +13,7 @@ import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
+import com.xy.shuhua.ui.ActivityQuadrilateralCrop;
 import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.PhotoChooser.PhotoPickerActivity;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
@@ -44,6 +45,7 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
     private ImageView cardShow;
 
     private static final int PICK_PHOTO = 101;
+    private static final int Crop_Photo = 102;
     private String avatarPath = "";
     private String serverUrl = "";
 
@@ -241,9 +243,11 @@ public class ActivityIdentifyInfo extends ActivityBaseNoSliding implements View.
                 return;
             }
             if (!TextUtils.isEmpty(result.get(0))) {
-                avatarPath = result.get(0);
-                Glide.with(this).load(new File(avatarPath)).error(R.drawable.me_avatar_boy).into(cardShow);
+                ActivityQuadrilateralCrop.openForResult(ActivityIdentifyInfo.this, result.get(0), Crop_Photo);
             }
+        }else if(requestCode == Crop_Photo && resultCode == RESULT_OK){
+            avatarPath = data.getStringExtra(ActivityQuadrilateralCrop.kSavePath);
+            Glide.with(this).load(new File(avatarPath)).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(cardShow);
         }
     }
 }

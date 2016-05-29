@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.google.gson.annotations.SerializedName;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
@@ -30,7 +32,6 @@ import okhttp3.Call;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -59,6 +60,9 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
 
     private ArtGoodsInfoModel artGoodsInfoModel;
     private ArrayList<String> imageUrls = new ArrayList<>();
+
+    private String userName;
+    private String userAvatar;
 
     public static void open(Activity activity, String goodsId) {
         Intent intent = new Intent(activity, ActivityArtGoodsInfo.class);
@@ -190,6 +194,14 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 zuopinContainer.addView(rowView, params);
             }
         }
+
+        //根据id查询用户具体信息
+        if (artGoodsInfoModel != null && artGoodsInfoModel.user != null) {
+            String userId = artGoodsInfoModel.user.userid;
+            if (!TextUtils.isEmpty(userId)) {
+                getUserInfo(userId);
+            }
+        }
     }
 
     @Override
@@ -209,14 +221,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 break;
             case R.id.userInfoView:
                 if (artGoodsInfoModel != null && artGoodsInfoModel.user != null) {
-                    String userId = artGoodsInfoModel.user.user_id;
-                    String useravatar = artGoodsInfoModel.user.imageurl;
-                    String username = artGoodsInfoModel.user.nickname;
+                    String userId = artGoodsInfoModel.user.userid;
                     if (TextUtils.isEmpty(userId)) {
                         ToastUtil.makeShortText("作家不存在");
                         return;
                     }
-                    ActivityAuthorHomePage.open(this, userId, useravatar, username);
+
+                    ActivityAuthorHomePage.open(this, userId, userAvatar, userName);
                 }
                 break;
         }
@@ -224,14 +235,16 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
 
     private void tryToChat() {
         if (artGoodsInfoModel != null && artGoodsInfoModel.user != null) {
-            String userId = artGoodsInfoModel.user.user_id;
-            String useravatar = artGoodsInfoModel.user.imageurl;
-            String username = artGoodsInfoModel.user.nickname;
+            String userId = artGoodsInfoModel.user.userid;
             if (TextUtils.isEmpty(userId)) {
                 ToastUtil.makeShortText("作家不存在");
                 return;
             }
-            RongIM.getInstance().startPrivateChat(this, userId, username);
+            if(TextUtils.isEmpty(userName)){
+                RongIM.getInstance().startPrivateChat(this, userId, userId);
+            }else{
+                RongIM.getInstance().startPrivateChat(this, userId, userName);
+            }
         }
     }
 
@@ -294,5 +307,44 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                         }
                     }
                 });
+    }
+
+    private void getUserInfo(String userId) {
+        Map<String, String> params = new HashMap<>();
+        params.put("userid", userId);
+        PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.GET_USER_INFO, params);
+        OkHttpUtils.get()
+                .params(params)
+                .url(ServerConfig.BASE_URL + ServerConfig.GET_USER_INFO)
+                .tag(this)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e) {
+                        Log.d("xiaoyu",e.toString());
+                    }
+
+                    @Override
+                    public void onResponse(String response) {
+                        UserModel userModel = GsonUtil.transModel(response,UserModel.class);
+                        if(userModel != null){
+                            userName = userModel.nickname;
+                            userAvatar = userModel.imagepath;
+                        }
+                    }
+                });
+    }
+
+    class UserModel{
+        @SerializedName("message")
+        public String message;
+        @SerializedName("result")
+        public String result;
+        @SerializedName("nickname")
+        public String nickname;
+        @SerializedName("imagepath")
+        public String imagepath;
+        @SerializedName("userid")
+        public String userid;
     }
 }

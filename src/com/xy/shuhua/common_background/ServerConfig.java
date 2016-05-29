@@ -40,4 +40,5 @@ public class ServerConfig {
     public static final String PRAISE_ZUOPIN = "shuhua/api/artService/parise.do";//赞作品
     public static final String IDENTIFY_INFO = "shuhua/api/accounts/authentication.do";//身份认证
     public static final String GET_ART_BY_TYPE  = "shuhua/api/artService/getArtByType.do";//主页某人艺术界面，点击“当代艺术品”，“书画作品”,"儿童书画作品"搜索的协议
+    public static final String GET_USER_INFO = "shuhua/api/accounts/getUserinfo.do";//根据用户id得到用户信息
 }

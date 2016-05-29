@@ -183,6 +183,12 @@
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
 
+        <activity
+                android:name=".ui.ActivityQuadrilateralCrop"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+
         <!-- rongyun begin -->
         <service
                 android:name="io.rong.push.PushService"

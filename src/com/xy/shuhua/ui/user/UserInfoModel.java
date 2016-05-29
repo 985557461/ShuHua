@@ -18,6 +18,8 @@ public class UserInfoModel {
     public String age;
     @SerializedName("introduce")
     public String introduce;
+    @SerializedName("userid")
+    public String userid;
     @SerializedName("user_id")
     public String user_id;
     @SerializedName("imageurl")

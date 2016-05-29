@@ -30,4 +30,9 @@
     <string name="commit">确定</string>
     <string name="commit_num">确定(%1$d/%2$d)</string>
     <string name="zhang">张</string>
+    <string name="baohedu">饱和度</string>
+    <string name="duibidu">对比度</string>
+    <string name="baipingheng">白平衡</string>
+    <string name="ruihua">锐化</string>
+    <string name="liangdu">亮度</string>
 </resources>
