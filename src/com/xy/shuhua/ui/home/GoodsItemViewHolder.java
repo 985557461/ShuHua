@@ -47,9 +47,9 @@ public class GoodsItemViewHolder extends RecyclerView.ViewHolder implements View
             return;
         }
         if (!TextUtils.isEmpty(homeArtGoodsModel.imageurl)) {
-            Glide.with(context).load(homeArtGoodsModel.imageurl).into(imageView);
+            Glide.with(context).load(homeArtGoodsModel.imageurl).dontAnimate().placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
         } else {
-            Glide.with(context).load("").into(imageView);
+            Glide.with(context).load(R.drawable.icon_art_pressed).dontAnimate().placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
         }
         if (!TextUtils.isEmpty(homeArtGoodsModel.name)) {
             name.setText(homeArtGoodsModel.name);

@@ -3,6 +3,8 @@ package com.xy.shuhua.ui.art;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +21,7 @@ import com.xy.shuhua.ui.art.model.ArtGoodsInfoModel;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityAuthorHomePage;
-import com.xy.shuhua.ui.photo_look.ActivityPhotoLook;
+import com.xy.shuhua.ui.view.HackyViewPager;
 import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
@@ -27,6 +29,7 @@ import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.PrintHttpUrlUtil;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
+import com.xy.shuhua.util.photoview.PhotoView;
 import io.rong.imkit.RongIM;
 import okhttp3.Call;
 
@@ -54,6 +57,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private TextView bianhao;
     private View otherZuoPinView;
     private LinearLayout zuopinContainer;
+
+    //悬浮框相关
+    private View backViewTwo;
+    private TextView title;
+    private ViewPager mViewPager;
+    private View xuanfuContainer;
+    private SamplePagerAdapter samplePagerAdapter;
 
     private static final String kGoodsId = "goods_id";
     private String goodsId;
@@ -98,11 +108,47 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         bianhao = (TextView) findViewById(R.id.bianhao);
         otherZuoPinView = findViewById(R.id.otherZuoPinView);
         zuopinContainer = (LinearLayout) findViewById(R.id.zuopinContainer);
+
+        backViewTwo = findViewById(R.id.backViewTwo);
+        title = (TextView) findViewById(R.id.title);
+        mViewPager = (HackyViewPager) findViewById(R.id.view_pager);
+        xuanfuContainer = findViewById(R.id.xuanfuContainer);
     }
 
     @Override
     protected void initViews() {
         refreshData();
+
+        mainIV.setOnClickListener(this);
+        backViewTwo.setOnClickListener(this);
+        samplePagerAdapter = new SamplePagerAdapter();
+        mViewPager.setAdapter(samplePagerAdapter);
+    }
+
+    private class SamplePagerAdapter extends PagerAdapter {
+        @Override
+        public int getCount() {
+            return imageUrls.size();
+        }
+
+        @Override
+        public View instantiateItem(ViewGroup container, int position) {
+            PhotoView photoView = new PhotoView(container.getContext());
+            Glide.with(ActivityArtGoodsInfo.this).load(imageUrls.get(position)).into(photoView);
+            // Now just add PhotoView to ViewPager and return it
+            container.addView(photoView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            return photoView;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView((View) object);
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
     }
 
     @Override
@@ -138,6 +184,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.imageurl5)) {
                 imageUrls.add(artGoodsInfoModel.art.imageurl5);
             }
+            samplePagerAdapter.notifyDataSetChanged();
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.name)) {
                 name.setText(artGoodsInfoModel.art.name);
             }
@@ -207,6 +254,9 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.backViewTwo:
+                xuanfuContainer.setVisibility(View.INVISIBLE);
+                break;
             case R.id.backView:
                 finish();
                 break;
@@ -214,7 +264,25 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 praiseZuoPin();
                 break;
             case R.id.picView:
-                ActivityPhotoLook.open(this,imageUrls);
+            case R.id.mainIV:
+                xuanfuContainer.setVisibility(View.VISIBLE);
+                title.setText("1/" + imageUrls.size());
+                mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int i, float v, int i1) {
+
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        title.setText((position + 1) + "/" + imageUrls.size());
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int i) {
+
+                    }
+                });
                 break;
             case R.id.chatView:
                 tryToChat();
@@ -240,9 +308,9 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 ToastUtil.makeShortText("作家不存在");
                 return;
             }
-            if(TextUtils.isEmpty(userName)){
+            if (TextUtils.isEmpty(userName)) {
                 RongIM.getInstance().startPrivateChat(this, userId, userId);
-            }else{
+            } else {
                 RongIM.getInstance().startPrivateChat(this, userId, userName);
             }
         }
@@ -277,6 +345,15 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (xuanfuContainer.getVisibility() == View.VISIBLE) {
+            xuanfuContainer.setVisibility(View.INVISIBLE);
+            return;
+        }
+        super.onBackPressed();
     }
 
     private void praiseZuoPin() {
@@ -321,13 +398,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        Log.d("xiaoyu",e.toString());
+                        Log.d("xiaoyu", e.toString());
                     }
 
                     @Override
                     public void onResponse(String response) {
-                        UserModel userModel = GsonUtil.transModel(response,UserModel.class);
-                        if(userModel != null){
+                        UserModel userModel = GsonUtil.transModel(response, UserModel.class);
+                        if (userModel != null) {
                             userName = userModel.nickname;
                             userAvatar = userModel.imagepath;
                         }
@@ -335,7 +412,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 });
     }
 
-    class UserModel{
+    class UserModel {
         @SerializedName("message")
         public String message;
         @SerializedName("result")

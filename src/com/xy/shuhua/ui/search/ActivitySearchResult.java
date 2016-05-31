@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ import com.xy.shuhua.util.ultra_pull_refresh.PtrClassicFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrFrameLayout;
 import com.xy.shuhua.util.ultra_pull_refresh.PtrHandler;
 import okhttp3.Call;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -111,13 +113,20 @@ public class ActivitySearchResult extends ActivityBaseNoSliding implements View.
     }
 
     private void refreshData() {
-        start_num = 1;
+        start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
         params.put("category","");
         params.put("status","");
-        params.put("name", name);
+        /**判断是否是纯数字，如果是数字传递code**/
+        if(TextUtils.isDigitsOnly(name)){
+            params.put("name", "");
+            params.put("code", name);
+        }else{
+            params.put("name", name);
+            params.put("code", "");
+        }
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.SEARCH_ARTS, params);
         OkHttpUtils.get()
                 .params(params)
@@ -160,7 +169,14 @@ public class ActivitySearchResult extends ActivityBaseNoSliding implements View.
         params.put("start_num", start_num + "");
         params.put("category","");
         params.put("status","");
-        params.put("name", name);
+        /**判断是否是纯数字，如果是数字传递code**/
+        if(TextUtils.isDigitsOnly(name)){
+            params.put("name", "");
+            params.put("code", name);
+        }else{
+            params.put("name", name);
+            params.put("code", "");
+        }
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.SEARCH_ARTS)

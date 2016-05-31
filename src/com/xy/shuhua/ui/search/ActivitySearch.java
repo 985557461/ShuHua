@@ -91,6 +91,13 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < list.size(); i++) {
                 SearchHistoryItemView itemView = new SearchHistoryItemView(this);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        searchEditText.setText(((SearchHistoryItemView) view).contentTV.getText().toString());
+                        searchEditText.setSelection(((SearchHistoryItemView)view).contentTV.getText().toString().length());
+                    }
+                });
                 itemView.setData(list.get(i));
                 historyContainer.addView(itemView);
                 stringBuilder.append(list.get(i));
@@ -102,6 +109,13 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
         } else {
             SearchHistoryItemView itemView = new SearchHistoryItemView(this);
             itemView.setData(str);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    searchEditText.setText(((SearchHistoryItemView)view).contentTV.getText().toString());
+                    searchEditText.setSelection(((SearchHistoryItemView)view).contentTV.getText().toString().length());
+                }
+            });
             historyContainer.addView(itemView);
             SharedPreferenceUtil.setStringDataIntoSP(SEARCH_STRINGS, SEARCH_HISTORY, str);
         }
@@ -120,8 +134,10 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_UP) {
                     tryToSearch();
+                    return true;
+                }else{
+                    return false;
                 }
-                return true;
             }
         });
     }
@@ -143,10 +159,16 @@ public class ActivitySearch extends ActivityBaseNoSliding implements View.OnClic
                 finish();
                 break;
             case R.id.fuguTV:
+                searchEditText.setText(fuguTV.getText().toString());
+                searchEditText.setSelection(fuguTV.getText().toString().length());
                 break;
             case R.id.zihuaTV:
+                searchEditText.setText(zihuaTV.getText().toString());
+                searchEditText.setSelection(zihuaTV.getText().toString().length());
                 break;
             case R.id.yishuTV:
+                searchEditText.setText(yishuTV.getText().toString());
+                searchEditText.setSelection(yishuTV.getText().toString().length());
                 break;
             case R.id.clearHistoryTV:
                 clearHistory();

@@ -168,32 +168,6 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/Exceptions.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/ImageUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/utils/L.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/ActivityCapture.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/BitmapUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CameraCropBorderView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CaptureFocuseView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/CaptureSensorsObserver.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/DragGridView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/FileUtil.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/FixHeightRadioImageView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/HackyViewPager.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/IntentUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperFrame.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperLayout.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/LoadingWrapperLinear.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PathManager.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAdapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbum.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbumActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoAlbumAdapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseActicity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseImplActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoChooseView.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PhotoGridItem.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PreviewActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/PreviewAdapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photo/SimpleTextViewAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/Compat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/DefaultOnDoubleTapListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/util/photoview/HackyDrawerLayout.java" charset="UTF-8" />

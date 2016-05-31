@@ -39,9 +39,9 @@ public class ZuoPinItemViewHolder extends RecyclerView.ViewHolder implements Vie
             return;
         }
         if (!TextUtils.isEmpty(itemModel.imageurl)) {
-            Glide.with(context).load(itemModel.imageurl).into(imageView);
+            Glide.with(context).load(itemModel.imageurl).dontAnimate().placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
         } else {
-            Glide.with(context).load("").into(imageView);
+            Glide.with(context).load("").dontAnimate().placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
         }
         if (!TextUtils.isEmpty(itemModel.name)) {
             name.setText(itemModel.name);

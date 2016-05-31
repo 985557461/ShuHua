@@ -111,7 +111,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
     }
 
     public void refreshData() {
-        start_num = 1;
+        start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");

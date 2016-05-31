@@ -11,6 +11,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.*;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.xy.shuhua.R;
 import com.xy.shuhua.ui.gpuimage.GPUImageFilter;
 import com.xy.shuhua.ui.gpuimage.GPUImageView;
@@ -151,7 +154,6 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     }
 
     private void initViews() {
-        loadBitmap();
     }
 
     private void setListeners() {
@@ -510,7 +512,6 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         Matrix matrix = new Matrix();
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        matrix.postScale(scaleRatio, scaleRatio);
         canvas.drawBitmap(currentBmp, matrix, paint);
         gpuImageView.getGPUImage().deleteImage();
         gpuImageView.setImage(copyBmp);
@@ -523,41 +524,82 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            showBitmap();
+            loadBitmap();
         }
     }
 
     public void loadBitmap() {
-        currentBmp = BitmapFactory.decodeFile(imagePath);
+        Glide.with(this).load(new File(imagePath)).asBitmap().into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                currentBmp = bitmap;
+               //异步加载图片，避免图片过大或者过小
+                new AsyncTask<Void,Void,Bitmap>(){
+
+                    @Override
+                    protected void onPreExecute() {
+                        DialogUtil.getInstance().showLoading(ActivityQuadrilateralCrop.this);
+                        super.onPreExecute();
+                    }
+
+                    @Override
+                    protected Bitmap doInBackground(Void... voids) {
+                        //计算缩放后的图片，不然图片过大，显示为黑色
+                        bmpWidth = currentBmp.getWidth();
+                        bmpHeight = currentBmp.getHeight();
+
+                        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                        int screenWidth = wm.getDefaultDisplay().getWidth();
+                        int screenHeight = wm.getDefaultDisplay().getHeight();
+                        float scale = getResources().getDisplayMetrics().density;
+                        int otherHeight = (int) (163.0f * scale + 0.5f);
+
+                        int fullWidth = screenWidth;
+                        int fullHeight = screenHeight - otherHeight - getStatusHeight();
+
+                        float horScaleRadio = fullWidth * 1.0f / bmpWidth;
+                        float verScaleRadio = fullHeight * 1.0f / bmpHeight;
+
+                        if (horScaleRadio < verScaleRadio) {//图片竖直缩放
+                            imageViewWidth = fullWidth;
+                            imageViewHeight = (int) (bmpHeight * horScaleRadio);
+                            scaleRatio = horScaleRadio;
+                        } else {//图片水平缩放
+                            imageViewHeight = fullHeight;
+                            imageViewWidth = (int) (bmpWidth * verScaleRadio);
+                            scaleRatio = verScaleRadio;
+                        }
+                        Bitmap nowBitmap = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
+                        Matrix matrix = new Matrix();
+                        matrix.postScale(scaleRatio, scaleRatio);
+
+                        Paint paint = new Paint();
+                        paint.setAntiAlias(true);
+                        Canvas texSCanvas = new Canvas(nowBitmap);
+                        texSCanvas.drawBitmap(currentBmp, matrix, paint);
+                        if(currentBmp != null && currentBmp != nowBitmap && !currentBmp.isRecycled()){
+                            currentBmp.recycle();
+                            currentBmp = null;
+                            System.gc();
+                        }
+                        currentBmp = nowBitmap;
+                        return currentBmp;
+                    }
+
+                    @Override
+                    protected void onPostExecute(Bitmap bitmap) {
+                        super.onPostExecute(bitmap);
+                        showBitmap();
+                        DialogUtil.getInstance().dismissLoading(ActivityQuadrilateralCrop.this);
+                    }
+                }.execute();
+            }
+        });
     }
 
     public void showBitmap() {
         if (currentBmp == null || currentBmp.isRecycled()) {
             return;
-        }
-        bmpWidth = currentBmp.getWidth();
-        bmpHeight = currentBmp.getHeight();
-
-        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        int screenWidth = wm.getDefaultDisplay().getWidth();
-        int screenHeight = wm.getDefaultDisplay().getHeight();
-        float scale = getResources().getDisplayMetrics().density;
-        int otherHeight = (int) (163.0f * scale + 0.5f);
-
-        int fullWidth = screenWidth;
-        int fullHeight = screenHeight - otherHeight - getStatusHeight();
-
-        float horScaleRadio = fullWidth * 1.0f / bmpWidth;
-        float verScaleRadio = fullHeight * 1.0f / bmpHeight;
-
-        if (horScaleRadio < verScaleRadio) {//图片竖直缩放
-            imageViewWidth = fullWidth;
-            imageViewHeight = (int) (bmpHeight * horScaleRadio);
-            scaleRatio = horScaleRadio;
-        } else {//图片水平缩放
-            imageViewHeight = fullHeight;
-            imageViewWidth = (int) (bmpWidth * verScaleRadio);
-            scaleRatio = verScaleRadio;
         }
 
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) gpuImageView.getLayoutParams();

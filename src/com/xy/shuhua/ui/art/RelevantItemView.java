@@ -53,7 +53,7 @@ public class RelevantItemView extends FrameLayout {
                     if (!TextUtils.isEmpty(itemModel.id)) {
                         ActivityArtGoodsInfo.open((Activity) context, itemModel.id);
                     } else {
-                        ToastUtil.makeShortText("商品不存在");
+                        ToastUtil.makeShortText("作品不存在");
                     }
                 }
             }
@@ -66,7 +66,9 @@ public class RelevantItemView extends FrameLayout {
             return;
         }
         if (!TextUtils.isEmpty(itemModel.imageurl)) {
-            Glide.with(getContext()).load(itemModel.imageurl).into(imageView);
+            Glide.with(getContext()).load(itemModel.imageurl).placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
+        }else{
+            Glide.with(getContext()).load(R.drawable.icon_art_pressed).placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(imageView);
         }
         if (!TextUtils.isEmpty(itemModel.name)) {
             name.setText(itemModel.name);

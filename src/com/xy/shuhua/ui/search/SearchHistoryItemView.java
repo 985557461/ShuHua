@@ -11,8 +11,8 @@ import com.xy.shuhua.R;
 /**
  * Created by xiaoyu on 2016/4/13.
  */
-public class SearchHistoryItemView extends FrameLayout implements View.OnClickListener{
-    private TextView contentTV;
+public class SearchHistoryItemView extends FrameLayout{
+    public TextView contentTV;
 
     public SearchHistoryItemView(Context context) {
         super(context);
@@ -35,15 +35,9 @@ public class SearchHistoryItemView extends FrameLayout implements View.OnClickLi
 
         contentTV = (TextView) findViewById(R.id.contentTV);
 
-        setOnClickListener(this);
     }
 
     public void setData(String str) {
         contentTV.setText(str);
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 }

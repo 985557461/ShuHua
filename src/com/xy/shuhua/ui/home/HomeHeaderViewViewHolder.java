@@ -166,9 +166,9 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 return;
             }
             if (!TextUtils.isEmpty(bannerModel.imageurl)) {
-                Glide.with(getContext()).load(bannerModel.imageurl).into(this);
+                Glide.with(getContext()).load(bannerModel.imageurl).placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(this);
             } else {
-                Glide.with(getContext()).load("").into(this);
+                Glide.with(getContext()).load("").placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(this);
             }
         }
     }
