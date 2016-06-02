@@ -15,7 +15,6 @@ import com.xy.shuhua.ui.ActivityMain;
 import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.util.DialogUtil;
-import com.xy.shuhua.util.DisplayUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;

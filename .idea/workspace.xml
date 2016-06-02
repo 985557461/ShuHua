@@ -84,68 +84,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java">
+      <file leaf-file-name="ArtFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2222" max-vertical-offset="5588">
-              <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
-              <folding>
-                <element signature="e#3193#3194#0" expanded="false" />
-                <element signature="e#3238#3239#0" expanded="false" />
-                <element signature="e#3418#3419#0" expanded="false" />
-                <element signature="e#3464#3465#0" expanded="false" />
-                <element signature="e#10359#10360#0" expanded="false" />
-                <element signature="e#10415#10416#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuadrilateralCropImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/QuadrilateralCropImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4598" max-vertical-offset="6996">
-              <caret line="244" column="54" selection-start-line="237" selection-start-column="8" selection-end-line="244" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.6451613" vertical-offset="1494" max-vertical-offset="2376">
+              <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityQuadrilateralCrop.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/ActivityQuadrilateralCrop.java">
+      <file leaf-file-name="ArtItemViewHolder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70183486" vertical-offset="3" max-vertical-offset="15268">
-              <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1474">
+              <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivitySearchArtByType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivitySearchArtByType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="4994">
+              <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
               <folding>
-                <element signature="e#5623#5624#0" expanded="true" />
-                <element signature="e#5674#5675#0" expanded="true" />
-                <element signature="e#13381#13408#0" expanded="true" />
-                <element signature="e#15707#15733#0" expanded="true" />
-                <element signature="e#17054#20299#0" expanded="true" />
-                <element signature="e#20298#20299#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_quadrilateral_crop.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
+      <file leaf-file-name="activity_search_result.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_search_result.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.392857" vertical-offset="1626" max-vertical-offset="5258">
-              <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="1100">
-              <caret line="15" column="63" selection-start-line="14" selection-start-column="18" selection-end-line="15" selection-end-column="63" />
+            <state vertical-scroll-proportion="-3.9285715" vertical-offset="0" max-vertical-offset="1210">
+              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -161,10 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/QuadrilateralCropImageView.java" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/util/PathManager.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/handle/HandleHelper.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/gpuimage/util/TextureRotationUtil.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/gpuimage/GPUImageFilterGroup.java" />
@@ -191,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/ActivityIdentifyInfo.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityMyInfo.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/UserInfoModel.java" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" />
@@ -202,9 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/RelevantItemView.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/search/SearchHistoryItemView.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/search/ActivitySearch.java" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivitySearchArtByType.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityAuthorList.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/ActivityAllZuoPin.java" />
@@ -212,6 +182,14 @@
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/ZuoPinRecyclerView.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/search/ActivitySearchResult.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/ActivityQuadrilateralCrop.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/common/ActivityBaseNoSliding.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivitySearchArtByType.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_search_result.xml" />
       </list>
     </option>
   </component>
@@ -249,6 +227,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -330,13 +309,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="quadrilateral_crop" />
+              <option name="myItemId" value="art" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,7 +334,7 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="69P0215C05003524" />
     <property name="FullScreen" value="false" />
     <property name="ExportedModule" value="shuhua" />
-    <property name="ExportedApkPath" value="C:\Users\xiaoyu\Desktop\shuhua.apk" />
+    <property name="ExportedApkPath" value="C:\Users\xiaoyu\Desktop\shuhua603.apk" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -738,12 +716,16 @@
       <workItem from="1464535164225" duration="691000" />
       <workItem from="1464620796772" duration="38000" />
       <workItem from="1464712153454" duration="683000" />
-      <workItem from="1464713220550" duration="1283000" />
+      <workItem from="1464713220550" duration="1485000" />
+      <workItem from="1464795762519" duration="1584000" />
+      <workItem from="1464878664256" duration="3500000" />
+      <workItem from="1464882566810" duration="21000" />
+      <workItem from="1464882653350" duration="2083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213536000" />
+    <option name="totallyTimeSpent" value="220926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
@@ -764,13 +746,13 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225107" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20459402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31277058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24675325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2564935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21314102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -841,12 +823,6 @@
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java</url>
-          <line>129</line>
-          <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java</url>
           <line>337</line>
           <properties />
@@ -864,8 +840,20 @@
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="98" />
+      <option name="time" value="100" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -874,65 +862,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/handlenew/HandleNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38260868" vertical-offset="22" max-vertical-offset="1738">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/handlenew/HandleUtilNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8752643" vertical-offset="722" max-vertical-offset="1386">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/CropOverlayView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13379" max-vertical-offset="14916">
-          <caret line="618" column="28" selection-start-line="618" selection-start-column="28" selection-end-line="618" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/CropImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8055" max-vertical-offset="11154">
-          <caret line="385" column="15" selection-start-line="385" selection-start-column="15" selection-end-line="385" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/QuadrilateralCropOverlayView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6138">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/util/HandleUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5553" max-vertical-offset="6248">
-          <caret line="286" column="23" selection-start-line="286" selection-start-column="23" selection-end-line="286" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/crop_image_view_new.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52757794" vertical-offset="0" max-vertical-offset="440">
-          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityMyInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12942989" vertical-offset="4" max-vertical-offset="5522">
-          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/mine/ActivityIdentifyInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55932206" vertical-offset="4367" max-vertical-offset="5016">
@@ -951,14 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71428573" vertical-offset="56" max-vertical-offset="770">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39059967" vertical-offset="2047" max-vertical-offset="4224">
-          <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,14 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6193" max-vertical-offset="8580">
-          <caret line="336" column="52" selection-start-line="336" selection-start-column="52" selection-end-line="336" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/search/SearchHistoryItemView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="946">
@@ -1127,13 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7026087" vertical-offset="234" max-vertical-offset="1122">
           <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32426304" vertical-offset="0" max-vertical-offset="5324">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1155,13 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="814">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivitySearchArtByType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="4070">
-          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1210,24 +1109,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="1100">
+        <state vertical-scroll-proportion="0.22629969" vertical-offset="182" max-vertical-offset="1100">
           <caret line="15" column="63" selection-start-line="14" selection-start-column="18" selection-end-line="15" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1914" max-vertical-offset="5522">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
-          <folding>
-            <element signature="e#3193#3194#0" expanded="false" />
-            <element signature="e#3238#3239#0" expanded="false" />
-            <element signature="e#3418#3419#0" expanded="false" />
-            <element signature="e#3464#3465#0" expanded="false" />
-            <element signature="e#10359#10360#0" expanded="false" />
-            <element signature="e#10415#10416#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,7 +1120,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.392857" vertical-offset="1626" max-vertical-offset="5258">
+        <state vertical-scroll-proportion="0.21931261" vertical-offset="1626" max-vertical-offset="5258">
           <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
           <folding />
         </state>
@@ -1246,10 +1130,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3009576" vertical-offset="0" max-vertical-offset="1430">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#552#553#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/ActivityQuadrilateralCrop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2923538" vertical-offset="3" max-vertical-offset="15158">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1257,22 +1144,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4598" max-vertical-offset="6996">
           <caret line="244" column="54" selection-start-line="237" selection-start-column="8" selection-end-line="244" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/sdk/platforms/android-18/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2798092" vertical-offset="0" max-vertical-offset="10230">
+          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.235474" vertical-offset="0" max-vertical-offset="8580">
+          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/ActivityQuadrilateralCrop.java">
+    <entry file="jar://$PROJECT_DIR$/libs/android-support-v4.jar!/android/support/v4/app/FragmentActivity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70183486" vertical-offset="3" max-vertical-offset="15268">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.33222038" vertical-offset="1385" max-vertical-offset="12078">
+          <caret line="115" column="17" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/common/ActivityBaseNoSliding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3628186" vertical-offset="0" max-vertical-offset="836">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42605633" vertical-offset="1122" max-vertical-offset="3630">
+          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20833333" vertical-offset="2" max-vertical-offset="4224">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
           <folding>
-            <element signature="e#5623#5624#0" expanded="true" />
-            <element signature="e#5674#5675#0" expanded="true" />
-            <element signature="e#13381#13408#0" expanded="true" />
-            <element signature="e#15707#15733#0" expanded="true" />
-            <element signature="e#17054#20299#0" expanded="true" />
-            <element signature="e#20298#20299#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6084#6085#0" expanded="false" />
+            <element signature="e#6163#6164#0" expanded="false" />
+            <element signature="e#8115#8116#0" expanded="false" />
+            <element signature="e#8186#8187#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/quadrilateral_crop/cropwindow/handle/Handle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59370315" vertical-offset="0" max-vertical-offset="1210">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5302782" vertical-offset="1612" max-vertical-offset="6204">
+          <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1732#2013#0" expanded="true" />
+            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="e#2803#2804#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+            <element signature="e#5114#5115#0" expanded="true" />
+            <element signature="e#5168#5169#0" expanded="true" />
+            <element signature="e#5250#5251#0" expanded="true" />
+            <element signature="e#5290#5291#0" expanded="true" />
+            <element signature="e#7146#7584#0" expanded="true" />
+            <element signature="e#7583#7584#0" expanded="true" />
+            <element signature="e#9914#10438#0" expanded="true" />
+            <element signature="e#10437#10438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0081834" vertical-offset="286" max-vertical-offset="4884">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="38" />
+          <folding>
+            <element signature="e#3194#3195#0" expanded="true" />
+            <element signature="e#3239#3240#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_search_result.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9285715" vertical-offset="0" max-vertical-offset="1210">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivitySearchArtByType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="4994">
+          <caret line="69" column="41" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1474">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6451613" vertical-offset="1494" max-vertical-offset="2376">
+          <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

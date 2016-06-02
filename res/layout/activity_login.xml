@@ -60,7 +60,6 @@
             android:gravity="left|center_vertical"
             android:hint="密码"
             android:textColorHint="#c2c2c2"
-            android:inputType="number"
             android:textSize="15sp"
             android:textColor="#333333"/>
     <View android:layout_width="match_parent"

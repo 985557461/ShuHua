@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public List<ArtUserModel> userlist;
     public List<BannerModel> banner_posts;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

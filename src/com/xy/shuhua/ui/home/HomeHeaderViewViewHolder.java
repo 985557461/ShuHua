@@ -2,6 +2,9 @@ package com.xy.shuhua.ui.home;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -15,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.xy.shuhua.R;
 import com.xy.shuhua.ui.home.model.ArtUserModel;
 import com.xy.shuhua.ui.home.model.BannerModel;
@@ -40,6 +45,18 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
     private View rootView;
     private int itemWidth = 0;
     private int itemMargin = 0;
+
+    private int size = 0;
+    private int currentPage = 0;
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            currentPage = (currentPage+1) % size;
+            viewPager.setCurrentItem(currentPage);
+            sendEmptyMessageDelayed(1,3000);
+        }
+    };
 
     public HomeHeaderViewViewHolder(Context context, View itemView) {
         super(itemView);
@@ -71,8 +88,12 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 imageView.setData(bannerModels.get(i));
                 bannerImageViews.add(imageView);
             }
+            size = bannerImageViews.size();
             viewPager.setAdapter(bannerAdapter);
             circlePageIndicator.setViewPager(viewPager);
+            if(size > 0){
+                handler.sendEmptyMessageDelayed(1,500);
+            }
         }
         /**“’ ıº“**/
         if (artUserModels != null) {
@@ -166,9 +187,18 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
                 return;
             }
             if (!TextUtils.isEmpty(bannerModel.imageurl)) {
-                Glide.with(getContext()).load(bannerModel.imageurl).placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(this);
+                Glide.with(getContext()).load(bannerModel.imageurl).asBitmap().into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                        if(bitmap != null){
+                            setImageBitmap(bitmap);
+                        }else{
+                            setImageResource(R.drawable.icon_art_pressed);
+                        }
+                    }
+                });
             } else {
-                Glide.with(getContext()).load("").placeholder(R.drawable.icon_art_pressed).error(R.drawable.icon_art_pressed).into(this);
+                setImageResource(R.drawable.icon_art_pressed);
             }
         }
     }

@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.ServerConfig;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
@@ -38,6 +40,7 @@ import java.util.Map;
  */
 public class ActivitySearchArtByType extends ActivityBaseNoSliding implements View.OnClickListener {
     private View backView;
+    private TextView title;
     private PtrClassicFrameLayout refreshContainer;
     private AutoLoadMoreRecyclerView recyclerView;
     private CustomAdapter customAdapter;
@@ -47,11 +50,14 @@ public class ActivitySearchArtByType extends ActivityBaseNoSliding implements Vi
     private int start_num = 0;
 
     public static final String TYPE = "type";
+    public static final String TITLE = "title";
     private String type;
+    private String titleStr;
 
-    public static void open(Activity activity, String type) {
+    public static void open(Activity activity, String type,String title) {
         Intent intent = new Intent(activity, ActivitySearchArtByType.class);
         intent.putExtra(TYPE, type);
+        intent.putExtra(TITLE,title);
         activity.startActivity(intent);
     }
 
@@ -60,18 +66,23 @@ public class ActivitySearchArtByType extends ActivityBaseNoSliding implements Vi
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         type = intent.getStringExtra(TYPE);
+        titleStr = intent.getStringExtra(TITLE);
         setContentView(R.layout.activity_search_result);
     }
 
     @Override
     protected void getViews() {
         backView = findViewById(R.id.backView);
+        title = (TextView) findViewById(R.id.title);
         refreshContainer = (PtrClassicFrameLayout) findViewById(R.id.refreshContainer);
         recyclerView = (AutoLoadMoreRecyclerView) findViewById(R.id.recyclerView);
     }
 
     @Override
     protected void initViews() {
+        if(!TextUtils.isEmpty(titleStr)){
+            title.setText(titleStr);
+        }
         recyclerView.getRecyclerView().setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
         recyclerView.getRecyclerView().addItemDecoration(new DividerGridItemDecoration(this, R.drawable.goods_list_divider));
 
