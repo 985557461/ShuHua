@@ -96,6 +96,10 @@
     <file url="file://$PROJECT_DIR$/res/values/vpi__colors.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values/vpi__defaults.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/values/vpi__styles.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/cn/sharesdk/onekeyshare/OnekeyShareThemeImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/sharesdk/onekeyshare/themes/classic/ClassicTheme.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/sharesdk/onekeyshare/themes/classic/FriendAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/sharesdk/onekeyshare/themes/classic/FriendListPage.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/Account.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/CommonModel.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/CommonPreference.java" charset="GBK" />

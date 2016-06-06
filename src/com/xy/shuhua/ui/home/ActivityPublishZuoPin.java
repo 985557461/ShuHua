@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -215,11 +216,11 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                         UploadImageModel uploadImageModel = GsonUtil.transModel(response, UploadImageModel.class);
                         if (uploadImageModel != null && !TextUtils.isEmpty(uploadImageModel.result)) {
                             serverPaths.add(uploadImageModel.result);
-                            pathIndex++;
-                            if (pathIndex > pathsList.size() - 1) {
+                            if (pathIndex == pathsList.size()-1) {
                                 Log.d("xiaoyu", "图片上传完毕");
                                 publishZuoPin();
                             } else {
+                                pathIndex++;
                                 uploadImage(pathIndex);
                             }
                         } else {
@@ -279,6 +280,9 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                             ToastUtil.makeShortText("网络连接失败了");
                             return;
                         }
+                        LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
+                        Intent intent = new Intent(HomeFragment.kRefresh);
+                        manager.sendBroadcast(intent);
                         ToastUtil.makeShortText("发布成功");
                         finish();
                     }

@@ -128,9 +128,9 @@ public class ActivitySearchResult extends ActivityBaseNoSliding implements View.
             params.put("code", "");
         }
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.SEARCH_ARTS, params);
-        OkHttpUtils.get()
+        OkHttpUtils.post()
                 .params(params)
-                .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)
+                .url(ServerConfig.BASE_URL + ServerConfig.SEARCH_ARTS)
                 .tag(this)
                 .build()
                 .execute(new StringCallback() {
@@ -177,7 +177,7 @@ public class ActivitySearchResult extends ActivityBaseNoSliding implements View.
             params.put("name", name);
             params.put("code", "");
         }
-        OkHttpUtils.get()
+        OkHttpUtils.post()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.SEARCH_ARTS)
                 .tag(this)

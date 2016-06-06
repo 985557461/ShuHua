@@ -1,9 +1,13 @@
 package com.xy.shuhua.ui.home;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -12,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.ServerConfig;
+import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.home.model.ArtUserModel;
 import com.xy.shuhua.ui.home.model.BannerModel;
 import com.xy.shuhua.ui.home.model.HomeArtGoodsModel;
@@ -52,6 +57,42 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public List<ArtUserModel> userlist;
     public List<BannerModel> banner_posts;
 
+    public static final String kRefresh = "refresh";
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(kRefresh.equals(action)){
+                refreshData();
+            }
+        }
+    };
+
+    private void register(){
+        LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
+        IntentFilter intentFilter = new IntentFilter(kRefresh);
+        manager.registerReceiver(receiver,intentFilter);
+    }
+
+    private void unRegister(){
+        if(receiver != null){
+            LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
+            manager.unregisterReceiver(receiver);
+        }
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        register();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unRegister();
+    }
 
     @Nullable
     @Override

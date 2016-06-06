@@ -91,6 +91,7 @@ public class HomeHeaderViewViewHolder extends RecyclerView.ViewHolder {
             size = bannerImageViews.size();
             viewPager.setAdapter(bannerAdapter);
             circlePageIndicator.setViewPager(viewPager);
+            handler.removeCallbacksAndMessages(null);
             if(size > 0){
                 handler.sendEmptyMessageDelayed(1,500);
             }
