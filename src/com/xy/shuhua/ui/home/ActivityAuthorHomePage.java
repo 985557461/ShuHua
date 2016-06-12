@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import com.xy.shuhua.R;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.mine.ActivityAllZuoPin;
-import com.xy.shuhua.ui.mine.WenZhangRecyclerView;
+import com.xy.shuhua.ui.mine.DescView;
 import com.xy.shuhua.ui.mine.ZuoPinRecyclerView;
 
 import java.util.ArrayList;
@@ -31,10 +31,8 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
     private View allZuoPin;
     private View zuoPinLL;
     private View zuoPinLineView;
-    private View zhanLanLL;
-    private View zhanLanLineView;
-    private View wenZhangLL;
-    private View wenZhangLineView;
+    private View descLL;
+    private View descLineView;
     private ViewPager viewPager;
 
     private List<View> views = new ArrayList<>();
@@ -43,15 +41,21 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
     public static final String kUserid = "key_user_id";
     public static final String kUserAvatar = "key_user_avatar";
     public static final String kUserName = "key_user_name";
+    public static final String kIntroduce = "key_introduce";
     private String userid;
     private String useravatar;
     private String username;
+    private String introdece;
 
-    public static void open(Activity activity, String userid, String useravatar, String username) {
+    private ZuoPinRecyclerView zuoPinRecyclerView;
+    private DescView descView;
+
+    public static void open(Activity activity, String userid, String useravatar, String username,String introduce) {
         Intent intent = new Intent(activity, ActivityAuthorHomePage.class);
         intent.putExtra(kUserid, userid);
         intent.putExtra(kUserAvatar, useravatar);
         intent.putExtra(kUserName, username);
+        intent.putExtra(kIntroduce,introduce);
         activity.startActivity(intent);
     }
 
@@ -60,6 +64,7 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
         userid = getIntent().getStringExtra(kUserid);
         useravatar = getIntent().getStringExtra(kUserAvatar);
         username = getIntent().getStringExtra(kUserName);
+        introdece = getIntent().getStringExtra(kIntroduce);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_author_home_page);
     }
@@ -72,25 +77,26 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
         allZuoPin = findViewById(R.id.allZuoPin);
         zuoPinLL = findViewById(R.id.zuoPinLL);
         zuoPinLineView = findViewById(R.id.zuoPinLineView);
-        zhanLanLL = findViewById(R.id.zhanLanLL);
-        zhanLanLineView = findViewById(R.id.zhanLanLineView);
-        wenZhangLL = findViewById(R.id.wenZhangLL);
-        wenZhangLineView = findViewById(R.id.wenZhangLineView);
+        descLL = findViewById(R.id.descLL);
+        descLineView = findViewById(R.id.descLineView);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         backView.setOnClickListener(this);
         allZuoPin.setOnClickListener(this);
         zuoPinLL.setOnClickListener(this);
-        zhanLanLL.setOnClickListener(this);
-        wenZhangLL.setOnClickListener(this);
+        descLL.setOnClickListener(this);
 
 
-        ZuoPinRecyclerView itemView1 = new ZuoPinRecyclerView(this, userid);
-        views.add(itemView1);
-        WenZhangRecyclerView itemView2 = new WenZhangRecyclerView(this, 0, userid);
-        views.add(itemView2);
-        WenZhangRecyclerView itemView3 = new WenZhangRecyclerView(this, 1, userid);
-        views.add(itemView3);
+        zuoPinRecyclerView = new ZuoPinRecyclerView(this, userid);
+        views.add(zuoPinRecyclerView);
+        descView  = new DescView(this);
+
+        if(!TextUtils.isEmpty(introdece)){
+            descView.desc.setText("个人简介："+introdece);
+        }else{
+            descView.desc.setText("这个人还没有个人简介奥");
+        }
+        views.add(descView);
 
         minePagerAdapter = new MinePagerAdapter();
         viewPager.setAdapter(minePagerAdapter);
@@ -117,7 +123,7 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
     private void initUserData() {
         /**初始化数据**/
         if (!TextUtils.isEmpty(useravatar)) {
-            Glide.with(this).load(useravatar).error(R.drawable.me_avatar_boy).into(avatar);
+            Glide.with(this).load(useravatar).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(avatar);
         } else {
             avatar.setImageResource(R.drawable.me_avatar_boy);
         }
@@ -143,18 +149,11 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
         switch (index) {
             case 0:
                 zuoPinLineView.setVisibility(View.VISIBLE);
-                zhanLanLineView.setVisibility(View.GONE);
-                wenZhangLineView.setVisibility(View.GONE);
+                descLineView.setVisibility(View.GONE);
                 break;
             case 1:
                 zuoPinLineView.setVisibility(View.GONE);
-                zhanLanLineView.setVisibility(View.VISIBLE);
-                wenZhangLineView.setVisibility(View.GONE);
-                break;
-            case 2:
-                zuoPinLineView.setVisibility(View.GONE);
-                zhanLanLineView.setVisibility(View.GONE);
-                wenZhangLineView.setVisibility(View.VISIBLE);
+                descLineView.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -172,13 +171,9 @@ public class ActivityAuthorHomePage extends ActivityBaseNoSliding implements Vie
                 changedSelectedState(0);
                 viewPager.setCurrentItem(0);
                 break;
-            case R.id.zhanLanLL:
+            case R.id.descLL:
                 changedSelectedState(1);
                 viewPager.setCurrentItem(1);
-                break;
-            case R.id.wenZhangLL:
-                changedSelectedState(2);
-                viewPager.setCurrentItem(2);
                 break;
         }
     }

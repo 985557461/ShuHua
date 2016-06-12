@@ -3,6 +3,7 @@ package com.xy.shuhua.ui.art;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
@@ -19,10 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.CommonModel;
 import com.xy.shuhua.common_background.ServerConfig;
+import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.art.model.ArtGoodsInfoModel;
 import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityAuthorHomePage;
+import com.xy.shuhua.ui.home.HomeFragment;
+import com.xy.shuhua.ui.user.UserInfoModel;
 import com.xy.shuhua.ui.view.HackyViewPager;
 import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.DisplayUtil;
@@ -36,6 +40,7 @@ import io.rong.imkit.RongIM;
 import okhttp3.Call;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +63,6 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private View chatView;
     private TextView time;
     private TextView bianhao;
-    private View otherZuoPinView;
     private LinearLayout zuopinContainer;
 
     //悬浮框相关
@@ -76,6 +80,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
 
     private String userName;
     private String userAvatar;
+    private String introdece;
 
     public static void open(Activity activity, String goodsId) {
         Intent intent = new Intent(activity, ActivityArtGoodsInfo.class);
@@ -110,7 +115,6 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         chatView = findViewById(R.id.chatView);
         time = (TextView) findViewById(R.id.time);
         bianhao = (TextView) findViewById(R.id.bianhao);
-        otherZuoPinView = findViewById(R.id.otherZuoPinView);
         zuopinContainer = (LinearLayout) findViewById(R.id.zuopinContainer);
 
         backViewTwo = findViewById(R.id.backViewTwo);
@@ -194,66 +198,95 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 name.setText(artGoodsInfoModel.art.name);
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.artsize)) {
-                guiGe.setText(artGoodsInfoModel.art.artsize);
+                guiGe.setText("尺寸: " + artGoodsInfoModel.art.artsize);
+            }else{
+                guiGe.setText("尺寸: 默认");
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.price)) {
-                price.setText(artGoodsInfoModel.art.price);
+                price.setText(artGoodsInfoModel.art.price + "元");
+            }else{
+                price.setText("暂无报价");
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.artnum)) {
                 zuopinCount.setText(artGoodsInfoModel.art.artnum + "件作品");
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.newdate)) {
                 time.setText(artGoodsInfoModel.art.newdate);
+            } else {
+                time.setText(new Date().toString());
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.id)) {
                 bianhao.setText("默认艺术 " + artGoodsInfoModel.art.id);
+            } else {
+                bianhao.setText("默认艺术 0");
             }
         }
         if (artGoodsInfoModel.user != null) {
             if (!TextUtils.isEmpty(artGoodsInfoModel.user.imageurl)) {
-                Glide.with(this).load(artGoodsInfoModel.user.imageurl).error(R.drawable.me_avatar_boy).into(authorAvatar);
+                Glide.with(this).load(artGoodsInfoModel.user.imageurl).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(authorAvatar);
             } else {
                 authorAvatar.setImageResource(R.drawable.me_avatar_boy);
             }
-            if (!TextUtils.isEmpty(artGoodsInfoModel.user.nickname)) {
+            userName = getUserName(artGoodsInfoModel.user);
+            userAvatar = artGoodsInfoModel.user.imageurl;
+            introdece = artGoodsInfoModel.user.introduce;
+            if (!TextUtils.isEmpty(userName)) {
                 authorName.setText(artGoodsInfoModel.user.nickname);
+            } else {
+                authorName.setText("游客");
             }
         }
-        if (artGoodsInfoModel.lists == null || artGoodsInfoModel.lists.size() == 0) {
-            otherZuoPinView.setVisibility(View.GONE);
-        } else {
-            otherZuoPinView.setVisibility(View.VISIBLE);
-            zuopinContainer.removeAllViews();
-            int count = artGoodsInfoModel.lists.size();
-            int row = count / 2 + (count % 2 == 0 ? 0 : 1);
-            for (int i = 0; i < row; i++) {
-                RelevantRowView rowView = new RelevantRowView(this);
-                int indexOne = i * 2;
-                int indexTwo = i * 2 + 1;
-                ArtGoodsItemModel modelOne = null;
-                ArtGoodsItemModel modelTwo = null;
-                if (indexOne < count) {
-                    modelOne = artGoodsInfoModel.lists.get(indexOne);
-                }
-                if (indexTwo < count) {
-                    modelTwo = artGoodsInfoModel.lists.get(indexTwo);
-                }
-                rowView.setData(modelOne, modelTwo);
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                if (i != row - 1) {
-                    params.bottomMargin = DisplayUtil.dip2px(this, 12);
-                }
-                zuopinContainer.addView(rowView, params);
-            }
-        }
+//        if (artGoodsInfoModel.lists == null || artGoodsInfoModel.lists.size() == 0) {
+//            otherZuoPinView.setVisibility(View.GONE);
+//        } else {
+//            otherZuoPinView.setVisibility(View.VISIBLE);
+//            zuopinContainer.removeAllViews();
+//            int count = artGoodsInfoModel.lists.size();
+//            int row = count / 2 + (count % 2 == 0 ? 0 : 1);
+//            for (int i = 0; i < row; i++) {
+//                RelevantRowView rowView = new RelevantRowView(this);
+//                int indexOne = i * 2;
+//                int indexTwo = i * 2 + 1;
+//                ArtGoodsItemModel modelOne = null;
+//                ArtGoodsItemModel modelTwo = null;
+//                if (indexOne < count) {
+//                    modelOne = artGoodsInfoModel.lists.get(indexOne);
+//                }
+//                if (indexTwo < count) {
+//                    modelTwo = artGoodsInfoModel.lists.get(indexTwo);
+//                }
+//                rowView.setData(modelOne, modelTwo);
+//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                if (i != row - 1) {
+//                    params.bottomMargin = DisplayUtil.dip2px(this, 12);
+//                }
+//                zuopinContainer.addView(rowView, params);
+//            }
+//        }
 
         //根据id查询用户具体信息
-        if (artGoodsInfoModel != null && artGoodsInfoModel.user != null) {
-            String userId = artGoodsInfoModel.user.userid;
-            if (!TextUtils.isEmpty(userId)) {
-                getUserInfo(userId);
+        if (TextUtils.isEmpty(userName)) {
+            if (artGoodsInfoModel != null && artGoodsInfoModel.user != null) {
+                String userId = artGoodsInfoModel.user.userid;
+                if (!TextUtils.isEmpty(userId)) {
+                    getUserInfo(userId);
+                }
             }
         }
+    }
+
+    //得到发布作品人的名字
+    private String getUserName(UserInfoModel userInfoModel) {
+        if (!TextUtils.isEmpty(userInfoModel.realname)) {
+            return userInfoModel.realname;
+        }
+        if (!TextUtils.isEmpty(userInfoModel.nickname)) {
+            return userInfoModel.nickname;
+        }
+        if (!TextUtils.isEmpty(userInfoModel.username)) {
+            return userInfoModel.username;
+        }
+        return "";
     }
 
     @Override
@@ -300,7 +333,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                         return;
                     }
 
-                    ActivityAuthorHomePage.open(this, userId, userAvatar, userName);
+                    ActivityAuthorHomePage.open(this, userId, userAvatar, userName,introdece);
                 }
                 break;
             case R.id.shareView:
@@ -321,13 +354,13 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
         oks.setTitleUrl("http://sharesdk.cn");
         // text是分享文本，所有平台都需要这个字段
-        oks.setText("我是分享文本");
+        oks.setText("默认艺术，专注作家的平台");
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
         //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
         // url仅在微信（包括好友和朋友圈）中使用
         oks.setUrl("http://sharesdk.cn");
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-        oks.setComment("我是测试评论文本");
+//        oks.setComment("我是测试评论文本");
         // site是分享此内容的网站名称，仅在QQ空间使用
         oks.setSite(getString(R.string.app_name));
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
@@ -414,6 +447,9 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                         DialogUtil.getInstance().dismissLoading(ActivityArtGoodsInfo.this);
                         CommonModel commonModel = GsonUtil.transModel(response, CommonModel.class);
                         if (commonModel != null && "1".equals(commonModel.result)) {
+                            LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
+                            Intent intent = new Intent(HomeFragment.kRefresh);
+                            manager.sendBroadcast(intent);
                             ToastUtil.makeShortText("点赞成功");
                         } else {
                             ToastUtil.makeShortText("网络连接失败");

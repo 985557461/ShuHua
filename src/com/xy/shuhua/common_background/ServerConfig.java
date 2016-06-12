@@ -29,7 +29,6 @@ public class ServerConfig {
     public static final String MODIFY_PWD = "shuhua/api/accounts/change_password.do";//修改密码
     public static final String UPLOAD_FILE = "shuhua/api/export/upload.do";//POST上传文件  参数file
     public static final String MY_ZUOPIN = "shuhua/api/artService/getArtByUserid.do";//根据用户id查询作品列表
-    public static final String MY_WENZHANG = "shuhua/api/activity/queryActivitys.do";//根据用户id查询我的文章或者展览
     public static final String ZUOPIN_INFO = "shuhua/api/artService/getArtDeatil.do";//作品详细信息
     public static final String PUBLISH_ZUOPIN = "shuhua/api/art/saveArt.do";//发布作品的接口
     public static final String ALL_AUTHOR = "shuhua/api/accounts/getArtist.do";//所有艺术家接口

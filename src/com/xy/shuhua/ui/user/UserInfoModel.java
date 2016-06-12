@@ -26,4 +26,16 @@ public class UserInfoModel {
     public String imageurl;
     @SerializedName("usertype")
     public String usertype;
+    @SerializedName("username")
+    public String username;
+    @SerializedName("token")
+    public String token;
+    @SerializedName("ispub")
+    public String ispub;
+    @SerializedName("email")
+    public String email;
+    @SerializedName("realname")
+    public String realname;
+    @SerializedName("mobile")
+    public String mobile;
 }

@@ -35,14 +35,15 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private View settingFL;
     private View zuoPinLL;
     private View zuoPinLineView;
-    private View zhanLanLL;
-    private View zhanLanLineView;
-    private View wenZhangLL;
-    private View wenZhangLineView;
+    private View descLL;
+    private View descLineView;
     private ViewPager viewPager;
 
     private List<View> views = new ArrayList<>();
     private MinePagerAdapter minePagerAdapter;
+
+    private ZuoPinRecyclerView zuoPinRecyclerView;
+    private DescView descView;
 
     private Account account = CustomApplication.getInstance().getAccount();
 
@@ -68,24 +69,24 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         settingFL = view.findViewById(R.id.settingFL);
         zuoPinLL = view.findViewById(R.id.zuoPinLL);
         zuoPinLineView = view.findViewById(R.id.zuoPinLineView);
-        zhanLanLL = view.findViewById(R.id.zhanLanLL);
-        zhanLanLineView = view.findViewById(R.id.zhanLanLineView);
-        wenZhangLL = view.findViewById(R.id.wenZhangLL);
-        wenZhangLineView = view.findViewById(R.id.wenZhangLineView);
+        descLL = view.findViewById(R.id.descLL);
+        descLineView = view.findViewById(R.id.descLineView);
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
 
         allZuoPin.setOnClickListener(this);
         settingFL.setOnClickListener(this);
         zuoPinLL.setOnClickListener(this);
-        zhanLanLL.setOnClickListener(this);
-        wenZhangLL.setOnClickListener(this);
+        descLL.setOnClickListener(this);
 
-        ZuoPinRecyclerView itemView1 = new ZuoPinRecyclerView(getContext(), account.userId);
-        views.add(itemView1);
-        WenZhangRecyclerView itemView2 = new WenZhangRecyclerView(getContext(), 0, account.userId);
-        views.add(itemView2);
-        WenZhangRecyclerView itemView3 = new WenZhangRecyclerView(getContext(), 1, account.userId);
-        views.add(itemView3);
+        zuoPinRecyclerView = new ZuoPinRecyclerView(getContext(), account.userId);
+        views.add(zuoPinRecyclerView);
+        descView = new DescView(getContext());
+        if(!TextUtils.isEmpty(account.introduce)){
+            descView.desc.setText("个人简介："+account.introduce);
+        }else{
+            descView.desc.setText("这个人还没有个人简介奥");
+        }
+        views.add(descView);
 
         minePagerAdapter = new MinePagerAdapter();
         viewPager.setAdapter(minePagerAdapter);
@@ -148,6 +149,12 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             } else {
                 name.setText("去设置");
             }
+
+            if(!TextUtils.isEmpty(account.introduce)){
+                descView.desc.setText("个人简介："+account.introduce);
+            }else{
+                descView.desc.setText("这个人还没有个人简介奥");
+            }
         }
     }
 
@@ -155,18 +162,11 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         switch (index) {
             case 0:
                 zuoPinLineView.setVisibility(View.VISIBLE);
-                zhanLanLineView.setVisibility(View.GONE);
-                wenZhangLineView.setVisibility(View.GONE);
+                descLineView.setVisibility(View.GONE);
                 break;
             case 1:
                 zuoPinLineView.setVisibility(View.GONE);
-                zhanLanLineView.setVisibility(View.VISIBLE);
-                wenZhangLineView.setVisibility(View.GONE);
-                break;
-            case 2:
-                zuoPinLineView.setVisibility(View.GONE);
-                zhanLanLineView.setVisibility(View.GONE);
-                wenZhangLineView.setVisibility(View.VISIBLE);
+                descLineView.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -184,13 +184,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 changedSelectedState(0);
                 viewPager.setCurrentItem(0);
                 break;
-            case R.id.zhanLanLL:
+            case R.id.descLL:
                 changedSelectedState(1);
                 viewPager.setCurrentItem(1);
-                break;
-            case R.id.wenZhangLL:
-                changedSelectedState(2);
-                viewPager.setCurrentItem(2);
                 break;
         }
     }

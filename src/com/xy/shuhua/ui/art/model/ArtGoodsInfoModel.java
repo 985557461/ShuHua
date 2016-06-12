@@ -42,7 +42,7 @@ public class ArtGoodsInfoModel {
         @SerializedName("name")
         public String name;//作品名称
         @SerializedName("artnum")
-        public String artnum;//作品数量
+        public String artnum;//作品数量（后台没有返回）
         @SerializedName("newdate")
         public String newdate;
         @SerializedName("imageurl")

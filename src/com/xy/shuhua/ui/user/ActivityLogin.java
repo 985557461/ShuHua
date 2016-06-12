@@ -3,11 +3,21 @@ package com.xy.shuhua.ui.user;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.tencent.qzone.QZone;
+import cn.sharesdk.wechat.friends.Wechat;
+import com.mob.tools.utils.UIHandler;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.Account;
 import com.xy.shuhua.common_background.ServerConfig;
@@ -30,13 +40,23 @@ import java.util.Map;
 /**
  * Created by xiaoyu on 2016/3/15.
  */
-public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClickListener {
+public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClickListener,PlatformActionListener,Handler.Callback {
     private View backView;
     private EditText phoneNumber;
     private EditText password;
     private TextView forgetPwd;
     private TextView register;
     private TextView login;
+    private View weixinLoginView;
+    private View qqLoginView;
+    private View sinaLoginView;
+
+    //第三方登录
+    private static final int MSG_USERID_FOUND = 1;
+    private static final int MSG_LOGIN = 2;
+    private static final int MSG_AUTH_CANCEL = 3;
+    private static final int MSG_AUTH_ERROR= 4;
+    private static final int MSG_AUTH_COMPLETE = 5;
 
     public static void open(Activity activity) {
         Intent intent = new Intent(activity, ActivityLogin.class);
@@ -46,6 +66,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ShareSDK.initSDK(this);
         Account account = CustomApplication.getInstance().getAccount();
         if (!TextUtils.isEmpty(account.userId)) {
             ActivityMain.open(this);
@@ -56,6 +77,12 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ShareSDK.stopSDK(this);
+    }
+
+    @Override
     protected void getViews() {
         backView = findViewById(R.id.backView);
         phoneNumber = (EditText) findViewById(R.id.phoneNumber);
@@ -63,6 +90,9 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         forgetPwd = (TextView) findViewById(R.id.forgetPwd);
         register = (TextView) findViewById(R.id.register);
         login = (TextView) findViewById(R.id.login);
+        weixinLoginView = findViewById(R.id.weixinLoginView);
+        qqLoginView = findViewById(R.id.qqLoginView);
+        sinaLoginView = findViewById(R.id.sinaLoginView);
     }
 
     @Override
@@ -76,6 +106,9 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         register.setOnClickListener(this);
         login.setOnClickListener(this);
         backView.setOnClickListener(this);
+        weixinLoginView.setOnClickListener(this);
+        qqLoginView.setOnClickListener(this);
+        sinaLoginView.setOnClickListener(this);
     }
 
     @Override
@@ -93,7 +126,37 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
             case R.id.backView:
                 finish();
                 break;
+            case R.id.qqLoginView:
+                authorize(new QZone(this));
+                break;
+            case R.id.weixinLoginView:
+                authorize(new Wechat(this));
+                break;
+            case R.id.sinaLoginView:
+                authorize(new SinaWeibo(this));
+                break;
         }
+    }
+
+    private void authorize(Platform plat) {
+        if(plat.isValid()) {
+            String userId = plat.getDb().getUserId();
+            if (!TextUtils.isEmpty(userId)) {
+                UIHandler.sendEmptyMessage(MSG_USERID_FOUND, this);
+                login(plat.getName(), userId, null);
+                return;
+            }
+        }
+        plat.setPlatformActionListener(this);
+        plat.SSOSetting(false);
+        plat.showUser(null);
+    }
+
+    private void login(String plat, String userId, HashMap<String, Object> userInfo) {
+        Message msg = new Message();
+        msg.what = MSG_LOGIN;
+        msg.obj = plat;
+        UIHandler.sendMessage(msg, this);
     }
 
     private void tryToLogin() {
@@ -211,5 +274,68 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 }
             });
         }
+    }
+
+    @Override
+    public void onComplete(Platform platform, int action, HashMap<String, Object> res) {
+        if (action == Platform.ACTION_USER_INFOR) {
+            UIHandler.sendEmptyMessage(MSG_AUTH_COMPLETE, this);
+            login(platform.getName(), platform.getDb().getUserId(), res);
+        }
+        System.out.println(res);
+        System.out.println("------User Name ---------" + platform.getDb().getUserName());
+        System.out.println("------User ID ---------" + platform.getDb().getUserId());
+    }
+
+    @Override
+    public void onError(Platform platform, int action, Throwable throwable) {
+        if (action == Platform.ACTION_USER_INFOR) {
+            UIHandler.sendEmptyMessage(MSG_AUTH_ERROR, this);
+        }
+        throwable.printStackTrace();
+    }
+
+    @Override
+    public void onCancel(Platform platform, int action) {
+        if (action == Platform.ACTION_USER_INFOR) {
+            UIHandler.sendEmptyMessage(MSG_AUTH_CANCEL, this);
+        }
+    }
+
+    @Override
+    public boolean handleMessage(Message message) {
+        switch(message.what) {
+            case MSG_USERID_FOUND: {
+                Toast.makeText(this, "用户信息已存在，正在跳转登录操作", Toast.LENGTH_SHORT).show();
+            }
+            break;
+            case MSG_LOGIN: {
+                Toast.makeText(this, "登录中", Toast.LENGTH_SHORT).show();
+                System.out.println("---------------");
+
+//				Builder builder = new Builder(this);
+//				builder.setTitle(R.string.if_register_needed);
+//				builder.setMessage(R.string.after_auth);
+//				builder.setPositiveButton(R.string.ok, null);
+//				builder.create().show();
+            }
+            break;
+            case MSG_AUTH_CANCEL: {
+                Toast.makeText(this, "授权取消", Toast.LENGTH_SHORT).show();
+                System.out.println("-------MSG_AUTH_CANCEL--------");
+            }
+            break;
+            case MSG_AUTH_ERROR: {
+                Toast.makeText(this, "授权失败", Toast.LENGTH_SHORT).show();
+                System.out.println("-------MSG_AUTH_ERROR--------");
+            }
+            break;
+            case MSG_AUTH_COMPLETE: {
+                Toast.makeText(this, "授权成功", Toast.LENGTH_SHORT).show();
+                System.out.println("--------MSG_AUTH_COMPLETE-------");
+            }
+            break;
+        }
+        return false;
     }
 }

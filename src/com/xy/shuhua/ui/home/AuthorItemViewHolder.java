@@ -65,8 +65,11 @@ public class AuthorItemViewHolder extends RecyclerView.ViewHolder implements Vie
 
     @Override
     public void onClick(View view) {
-        String avatar = artUserModel.imageurl;
-        String nameStr = name.getText().toString();
-        ActivityAuthorHomePage.open((Activity) context, artUserModel.userid, avatar, nameStr);
+        if(artUserModel != null){
+            String avatar = artUserModel.imageurl;
+            String nameStr = name.getText().toString();
+            String introduce = artUserModel.introduce;
+            ActivityAuthorHomePage.open((Activity) context, artUserModel.userid, avatar, nameStr,introduce);
+        }
     }
 }

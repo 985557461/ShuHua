@@ -45,6 +45,8 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
     private View rightView;
     private View nameView;
     private TextView nameTv;
+    private View descView;
+    private TextView descTv;
     private View priceView;
     private TextView priceTv;
     private View leiBieView;
@@ -80,6 +82,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
     private static final int request_leibie = 1003;
     private static final int request_caizhi = 1004;
     private static final int request_cicun = 1005;
+    private static final int request_desc = 1006;
 
     public static void open(Activity activity) {
         Intent intent = new Intent(activity, ActivityPublishZuoPin.class);
@@ -98,6 +101,8 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         rightView = findViewById(R.id.rightView);
         nameView = findViewById(R.id.nameView);
         nameTv = (TextView) findViewById(R.id.nameTv);
+        descView = findViewById(R.id.descView);
+        descTv = (TextView) findViewById(R.id.descTv);
         priceView = findViewById(R.id.priceView);
         priceTv = (TextView) findViewById(R.id.priceTv);
         leiBieView = findViewById(R.id.leiBieView);
@@ -122,6 +127,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         backView.setOnClickListener(this);
         rightView.setOnClickListener(this);
         nameView.setOnClickListener(this);
+        descView.setOnClickListener(this);
         priceView.setOnClickListener(this);
         leiBieView.setOnClickListener(this);
         caiZhiView.setOnClickListener(this);
@@ -143,11 +149,14 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
             case R.id.nameView:
                 ActivityInputContent.openForResult(this, request_name, "作品名称", nameTv.getText().toString());
                 break;
+            case R.id.descView:
+                ActivityInputContent.openForResult(this, request_desc, "作品简介", descTv.getText().toString());
+                break;
             case R.id.priceView:
                 ActivityInputContent.openForResult(this, request_price, "价格", priceTv.getText().toString());
                 break;
             case R.id.leiBieView:
-                ActivityInputContent.openForResult(this, request_leibie, "类别", leiBieTv.getText().toString());
+                ActivityZuoPinCategory.openForResult(this, leiBieTv.getText().toString(), request_leibie);
                 break;
             case R.id.caiZhiView:
                 ActivityInputContent.openForResult(this, request_caizhi, "材质", caiZhiTv.getText().toString());
@@ -156,7 +165,6 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                 ActivityInputContent.openForResult(this, request_cicun, "尺寸", chiCunTv.getText().toString());
                 break;
             case R.id.createTimeView:
-
                 break;
         }
     }
@@ -170,6 +178,11 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         String nameStr = nameTv.getText().toString();
         if (TextUtils.isEmpty(nameStr)) {
             ToastUtil.makeShortText("请输入名称");
+            return;
+        }
+        String descStr = descTv.getText().toString();
+        if (TextUtils.isEmpty(descStr)) {
+            ToastUtil.makeShortText("请输入作品简介");
             return;
         }
         String priceStr = priceTv.getText().toString();
@@ -216,7 +229,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                         UploadImageModel uploadImageModel = GsonUtil.transModel(response, UploadImageModel.class);
                         if (uploadImageModel != null && !TextUtils.isEmpty(uploadImageModel.result)) {
                             serverPaths.add(uploadImageModel.result);
-                            if (pathIndex == pathsList.size()-1) {
+                            if (pathIndex == pathsList.size() - 1) {
                                 Log.d("xiaoyu", "图片上传完毕");
                                 publishZuoPin();
                             } else {
@@ -294,10 +307,12 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == request_name && resultCode == RESULT_OK) {
             nameTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+        } else if (requestCode == request_desc && resultCode == RESULT_OK) {
+            descTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
         } else if (requestCode == request_price && resultCode == RESULT_OK) {
             priceTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
         } else if (requestCode == request_leibie && resultCode == RESULT_OK) {
-            leiBieTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
+            leiBieTv.setText(data.getStringExtra(ActivityZuoPinCategory.kContent));
         } else if (requestCode == request_caizhi && resultCode == RESULT_OK) {
             caiZhiTv.setText(data.getStringExtra(ActivityInputContent.kcontent));
         } else if (requestCode == request_cicun && resultCode == RESULT_OK) {
@@ -308,9 +323,9 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
                 return;
             }
             if (!TextUtils.isEmpty(result.get(0))) {
-                ActivityQuadrilateralCrop.openForResult(ActivityPublishZuoPin.this,result.get(0),Crop_Photo);
+                ActivityQuadrilateralCrop.openForResult(ActivityPublishZuoPin.this, result.get(0), Crop_Photo);
             }
-        }else if(requestCode == Crop_Photo && resultCode == RESULT_OK){
+        } else if (requestCode == Crop_Photo && resultCode == RESULT_OK) {
             avatarPath = data.getStringExtra(ActivityQuadrilateralCrop.kSavePath);
             pathsList.add(avatarPath);
             photoSelectView.setAdapter(adapter);

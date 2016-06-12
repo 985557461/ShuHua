@@ -217,6 +217,11 @@
                 android:screenOrientation="portrait"
                 android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
+        <activity
+                android:name=".ui.home.ActivityZuoPinCategory"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
         <!--选择图片相关-->
         <activity
                 android:name=".ui.PhotoChooser.PhotoPickerActivity"

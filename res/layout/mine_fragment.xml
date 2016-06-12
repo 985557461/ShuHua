@@ -87,14 +87,14 @@
                   android:visibility="visible"/>
         </LinearLayout>
         <LinearLayout
-                android:id="@+id/zhanLanLL"
+                android:id="@+id/descLL"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_marginRight="20dp">
             <TextView
-                    android:text="展览"
+                    android:text="简介"
                     android:textColor="#333333"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
@@ -104,28 +104,7 @@
                   android:layout_height="1dp"
                   android:background="#464b49"
                   android:layout_gravity="bottom"
-                  android:id="@+id/zhanLanLineView"
-                  android:visibility="gone"/>
-        </LinearLayout>
-        <LinearLayout
-                android:id="@+id/wenZhangLL"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginRight="20dp">
-            <TextView
-                    android:text="文章"
-                    android:textColor="#333333"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"/>
-            <View android:layout_width="match_parent"
-                  android:layout_height="1dp"
-                  android:background="#464b49"
-                  android:layout_gravity="bottom"
-                  android:id="@+id/wenZhangLineView"
+                  android:id="@+id/descLineView"
                   android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>

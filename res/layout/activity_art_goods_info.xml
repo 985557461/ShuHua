@@ -137,7 +137,8 @@
                                 android:id="@+id/authorName"
                                 android:textSize="16sp"
                                 android:textColor="#333333"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold"
+                                android:layout_centerVertical="true"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -145,7 +146,8 @@
                                 android:textSize="14sp"
                                 android:textColor="#dbdbdb"
                                 android:layout_marginTop="10dp"
-                                android:layout_below="@id/authorName"/>
+                                android:layout_below="@id/authorName"
+                                android:visibility="gone"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -202,16 +204,29 @@
                         android:paddingBottom="12dp"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-                        android:orientation="vertical"
-                        android:id="@+id/otherZuoPinView"
-                        android:visibility="gone">
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="相关作品"
-                            android:textSize="16sp"
-                            android:textColor="#333333"
-                            android:layout_marginBottom="15dp"/>
+                        android:orientation="vertical">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:gravity="center_vertical"
+                                  android:layout_marginBottom="15dp">
+                        <View android:layout_width="0dp"
+                              android:layout_height="1dp"
+                              android:background="#b2b2b2"
+                              android:layout_weight="1"
+                              android:layout_marginRight="15dp"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="艺术简介"
+                                android:textSize="16sp"
+                                android:textColor="#333333"/>
+                        <View android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="#b2b2b2"
+                                android:layout_weight="1"
+                                android:layout_marginRight="15dp"/>
+                    </LinearLayout>
                     <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
