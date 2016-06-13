@@ -57,6 +57,18 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private static final int MSG_AUTH_ERROR = 4;
     private static final int MSG_AUTH_COMPLETE = 5;
 
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle bundle = msg.getData();
+            String avatar = bundle.getString("avatar");
+            String token = bundle.getString("token");
+            String name = bundle.getString("name");
+            thirdLogin(avatar,name,token);
+        }
+    };
+
     public static void open(Activity activity) {
         Intent intent = new Intent(activity, ActivityLogin.class);
         activity.startActivity(intent);
@@ -287,12 +299,13 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         final String avatar = platform.getDb().getUserIcon();
         final String name = platform.getDb().getUserName();
         final String token = platform.getDb().getToken();
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                thirdLogin(avatar, name, token);
-            }
-        });
+        Message message = Message.obtain();
+        Bundle bundle = new Bundle();
+        bundle.putString("avatar", avatar);
+        bundle.putString("token", token);
+        bundle.putString("name", name);
+        message.setData(bundle);
+        handler.sendMessage(message);
     }
 
     //第三方登陆接口
@@ -303,12 +316,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         params.put("imagepath", avatar);
         params.put("ucode", token);
         params.put("flag", "1");
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                DialogUtil.getInstance().showLoading(ActivityLogin.this);
-            }
-        });
+        DialogUtil.getInstance().showLoading(ActivityLogin.this);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.THIRD_LOGIN, params);
         OkHttpUtils.post()
                 .params(params)
@@ -318,24 +326,14 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                                ToastUtil.makeShortText(getString(R.string.login_failed));
-                            }
-                        });
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
+                        ToastUtil.makeShortText(getString(R.string.login_failed));
                     }
 
                     @Override
                     public void onResponse(String response) {
                         Log.d("xiaoyu", "response:" + response);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                            }
-                        });
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
                         UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
                         if (userInfoModel != null && "1".equals(userInfoModel.result)) {
                             Account account = CustomApplication.getInstance().getAccount();
@@ -343,7 +341,9 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             account.userName = userInfoModel.nickname;
                             account.avatar = userInfoModel.imageurl;
                             account.saveMeInfoToPreference();
-                            getChatToken();
+                            //getChatToken();
+                            ActivityMain.open(ActivityLogin.this);
+                            finish();
                         } else {
                             ToastUtil.makeShortText(getString(R.string.login_failedd));
                         }
@@ -397,7 +397,6 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 Toast.makeText(this, getString(R.string.shouquan_success), Toast.LENGTH_SHORT).show();
                 System.out.println("--------MSG_AUTH_COMPLETE-------");
             }
-            break;
         }
         return false;
     }

@@ -30,72 +30,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e9bf8e-1ad5-4d81-b8c8-17afb03949d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/AuthorModelWithZuoPin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo$ArtPagerAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo$ArtPagerAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$ArtPagerAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$ArtPagerAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$2.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$3.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/ActivityMain.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/ActivityMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityRegister.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityRegister.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearch.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ActivitySetting.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ActivitySetting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/right_finish/ActivitySliding.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/right_finish/ActivitySliding.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtItemViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtPersonViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtPersonViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$ArtAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$ArtAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$2.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$3.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$4.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$ArtAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$ArtAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/recyclerview/AutoLoadMoreRecyclerView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/recyclerview/AutoLoadMoreRecyclerView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/ConversationListActivity.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/ConversationListActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/GoodsItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/GoodsItemViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder$HomeUserItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder$HomeUserItemView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/MineFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/MineFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/ultra_pull_refresh/PtrClassicDefaultHeader.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/ultra_pull_refresh/PtrClassicDefaultHeader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$id.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$id.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$integer.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$layout.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$string.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$style.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/RelevantItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/RelevantItemView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/RongYunMessageFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/RongYunMessageFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/SearchHistoryItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/SearchHistoryItemView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/common_background/ServerConfig.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/common_background/ServerConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/SlideShowView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/SlideShowView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/SpaceItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/SpaceItemViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinItemViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/BuildConfig.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/BuildConfig.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/BuildConfig.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/BuildConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/shuhua.apk" afterPath="$PROJECT_DIR$/out/production/shuhua/shuhua.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" afterPath="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_author_art_list.xml" afterPath="$PROJECT_DIR$/res/layout/activity_author_art_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/art_person_item_view.xml" afterPath="$PROJECT_DIR$/res/layout/art_person_item_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/art_type_view.xml" afterPath="$PROJECT_DIR$/res/layout/art_type_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ShuHua.iws" />
@@ -122,57 +65,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArtFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java">
+      <file leaf-file-name="ActivityLogin.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1592" max-vertical-offset="2376">
-              <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArtItemViewHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="777" max-vertical-offset="1672">
-              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.6898396" vertical-offset="6562" max-vertical-offset="8228">
+              <caret line="345" column="37" selection-start-line="345" selection-start-column="37" selection-end-line="345" selection-end-column="37" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2033#2417#0" expanded="true" />
+                <element signature="e#2416#2417#0" expanded="true" />
+                <element signature="e#8850#8882#0" expanded="true" />
+                <element signature="e#9162#9194#0" expanded="true" />
+                <element signature="e#10025#10057#0" expanded="true" />
+                <element signature="e#10484#10516#0" expanded="true" />
+                <element signature="e#10722#10755#0" expanded="true" />
+                <element signature="e#13016#13048#0" expanded="true" />
+                <element signature="e#14108#14141#0" expanded="true" />
+                <element signature="e#14918#14943#0" expanded="true" />
+                <element signature="e#15361#15396#0" expanded="true" />
+                <element signature="e#15601#15636#0" expanded="true" />
+                <element signature="e#15843#15879#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityArtTypeInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java">
+      <file leaf-file-name="OkHttpUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/OkHttpUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1826">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1668" max-vertical-offset="5192">
+              <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+              <folding>
+                <element signature="e#3582#3583#0" expanded="true" />
+                <element signature="e#3626#3627#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostFormRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/PostFormRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2178">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArtTypeView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java">
+      <file leaf-file-name="OkHttpRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/OkHttpRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="3894">
-              <caret line="195" column="63" selection-start-line="195" selection-start-column="63" selection-end-line="195" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1584">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="art_person_item_view.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/art_person_item_view.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="RequestCall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/RequestCall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66972476" vertical-offset="1270" max-vertical-offset="2134">
-              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1250" max-vertical-offset="2112">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2176#2177#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" />
-        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
         <option value="$PROJECT_DIR$/res/layout/art_type_view.xml" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" />
@@ -205,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" />
         <option value="$PROJECT_DIR$/res/layout/art_person_item_view.xml" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
       </list>
     </option>
   </component>
@@ -693,16 +651,16 @@
       <created>1465831373762</created>
       <option name="number" value="Default" />
       <updated>1465831373762</updated>
-      <workItem from="1465831374353" duration="9854000" />
+      <workItem from="1465831374353" duration="10677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9854000" />
+    <option name="totallyTimeSpent" value="10677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -725,7 +683,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43614718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5313853" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20842217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -900,81 +858,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/OkHttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3114504" vertical-offset="3096" max-vertical-offset="5214">
-          <caret line="206" column="24" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="24" />
-          <folding>
-            <element signature="e#6209#6384#0" expanded="true" />
-            <element signature="e#6383#6384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/PostFormRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2211838" vertical-offset="364" max-vertical-offset="2178">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/OkHttpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22442748" vertical-offset="909" max-vertical-offset="1584">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/RequestCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22442748" vertical-offset="1217" max-vertical-offset="2112">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="e#2114#2115#0" expanded="false" />
-            <element signature="e#2176#2177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22442748" vertical-offset="359" max-vertical-offset="2222">
           <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3248" vertical-offset="4285" max-vertical-offset="8250">
-          <caret line="239" column="72" selection-start-line="239" selection-start-column="72" selection-end-line="239" selection-end-column="72" />
-          <folding>
-            <element signature="e#5334#5369#0" expanded="true" />
-            <element signature="e#5540#5569#0" expanded="true" />
-            <element signature="e#6338#6370#0" expanded="true" />
-            <element signature="e#8433#8465#0" expanded="true" />
-            <element signature="e#8745#8777#0" expanded="true" />
-            <element signature="e#9608#9640#0" expanded="true" />
-            <element signature="e#10067#10099#0" expanded="true" />
-            <element signature="e#10305#10338#0" expanded="true" />
-            <element signature="e#10591#10623#0" expanded="true" />
-            <element signature="e#11392#11535#0" expanded="true" />
-            <element signature="e#11534#11535#0" expanded="true" />
-            <element signature="e#11892#12060#0" expanded="true" />
-            <element signature="e#12059#12060#0" expanded="true" />
-            <element signature="e#12520#12862#0" expanded="true" />
-            <element signature="e#12772#12804#0" expanded="true" />
-            <element signature="e#12861#12862#0" expanded="true" />
-            <element signature="e#13083#13334#0" expanded="true" />
-            <element signature="e#13333#13334#0" expanded="true" />
-            <element signature="e#14022#14055#0" expanded="true" />
-            <element signature="e#14832#14857#0" expanded="true" />
-            <element signature="e#15275#15310#0" expanded="true" />
-            <element signature="e#15515#15550#0" expanded="true" />
-            <element signature="e#15757#15793#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,7 +895,7 @@
         <state vertical-scroll-proportion="0.4489796" vertical-offset="0" max-vertical-offset="792">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1113,9 +1001,69 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66972476" vertical-offset="1270" max-vertical-offset="2134">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.32380953" vertical-offset="1270" max-vertical-offset="2134">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/PostFormRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2178">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/OkHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="942" max-vertical-offset="1584">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/RequestCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1250" max-vertical-offset="2112">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2176#2177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/OkHttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1668" max-vertical-offset="5192">
+          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+          <folding>
+            <element signature="e#3582#3583#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6898396" vertical-offset="6562" max-vertical-offset="8228">
+          <caret line="345" column="37" selection-start-line="345" selection-start-column="37" selection-end-line="345" selection-end-column="37" />
+          <folding>
+            <element signature="e#2033#2417#0" expanded="true" />
+            <element signature="e#2416#2417#0" expanded="true" />
+            <element signature="e#8850#8882#0" expanded="true" />
+            <element signature="e#9162#9194#0" expanded="true" />
+            <element signature="e#10025#10057#0" expanded="true" />
+            <element signature="e#10484#10516#0" expanded="true" />
+            <element signature="e#10722#10755#0" expanded="true" />
+            <element signature="e#13016#13048#0" expanded="true" />
+            <element signature="e#14108#14141#0" expanded="true" />
+            <element signature="e#14918#14943#0" expanded="true" />
+            <element signature="e#15361#15396#0" expanded="true" />
+            <element signature="e#15601#15636#0" expanded="true" />
+            <element signature="e#15843#15879#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
