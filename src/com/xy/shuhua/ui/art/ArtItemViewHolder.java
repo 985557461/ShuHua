@@ -60,11 +60,11 @@ public class ArtItemViewHolder extends RecyclerView.ViewHolder implements View.O
         if ("艺术名家".equals(homeArtItemModel.name)) {
             ActivityArtTypeInfo.open((Activity) context);
         } else if("当代艺术品".equals(homeArtItemModel.name)){
-            ActivitySearchArtByType.open((Activity) context,"0","当代艺术品");
+            ActivityAuthorArtList.open((Activity) context, "1");
         }else if("书画作品".equals(homeArtItemModel.name)){
-            ActivitySearchArtByType.open((Activity) context,"1","书画作品");
+            ActivityAuthorArtList.open((Activity) context,"2");
         }else if("儿童书画作品".equals(homeArtItemModel.name)){
-            ActivitySearchArtByType.open((Activity) context,"2","儿童书画作品");
+            ActivityAuthorArtList.open((Activity) context,"3");
         }
     }
 }

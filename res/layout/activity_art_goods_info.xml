@@ -204,6 +204,47 @@
                         android:paddingBottom="12dp"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
+                        android:orientation="vertical">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:gravity="center_vertical"
+                                  android:layout_marginBottom="15dp">
+                        <View android:layout_width="0dp"
+                              android:layout_height="1dp"
+                              android:layout_weight="1"
+                              android:layout_marginRight="10dp"
+                              android:background="#bebebe"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="艺术简介"
+                                android:textSize="16sp"
+                                android:textColor="#333333"/>
+                        <View android:layout_width="0dp"
+                              android:layout_height="1dp"
+                              android:layout_weight="1"
+                              android:layout_marginLeft="10dp"
+                              android:background="#bebebe"/>
+                    </LinearLayout>
+                    <TextView
+                            android:id="@+id/zuopinDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:textSize="15sp"
+                            android:textColor="#333333"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent"
+                      android:layout_height="8dp"
+                      android:background="#f0f0f3"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
                         android:orientation="vertical"
                         android:id="@+id/containerView">
                     <LinearLayout android:layout_width="match_parent"
@@ -214,7 +255,7 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="艺术简介"
+                                android:text="相关作品"
                                 android:textSize="16sp"
                                 android:textColor="#333333"/>
                     </LinearLayout>

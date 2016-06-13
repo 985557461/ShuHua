@@ -17,35 +17,17 @@
                 android:layout_height="47dp"
                 android:src="@drawable/me_avatar_boy"/>
         <TextView
-                android:id="@+id/zuoPinCount"
+                android:id="@+id/desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:textColor="#d1d1d1"
-                android:text="12件作品"
+                android:text="简介"
                 android:layout_alignBottom="@id/avatarIV"
                 android:layout_toRightOf="@id/avatarIV"
-                android:layout_marginLeft="9dp"/>
-        <TextView
-                android:id="@+id/fenSiCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#d1d1d1"
-                android:layout_marginLeft="10dp"
-                android:layout_alignBottom="@id/avatarIV"
-                android:layout_toRightOf="@id/zuoPinCount"
-                android:text="24个粉丝"/>
-        <TextView
-                android:id="@+id/locationTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#d1d1d1"
-                android:layout_marginLeft="8dp"
-                android:text="北京市"
-                android:layout_alignBottom="@id/avatarIV"
-                android:layout_toRightOf="@id/fenSiCount"/>
+                android:layout_marginLeft="9dp"
+                android:singleLine="true"
+                android:ellipsize="end"/>
         <TextView
                 android:id="@+id/authorName"
                 android:layout_width="wrap_content"
@@ -54,7 +36,7 @@
                 android:textColor="#333333"
                 android:text="李东辉"
                 android:layout_toRightOf="@id/avatarIV"
-                android:layout_above="@id/zuoPinCount"
+                android:layout_above="@id/desc"
                 android:layout_marginLeft="9dp"
                 android:layout_marginBottom="6dp"/>
         <FrameLayout
@@ -63,7 +45,8 @@
                 android:layout_marginBottom="5dp"
                 android:layout_width="27dp"
                 android:layout_height="27dp"
-                android:background="@drawable/gray_stroken_trans_bg_shape">
+                android:background="@drawable/gray_stroken_trans_bg_shape"
+                android:visibility="gone">
             <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
@@ -83,24 +66,27 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
         <com.xy.shuhua.ui.view.FixWidthImageView
+                android:id="@+id/imageOne"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
                 android:background="@drawable/icon_art_cover_image"
                 android:layout_marginRight="10dp"/>
         <com.xy.shuhua.ui.view.FixWidthImageView
+                android:id="@+id/imageTwo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
                 android:background="@drawable/icon_art_cover_image"
                 android:layout_marginRight="10dp"/>
         <com.xy.shuhua.ui.view.FixWidthImageView
+                android:id="@+id/imageThree"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
                 android:background="@drawable/icon_art_cover_image"/>
     </LinearLayout>
 </LinearLayout>

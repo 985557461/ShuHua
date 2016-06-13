@@ -3,105 +3,99 @@
   <component name="AndroidConfiguredLogFilters">
     <filters>
       <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="" />
         <option name="name" value="app: com.xy.shuhua" />
         <option name="packageNamePattern" value="com.xy.shuhua" />
+        <option name="pid" value="" />
+      </filter>
+      <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="xiaoyu" />
+        <option name="name" value="xiaoyu" />
+        <option name="packageNamePattern" value="" />
+        <option name="pid" value="" />
       </filter>
     </filters>
   </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.xy.shuhua" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76e9bf8e-1ad5-4d81-b8c8-17afb03949d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/util/CompressUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Rong_IMKit_v2_4_111.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Rong_IMKit_v2_4_11__3_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
-      <change type="DELETED" beforePath="G:\workSpace\ShuHua\src\.define" afterPath="" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\art\ActivityArtGoodsInfo.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\art\ActivityArtGoodsInfo.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/AuthorModelWithZuoPin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo$ArtPagerAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo$ArtPagerAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityArtTypeInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$ArtPagerAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList$ArtPagerAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ActivityAuthorArtList.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$1.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$1.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$2.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$2.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$3.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin$3.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\user\ActivityLogin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$2.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$3.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityLogin.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/ActivityMain.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/ActivityMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityRegister.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/user/ActivityRegister.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearch.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearchResult.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/ActivitySearchResult.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\mine\ActivitySetting.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\mine\ActivitySetting.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ActivitySetting.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ActivitySetting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/right_finish/ActivitySliding.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/right_finish/ActivitySliding.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtFragment.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\art\ArtItemViewHolder.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\art\ArtItemViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtItemViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtPersonViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtPersonViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$ArtAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView$ArtAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/ArtTypeView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$1.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$2.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$3.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$4.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$ArtAdapter.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView$ArtAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/AuthorArtView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/recyclerview/AutoLoadMoreRecyclerView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/recyclerview/AutoLoadMoreRecyclerView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/CirclePageIndicator.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/CirclePageIndicator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/ConversationListActivity.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/ConversationListActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/FixWidthImageView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/FixWidthImageView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/GoodsItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/GoodsItemViewHolder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder$HomeUserItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder$HomeUserItemView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/HomeHeaderViewViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/LinePageIndicator.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/LinePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/MessageFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/MessageFragment.class" />
-      <change type="MODIFICATION" beforePath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\mine\MineFragment.class" afterPath="G:\workSpace\ShuHua\out\production\shuhua\com\xy\shuhua\ui\mine\MineFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/MyActivity.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/chat/MyActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/MineFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/MineFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/ultra_pull_refresh/PtrClassicDefaultHeader.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/ultra_pull_refresh/PtrClassicDefaultHeader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$array.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$array.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$array.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$bool.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$bool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$bool.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$bool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$bool.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$bool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$color.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$color.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$color.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$dimen.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$id.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$id.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$id.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$integer.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$integer.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$integer.class" afterPath="$PROJECT_DIR$/out/production/shuhua/io/rong/imkit/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$layout.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$string.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$style.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/main/io/rong/imkit/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/RelevantItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/art/RelevantItemView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/RongYunMessageFragment.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/message/RongYunMessageFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/round_image/RoundImageView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/round_image/RoundImageView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/SearchHistoryItemView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/search/SearchHistoryItemView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/common_background/ServerConfig.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/common_background/ServerConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/SlideShowView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/view/SlideShowView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/SpaceItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/home/SpaceItemViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewflow/TitleFlowIndicator.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewflow/TitleFlowIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/TitlePageIndicator.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/TitlePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/UnderlinePageIndicator.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/util/viewpager_indicator/UnderlinePageIndicator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinItemViewHolder.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinItemViewHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinRecyclerView.class" afterPath="$PROJECT_DIR$/out/production/shuhua/com/xy/shuhua/ui/mine/ZuoPinRecyclerView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shuhua/shuhua.apk" afterPath="$PROJECT_DIR$/out/production/shuhua/shuhua.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityMyInfo.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityMyInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityZuoPinCategory.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityZuoPinCategory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/chat/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/chat/MyActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" afterPath="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" afterPath="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_zuopin_category.xml" afterPath="$PROJECT_DIR$/res/layout/activity_zuopin_category.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shuhua.iml" afterPath="$PROJECT_DIR$/shuhua.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_author_art_list.xml" afterPath="$PROJECT_DIR$/res/layout/activity_author_art_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/art_person_item_view.xml" afterPath="$PROJECT_DIR$/res/layout/art_person_item_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/art_type_view.xml" afterPath="$PROJECT_DIR$/res/layout/art_type_view.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ShuHua.iws" />
@@ -128,42 +122,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ActivityPublishZuoPin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java">
+      <file leaf-file-name="ArtFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7964">
-              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1592" max-vertical-offset="2376">
+              <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityLogin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
+      <file leaf-file-name="ArtItemViewHolder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2156863" vertical-offset="6237" max-vertical-offset="8096">
-              <caret line="262" column="0" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="777" max-vertical-offset="1672">
+              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
               <folding>
-                <element signature="e#5350#5385#0" expanded="true" />
-                <element signature="e#5556#5585#0" expanded="true" />
-                <element signature="e#6354#6386#0" expanded="true" />
-                <element signature="e#8449#8481#0" expanded="true" />
-                <element signature="e#8761#8793#0" expanded="true" />
-                <element signature="e#9624#9656#0" expanded="true" />
-                <element signature="e#10083#10115#0" expanded="true" />
-                <element signature="e#10321#10354#0" expanded="true" />
-                <element signature="e#10607#10639#0" expanded="true" />
-                <element signature="e#12635#12667#0" expanded="true" />
-                <element signature="e#14783#14808#0" expanded="true" />
-                <element signature="e#15226#15261#0" expanded="true" />
-                <element signature="e#15466#15501#0" expanded="true" />
-                <element signature="e#15708#15744#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ActivityArtTypeInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1826">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArtTypeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="3894">
+              <caret line="195" column="63" selection-start-line="195" selection-start-column="63" selection-end-line="195" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="art_person_item_view.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/art_person_item_view.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66972476" vertical-offset="1270" max-vertical-offset="2134">
+              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="D:\keyStore\shuhua.jks" />
+    <option name="KEY_ALIAS" value="shuhua" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,7 +190,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_author_art_list.xml" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_art_goods_info.xml" />
         <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java" />
+        <option value="$PROJECT_DIR$/res/layout/art_type_view.xml" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/AuthorModelWithZuoPin.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java" />
+        <option value="$PROJECT_DIR$/res/layout/art_person_item_view.xml" />
       </list>
     </option>
   </component>
@@ -258,6 +291,102 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shuhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shuhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shuhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="art" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shuhua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common_background" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShuHua" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -280,6 +409,13 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="69P0215C05003524" />
+    <property name="DEBUGGABLE_DEVICE" value="huawei-che_tl00h-69P0215C05003524" />
+    <property name="DEBUGGABLE_PROCESS" value="com.xy.shuhua" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="last_opened_file_path" value="D:/keyStore/shuhua.jks" />
+    <property name="ExportedModule" value="shuhua" />
+    <property name="ExportedApkPath" value="C:\Users\xiaoyu\Desktop\shuhua.apk" />
+    <property name="AndroidRunProguardForReleaseBuild" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.Unnamed">
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -546,21 +682,26 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="76e9bf8e-1ad5-4d81-b8c8-17afb03949d8" name="Default" comment="" />
       <created>1465831373762</created>
       <option name="number" value="Default" />
       <updated>1465831373762</updated>
-      <workItem from="1465831374353" duration="430000" />
+      <workItem from="1465831374353" duration="9854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="430000" />
+    <option name="totallyTimeSpent" value="9854000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -575,16 +716,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26279318" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43614718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20842217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -594,6 +736,39 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26279318" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12012987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20842217" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -612,7 +787,23 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java</url>
+          <line>292</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java</url>
+          <line>298</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -636,34 +827,295 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_login.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9107144" vertical-offset="243" max-vertical-offset="3674">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_author_art_list.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5535715" vertical-offset="155" max-vertical-offset="1078">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_art_goods_info.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3392856" vertical-offset="4511" max-vertical-offset="6952">
+          <caret line="211" column="22" selection-start-line="211" selection-start-column="22" selection-end-line="211" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4920071" vertical-offset="581" max-vertical-offset="1144">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/ShareSDK-Core-2.7.2.jar!/cn/sharesdk/framework/PlatformActionListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.16" vertical-offset="0" max-vertical-offset="418">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/ShareSDK-Core-2.7.2.jar!/cn/sharesdk/framework/Platform.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34734917" vertical-offset="74" max-vertical-offset="3916">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityPublishZuoPin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7964">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5065" max-vertical-offset="7964">
+          <caret line="273" column="41" selection-start-line="273" selection-start-column="41" selection-end-line="273" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/UserInfoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5038168" vertical-offset="264" max-vertical-offset="1034">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/OkHttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3114504" vertical-offset="3096" max-vertical-offset="5214">
+          <caret line="206" column="24" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="24" />
+          <folding>
+            <element signature="e#6209#6384#0" expanded="true" />
+            <element signature="e#6383#6384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/PostFormRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2211838" vertical-offset="364" max-vertical-offset="2178">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/OkHttpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22442748" vertical-offset="909" max-vertical-offset="1584">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/util/okhttp/request/RequestCall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22442748" vertical-offset="1217" max-vertical-offset="2112">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#2114#2115#0" expanded="false" />
+            <element signature="e#2176#2177#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22442748" vertical-offset="359" max-vertical-offset="2222">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/user/ActivityLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2156863" vertical-offset="6237" max-vertical-offset="8096">
-          <caret line="262" column="0" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3248" vertical-offset="4285" max-vertical-offset="8250">
+          <caret line="239" column="72" selection-start-line="239" selection-start-column="72" selection-end-line="239" selection-end-column="72" />
           <folding>
-            <element signature="e#5350#5385#0" expanded="true" />
-            <element signature="e#5556#5585#0" expanded="true" />
-            <element signature="e#6354#6386#0" expanded="true" />
-            <element signature="e#8449#8481#0" expanded="true" />
-            <element signature="e#8761#8793#0" expanded="true" />
-            <element signature="e#9624#9656#0" expanded="true" />
-            <element signature="e#10083#10115#0" expanded="true" />
-            <element signature="e#10321#10354#0" expanded="true" />
-            <element signature="e#10607#10639#0" expanded="true" />
-            <element signature="e#12635#12667#0" expanded="true" />
-            <element signature="e#14783#14808#0" expanded="true" />
-            <element signature="e#15226#15261#0" expanded="true" />
-            <element signature="e#15466#15501#0" expanded="true" />
-            <element signature="e#15708#15744#0" expanded="true" />
+            <element signature="e#5334#5369#0" expanded="true" />
+            <element signature="e#5540#5569#0" expanded="true" />
+            <element signature="e#6338#6370#0" expanded="true" />
+            <element signature="e#8433#8465#0" expanded="true" />
+            <element signature="e#8745#8777#0" expanded="true" />
+            <element signature="e#9608#9640#0" expanded="true" />
+            <element signature="e#10067#10099#0" expanded="true" />
+            <element signature="e#10305#10338#0" expanded="true" />
+            <element signature="e#10591#10623#0" expanded="true" />
+            <element signature="e#11392#11535#0" expanded="true" />
+            <element signature="e#11534#11535#0" expanded="true" />
+            <element signature="e#11892#12060#0" expanded="true" />
+            <element signature="e#12059#12060#0" expanded="true" />
+            <element signature="e#12520#12862#0" expanded="true" />
+            <element signature="e#12772#12804#0" expanded="true" />
+            <element signature="e#12861#12862#0" expanded="true" />
+            <element signature="e#13083#13334#0" expanded="true" />
+            <element signature="e#13333#13334#0" expanded="true" />
+            <element signature="e#14022#14055#0" expanded="true" />
+            <element signature="e#14832#14857#0" expanded="true" />
+            <element signature="e#15275#15310#0" expanded="true" />
+            <element signature="e#15515#15550#0" expanded="true" />
+            <element signature="e#15757#15793#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsItemModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21968617" vertical-offset="0" max-vertical-offset="814">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/ArtGoodsInfoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12553495" vertical-offset="0" max-vertical-offset="1452">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/common_background/ServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1122">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/model/AuthorModelWithZuoPin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4489796" vertical-offset="0" max-vertical-offset="792">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/art_type_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09065934" vertical-offset="0" max-vertical-offset="728">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/author_art_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.714286" vertical-offset="0" max-vertical-offset="638">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtPersonViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="3432">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityAuthorArtList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1848">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10208">
+          <caret line="86" column="53" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/AuthorArtView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4004">
+          <caret line="191" column="32" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1592" max-vertical-offset="2376">
+          <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/GoodsItemViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2853437" vertical-offset="594" max-vertical-offset="1760">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtItemViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="777" max-vertical-offset="1672">
+          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtTypeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1826">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtTypeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="3894">
+          <caret line="195" column="63" selection-start-line="195" selection-start-column="63" selection-end-line="195" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/art_person_item_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66972476" vertical-offset="1270" max-vertical-offset="2134">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

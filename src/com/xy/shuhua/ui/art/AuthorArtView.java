@@ -46,15 +46,17 @@ public class AuthorArtView extends FrameLayout {
     private static final int limit = 20;
     private int start_num = 0;
     private int status = 0;
+    private String category;
 
     public AuthorArtView(Context context) {
         super(context);
         init(context);
     }
 
-    public AuthorArtView(Context context,int status) {
+    public AuthorArtView(Context context,int status,String category) {
         super(context);
         this.status = status;
+        this.category = category;
         init(context);
     }
 
@@ -108,7 +110,7 @@ public class AuthorArtView extends FrameLayout {
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
         params.put("status", status + "");
-        params.put("category", "0");
+        params.put("category", category);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS, params);
         OkHttpUtils.get()
                 .params(params)
@@ -150,7 +152,7 @@ public class AuthorArtView extends FrameLayout {
         params.put("limit", limit + "");
         params.put("start_num", start_num + "");
         params.put("status", status + "");
-        params.put("category", "0");
+        params.put("category", category);
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS)

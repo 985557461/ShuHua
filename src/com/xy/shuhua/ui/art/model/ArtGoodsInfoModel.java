@@ -21,6 +21,8 @@ public class ArtGoodsInfoModel {
     public List<ArtGoodsItemModel> lists;
 
     public class Art{
+        @SerializedName("descri")
+        public String descri;
         @SerializedName("artsize")
         public String artsize;//³ß´ç
         @SerializedName("praisenum")

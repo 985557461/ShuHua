@@ -46,9 +46,8 @@ public class ActivityArtTypeInfo extends ActivityBaseNoSliding implements View.O
 
     @Override
     protected void initViews() {
-        for(int i=0;i<titles.length;i++){
-            views.add(new ArtTypeView(this));
-        }
+        views.add(new ArtTypeView(this,"1"));
+        views.add(new ArtTypeView(this,"2"));
 
         artPagerAdapter = new ArtPagerAdapter();
         viewPager.setAdapter(artPagerAdapter);

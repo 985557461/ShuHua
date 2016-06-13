@@ -18,20 +18,25 @@ import java.util.List;
  * Created by xiaoyu on 2016/4/2.
  */
 public class ActivityAuthorArtList extends ActivityBaseNoSliding{
+    private View backView;
     private TabPageIndicator indicator;
     private ViewPager viewPager;
     private ArtPagerAdapter artPagerAdapter;
     private List<AuthorArtView> views = new ArrayList<>();
 
     private String[] titles = new String[]{"推荐","最热","最新"};
+    public static final String kCategory = "category";//当代-1；书画-2；儿童画-3
+    private String category;
 
-    public static void open(Activity activity){
+    public static void open(Activity activity,String category){
         Intent intent = new Intent(activity,ActivityAuthorArtList.class);
+        intent.putExtra(kCategory,category);
         activity.startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        category = getIntent().getStringExtra(kCategory);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_author_art_list);
     }
@@ -40,12 +45,14 @@ public class ActivityAuthorArtList extends ActivityBaseNoSliding{
     protected void getViews() {
         indicator = (TabPageIndicator) findViewById(R.id.indicator);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        backView = findViewById(R.id.backView);
     }
 
     @Override
     protected void initViews() {
         for(int i=0;i<titles.length;i++){
-            views.add(new AuthorArtView(this,i));
+            views.add(new AuthorArtView(this,i,category));
         }
 
         artPagerAdapter = new ArtPagerAdapter();
@@ -55,7 +62,12 @@ public class ActivityAuthorArtList extends ActivityBaseNoSliding{
 
     @Override
     protected void setListeners() {
-
+        backView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private class ArtPagerAdapter extends PagerAdapter {

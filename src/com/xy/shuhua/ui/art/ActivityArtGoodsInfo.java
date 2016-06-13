@@ -63,6 +63,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private View chatView;
     private TextView time;
     private TextView bianhao;
+    private TextView zuopinDesc;
     private View containerView;
     private LinearLayout zuopinContainer;
 
@@ -116,6 +117,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         chatView = findViewById(R.id.chatView);
         time = (TextView) findViewById(R.id.time);
         bianhao = (TextView) findViewById(R.id.bianhao);
+        zuopinDesc = (TextView) findViewById(R.id.zuopinDesc);
         containerView = findViewById(R.id.containerView);
         zuopinContainer = (LinearLayout) findViewById(R.id.zuopinContainer);
 
@@ -203,6 +205,11 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 guiGe.setText("尺寸: " + artGoodsInfoModel.art.artsize);
             }else{
                 guiGe.setText("尺寸: 默认");
+            }
+            if (!TextUtils.isEmpty(artGoodsInfoModel.art.descri)) {
+                zuopinDesc.setText(artGoodsInfoModel.art.descri);
+            }else{
+                zuopinDesc.setText("该作品目前还没有简介");
             }
             if (!TextUtils.isEmpty(artGoodsInfoModel.art.price)) {
                 price.setText(artGoodsInfoModel.art.price + "元");

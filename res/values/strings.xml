@@ -43,4 +43,5 @@
     <string name="shouquan_calcel">授权取消</string>
     <string name="login">登陆</string>
     <string name="login_success">登陆成功</string>
+    <string name="login_failedd">登陆失败</string>
 </resources>

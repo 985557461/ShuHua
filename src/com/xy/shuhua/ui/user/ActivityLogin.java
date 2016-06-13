@@ -51,7 +51,6 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private View qqLoginView;
     private View sinaLoginView;
 
-    //��������¼
     private static final int MSG_USERID_FOUND = 1;
     private static final int MSG_LOGIN = 2;
     private static final int MSG_AUTH_CANCEL = 3;
@@ -285,27 +284,31 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         System.out.println(res);
         System.out.println("------User Name ---------" + platform.getDb().getUserName());
         System.out.println("------User ID ---------" + platform.getDb().getUserId());
-        String avatar = platform.getDb().getUserIcon();
-        String name = platform.getDb().getUserName();
-        String userId = platform.getDb().getUserId();
-        String token = platform.getDb().getToken();
-        thirdLogin(avatar, name, userId, token);
+        final String avatar = platform.getDb().getUserIcon();
+        final String name = platform.getDb().getUserName();
+        final String token = platform.getDb().getToken();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                thirdLogin(avatar, name, token);
+            }
+        });
     }
 
     //第三方登陆接口
-    private void thirdLogin(String avatar, String name, String userid, String token) {
-        Account account = CustomApplication.getInstance().getAccount();
-        account.avatar = avatar;
-        account.userName = name;
-        account.userId = userid;
-        account.saveMeInfoToPreference();
+    private void thirdLogin(String avatar, String name, String token) {
         Map<String, String> params = new HashMap<>();
         params.put("userType", "0");
         params.put("nickName", name);
         params.put("imagepath", avatar);
         params.put("ucode", token);
         params.put("flag", "1");
-        DialogUtil.getInstance().showLoading(this);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                DialogUtil.getInstance().showLoading(ActivityLogin.this);
+            }
+        });
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.THIRD_LOGIN, params);
         OkHttpUtils.post()
                 .params(params)
@@ -315,31 +318,35 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                        ToastUtil.makeShortText(getString(R.string.login_failed));
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
+                                ToastUtil.makeShortText(getString(R.string.login_failed));
+                            }
+                        });
                     }
 
                     @Override
                     public void onResponse(String response) {
-                        Log.d("xiaoyu","response:"+response);
-                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                        getChatToken();
-//                        UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
-//                        if ("1".equals(userInfoModel.result)) {
-//                            Account account = CustomApplication.getInstance().getAccount();
-//                            account.password = pwdStr;
-//                            account.phoneNumber = phoneStr;
-//                            account.userId = userInfoModel.user_id;
-//                            account.userName = userInfoModel.nickname;
-//                            account.address = userInfoModel.address;
-//                            account.age = userInfoModel.age;
-//                            account.introduce = userInfoModel.introduce;
-//                            account.userType = userInfoModel.usertype;
-//                            account.saveMeInfoToPreference();
-//                            getChatToken();
-//                        } else {
-//                            ToastUtil.makeShortText(userInfoModel.message);
-//                        }
+                        Log.d("xiaoyu", "response:" + response);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
+                            }
+                        });
+                        UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
+                        if (userInfoModel != null && "1".equals(userInfoModel.result)) {
+                            Account account = CustomApplication.getInstance().getAccount();
+                            account.userId = userInfoModel.userid;
+                            account.userName = userInfoModel.nickname;
+                            account.avatar = userInfoModel.imageurl;
+                            account.saveMeInfoToPreference();
+                            getChatToken();
+                        } else {
+                            ToastUtil.makeShortText(getString(R.string.login_failedd));
+                        }
                     }
                 });
     }
