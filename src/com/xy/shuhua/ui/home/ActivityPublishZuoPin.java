@@ -22,10 +22,7 @@ import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.photo_choose.PhotoSelectAdapter;
 import com.xy.shuhua.ui.home.photo_choose.PhotoSelectView;
 import com.xy.shuhua.ui.home.photo_choose.SquarePhotoView;
-import com.xy.shuhua.util.DialogUtil;
-import com.xy.shuhua.util.DisplayUtil;
-import com.xy.shuhua.util.GsonUtil;
-import com.xy.shuhua.util.ToastUtil;
+import com.xy.shuhua.util.*;
 import com.xy.shuhua.util.okhttp.OkHttpUtils;
 import com.xy.shuhua.util.okhttp.callback.StringCallback;
 import okhttp3.Call;
@@ -260,6 +257,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
             }
         }
         String nameStr = nameTv.getText().toString();
+        String descStr = descTv.getText().toString();
         String priceStr = priceTv.getText().toString();
         String leibieStr = leiBieTv.getText().toString();
         String caizhiStr = caiZhiTv.getText().toString();
@@ -267,9 +265,20 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
         Map<String, String> params = new HashMap<>();
         params.put("artname", nameStr);
         params.put("price", priceStr);
-        params.put("category", leibieStr);
+        if("当代".equals(leibieStr)){
+            params.put("category", "1");
+        }else if("书法".equals(leibieStr)) {
+            params.put("category", "2");
+        }else if("国画".equals(leibieStr)){
+            params.put("category", "2");
+        }else if("油画".equals(leibieStr)){
+            params.put("category", "1");
+        }else if("儿童画".equals(leibieStr)){
+            params.put("category", "3");
+        }
         params.put("caizhi", caizhiStr);
         params.put("artsize", chicunStr);
+        params.put("desc",descStr);
         params.put("imageurl", stringBuilder.toString());
         Account account = CustomApplication.getInstance().getAccount();
         params.put("userid", account.userId);
@@ -327,6 +336,7 @@ public class ActivityPublishZuoPin extends ActivityBaseNoSliding implements View
             }
         } else if (requestCode == Crop_Photo && resultCode == RESULT_OK) {
             avatarPath = data.getStringExtra(ActivityQuadrilateralCrop.kSavePath);
+            avatarPath = CompressUtil.getCompressBmp(avatarPath);
             pathsList.add(avatarPath);
             photoSelectView.setAdapter(adapter);
         }

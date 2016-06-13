@@ -63,6 +63,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
     private View chatView;
     private TextView time;
     private TextView bianhao;
+    private View containerView;
     private LinearLayout zuopinContainer;
 
     //悬浮框相关
@@ -115,6 +116,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         chatView = findViewById(R.id.chatView);
         time = (TextView) findViewById(R.id.time);
         bianhao = (TextView) findViewById(R.id.bianhao);
+        containerView = findViewById(R.id.containerView);
         zuopinContainer = (LinearLayout) findViewById(R.id.zuopinContainer);
 
         backViewTwo = findViewById(R.id.backViewTwo);
@@ -236,33 +238,33 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
                 authorName.setText("游客");
             }
         }
-//        if (artGoodsInfoModel.lists == null || artGoodsInfoModel.lists.size() == 0) {
-//            otherZuoPinView.setVisibility(View.GONE);
-//        } else {
-//            otherZuoPinView.setVisibility(View.VISIBLE);
-//            zuopinContainer.removeAllViews();
-//            int count = artGoodsInfoModel.lists.size();
-//            int row = count / 2 + (count % 2 == 0 ? 0 : 1);
-//            for (int i = 0; i < row; i++) {
-//                RelevantRowView rowView = new RelevantRowView(this);
-//                int indexOne = i * 2;
-//                int indexTwo = i * 2 + 1;
-//                ArtGoodsItemModel modelOne = null;
-//                ArtGoodsItemModel modelTwo = null;
-//                if (indexOne < count) {
-//                    modelOne = artGoodsInfoModel.lists.get(indexOne);
-//                }
-//                if (indexTwo < count) {
-//                    modelTwo = artGoodsInfoModel.lists.get(indexTwo);
-//                }
-//                rowView.setData(modelOne, modelTwo);
-//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                if (i != row - 1) {
-//                    params.bottomMargin = DisplayUtil.dip2px(this, 12);
-//                }
-//                zuopinContainer.addView(rowView, params);
-//            }
-//        }
+        if (artGoodsInfoModel.lists == null || artGoodsInfoModel.lists.size() == 0) {
+            containerView.setVisibility(View.GONE);
+        } else {
+            containerView.setVisibility(View.VISIBLE);
+            zuopinContainer.removeAllViews();
+            int count = artGoodsInfoModel.lists.size();
+            int row = count / 2 + (count % 2 == 0 ? 0 : 1);
+            for (int i = 0; i < row; i++) {
+                RelevantRowView rowView = new RelevantRowView(this);
+                int indexOne = i * 2;
+                int indexTwo = i * 2 + 1;
+                ArtGoodsItemModel modelOne = null;
+                ArtGoodsItemModel modelTwo = null;
+                if (indexOne < count) {
+                    modelOne = artGoodsInfoModel.lists.get(indexOne);
+                }
+                if (indexTwo < count) {
+                    modelTwo = artGoodsInfoModel.lists.get(indexTwo);
+                }
+                rowView.setData(modelOne, modelTwo);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                if (i != row - 1) {
+                    params.bottomMargin = DisplayUtil.dip2px(this, 12);
+                }
+                zuopinContainer.addView(rowView, params);
+            }
+        }
 
         //根据id查询用户具体信息
         if (TextUtils.isEmpty(userName)) {

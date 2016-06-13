@@ -35,4 +35,12 @@
     <string name="baipingheng">白平衡</string>
     <string name="ruihua">锐化</string>
     <string name="liangdu">亮度</string>
+    <string name="input_phone_num">请输入电话号码</string>
+    <string name="input_pwd">请输入密码</string>
+    <string name="login_failed">登陆失败</string>
+    <string name="shouquan_success">授权成功</string>
+    <string name="shouquan_failed">授权失败</string>
+    <string name="shouquan_calcel">授权取消</string>
+    <string name="login">登陆</string>
+    <string name="login_success">登陆成功</string>
 </resources>
