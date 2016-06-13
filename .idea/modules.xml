@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ShuHua.iml" filepath="$PROJECT_DIR$/ShuHua.iml" />
       <module fileurl="file://$PROJECT_DIR$/../imkit/src/main/main.iml" filepath="$PROJECT_DIR$/../imkit/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shuhua.iml" filepath="$PROJECT_DIR$/shuhua.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../imkit/src/main/main.iml" filepath="$PROJECT_DIR$/../imkit/src/main/main.iml" />
     </modules>
   </component>
 </project>

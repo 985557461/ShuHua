@@ -18,6 +18,7 @@ import com.xy.shuhua.ui.CustomApplication;
 import com.xy.shuhua.ui.PhotoChooser.PhotoPickerActivity;
 import com.xy.shuhua.ui.common.ActivityBaseNoSliding;
 import com.xy.shuhua.ui.home.ActivityInputContent;
+import com.xy.shuhua.util.CompressUtil;
 import com.xy.shuhua.util.DialogUtil;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
@@ -91,7 +92,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
     @Override
     protected void initViews() {
         if (!TextUtils.isEmpty(account.avatar)) {
-            Glide.with(this).load(account.avatar).error(R.drawable.me_avatar_boy).into(avatarImage);
+            Glide.with(this).load(account.avatar).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(avatarImage);
         } else {
             avatarImage.setImageResource(R.drawable.me_avatar_boy);
         }
@@ -267,6 +268,7 @@ public class ActivityMyInfo extends ActivityBaseNoSliding implements View.OnClic
             }
         }else if(requestCode == Crop_Photo && resultCode == RESULT_OK){
             avatarPath = data.getStringExtra(ActivityQuadrilateralCrop.kSavePath);
+            avatarPath = CompressUtil.getCompressBmp(avatarPath);
             Glide.with(this).load(new File(avatarPath)).placeholder(R.drawable.me_avatar_boy).error(R.drawable.me_avatar_boy).into(avatarImage);
         }
     }

@@ -50,19 +50,14 @@
             android:id="@+id/dangdaiView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    <!--书画-->
-    <com.xy.shuhua.ui.home.CategoryCheckView
-            android:id="@+id/shuHuaView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
     <!--书法-->
     <com.xy.shuhua.ui.home.CategoryCheckView
             android:id="@+id/shufaView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-    <!--绘画-->
+    <!--国画-->
     <com.xy.shuhua.ui.home.CategoryCheckView
-            android:id="@+id/huihuaView"
+            android:id="@+id/guohuaView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <!--油画-->

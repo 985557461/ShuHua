@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="GBK">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="ISO-8859-1">
     <file url="file://$PROJECT_DIR$/libs/android-support-v4.jar" charset="GBK" />
     <file url="file://$PROJECT_DIR$/libs/android-support-v7-recyclerview.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libs/glide-3.6.1.jar" charset="GBK" />
@@ -110,9 +110,12 @@
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/right_finish/SlidingLayout.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/ActivityMain.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/CustomApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ActivityArtGoodsInfo.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/art/ArtFragment.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/common/ActivityBaseNoSliding.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/common/ActivityBaseWithSliding.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityAuthorList.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/ActivityZuoPinCategory.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/GoodsItemViewHolder.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeBannerViewPager.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/xy/shuhua/ui/home/HomeFragment.java" charset="GBK" />

@@ -14,9 +14,8 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
     private View backView;
     private View rightView;
     private CategoryCheckView dangdaiView;
-    private CategoryCheckView shuHuaView;
     private CategoryCheckView shufaView;
-    private CategoryCheckView huihuaView;
+    private CategoryCheckView guohuaView;
     private CategoryCheckView youhuaView;
     private CategoryCheckView ertonghuaView;
 
@@ -41,9 +40,8 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
         backView = findViewById(R.id.backView);
         rightView = findViewById(R.id.rightView);
         dangdaiView = (CategoryCheckView) findViewById(R.id.dangdaiView);
-        shuHuaView = (CategoryCheckView) findViewById(R.id.shuHuaView);
         shufaView = (CategoryCheckView) findViewById(R.id.shufaView);
-        huihuaView = (CategoryCheckView) findViewById(R.id.huihuaView);
+        guohuaView = (CategoryCheckView) findViewById(R.id.guohuaView);
         youhuaView = (CategoryCheckView) findViewById(R.id.youhuaView);
         ertonghuaView = (CategoryCheckView) findViewById(R.id.ertonghuaView);
     }
@@ -51,20 +49,17 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
     @Override
     protected void initViews() {
         dangdaiView.name.setText("当代");
-        shuHuaView.name.setText("书画");
         shufaView.name.setText("书法");
-        huihuaView.name.setText("绘画");
+        guohuaView.name.setText("国画");
         youhuaView.name.setText("油画");
         ertonghuaView.name.setText("儿童画");
 
         if("当代".equals(content)){
             dangdaiView.setCheck(true);
-        }else if("书画".equals(content)){
-            shuHuaView.setCheck(true);
         }else if("书法".equals(content)){
             shufaView.setCheck(true);
-        }else if("绘画".equals(content)){
-            huihuaView.setCheck(true);
+        }else if("国画".equals(content)){
+            guohuaView.setCheck(true);
         }else if("油画".equals(content)){
             youhuaView.setCheck(true);
         }else if("儿童画".equals(content)){
@@ -77,9 +72,8 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
         backView.setOnClickListener(this);
         rightView.setOnClickListener(this);
         dangdaiView.setOnClickListener(this);
-        shuHuaView.setOnClickListener(this);
         shufaView.setOnClickListener(this);
-        huihuaView.setOnClickListener(this);
+        guohuaView.setOnClickListener(this);
         youhuaView.setOnClickListener(this);
         ertonghuaView.setOnClickListener(this);
     }
@@ -95,49 +89,36 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
                 break;
             case R.id.dangdaiView:
                 dangdaiView.setCheck(true);
-                shuHuaView.setCheck(false);
                 shufaView.setCheck(false);
-                huihuaView.setCheck(false);
-                youhuaView.setCheck(false);
-                ertonghuaView.setCheck(false);
-                break;
-            case R.id.shuHuaView:
-                dangdaiView.setCheck(false);
-                shuHuaView.setCheck(true);
-                shufaView.setCheck(false);
-                huihuaView.setCheck(false);
+                guohuaView.setCheck(false);
                 youhuaView.setCheck(false);
                 ertonghuaView.setCheck(false);
                 break;
             case R.id.shufaView:
                 dangdaiView.setCheck(false);
-                shuHuaView.setCheck(false);
                 shufaView.setCheck(true);
-                huihuaView.setCheck(false);
+                guohuaView.setCheck(false);
                 youhuaView.setCheck(false);
                 ertonghuaView.setCheck(false);
                 break;
-            case R.id.huihuaView:
+            case R.id.guohuaView:
                 dangdaiView.setCheck(false);
-                shuHuaView.setCheck(false);
                 shufaView.setCheck(false);
-                huihuaView.setCheck(true);
+                guohuaView.setCheck(true);
                 youhuaView.setCheck(false);
                 ertonghuaView.setCheck(false);
                 break;
             case R.id.youhuaView:
                 dangdaiView.setCheck(false);
-                shuHuaView.setCheck(false);
                 shufaView.setCheck(false);
-                huihuaView.setCheck(false);
+                guohuaView.setCheck(false);
                 youhuaView.setCheck(true);
                 ertonghuaView.setCheck(false);
                 break;
             case R.id.ertonghuaView:
                 dangdaiView.setCheck(false);
-                shuHuaView.setCheck(false);
                 shufaView.setCheck(false);
-                huihuaView.setCheck(false);
+                guohuaView.setCheck(false);
                 youhuaView.setCheck(false);
                 ertonghuaView.setCheck(true);
                 break;
@@ -149,14 +130,11 @@ public class ActivityZuoPinCategory extends ActivityBaseNoSliding implements Vie
         if(dangdaiView.isChecked()){
             categoryStr = "当代";
         }
-        if(shuHuaView.isChecked()){
-            categoryStr = "书画";
-        }
         if(shufaView.isChecked()){
             categoryStr = "书法";
         }
-        if(huihuaView.isChecked()){
-            categoryStr = "绘画";
+        if(guohuaView.isChecked()){
+            categoryStr = "国画";
         }
         if(youhuaView.isChecked()){
             categoryStr = "油画";

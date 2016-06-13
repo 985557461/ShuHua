@@ -40,7 +40,7 @@ import java.util.Map;
 /**
  * Created by xiaoyu on 2016/3/15.
  */
-public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClickListener,PlatformActionListener,Handler.Callback {
+public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClickListener, PlatformActionListener, Handler.Callback {
     private View backView;
     private EditText phoneNumber;
     private EditText password;
@@ -51,11 +51,11 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private View qqLoginView;
     private View sinaLoginView;
 
-    //µ⁄»˝∑Ωµ«¬º
+    //ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ¬º
     private static final int MSG_USERID_FOUND = 1;
     private static final int MSG_LOGIN = 2;
     private static final int MSG_AUTH_CANCEL = 3;
-    private static final int MSG_AUTH_ERROR= 4;
+    private static final int MSG_AUTH_ERROR = 4;
     private static final int MSG_AUTH_COMPLETE = 5;
 
     public static void open(Activity activity) {
@@ -139,7 +139,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     }
 
     private void authorize(Platform plat) {
-        if(plat.isValid()) {
+        if (plat.isValid()) {
             String userId = plat.getDb().getUserId();
             if (!TextUtils.isEmpty(userId)) {
                 UIHandler.sendEmptyMessage(MSG_USERID_FOUND, this);
@@ -162,12 +162,12 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private void tryToLogin() {
         final String phoneStr = phoneNumber.getText().toString();
         if (TextUtils.isEmpty(phoneStr)) {
-            ToastUtil.makeShortText("«Î ‰»ÎµÁª∞∫≈¬Î");
+            ToastUtil.makeShortText(getString(R.string.input_phone_num));
             return;
         }
         final String pwdStr = password.getText().toString();
         if (TextUtils.isEmpty(pwdStr)) {
-            ToastUtil.makeShortText(" ‰»Î√‹¬Î");
+            ToastUtil.makeShortText(getString(R.string.input_pwd));
             return;
         }
         Map<String, String> params = new HashMap<>();
@@ -184,7 +184,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                     @Override
                     public void onError(Call call, Exception e) {
                         DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                        ToastUtil.makeShortText("µ«¬º ß∞‹");
+                        ToastUtil.makeShortText("failed");
                     }
 
                     @Override
@@ -225,14 +225,14 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        ToastUtil.makeShortText("µ«¬º ß∞‹");
+                        ToastUtil.makeShortText("failed");
                     }
 
                     @Override
                     public void onResponse(String response) {
                         Log.d("xiaoyu", response);
                         if (TextUtils.isEmpty(response)) {
-                            ToastUtil.makeShortText("µ«¬º ß∞‹");
+                            ToastUtil.makeShortText("failed");
                             return;
                         }
                         response = response.replaceAll("\\\\", "");
@@ -245,7 +245,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             account.saveMeInfoToPreference();
                             connect(tokenModel.token);
                         } else {
-                            ToastUtil.makeShortText("µ«¬º ß∞‹");
+                            ToastUtil.makeShortText("failed");
                         }
                     }
                 });
@@ -257,20 +257,20 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
             RongIM.connect(token, new RongIMClient.ConnectCallback() {
                 @Override
                 public void onTokenIncorrect() {
-                    ToastUtil.makeShortText("µ«¬º ß∞‹");
+                    ToastUtil.makeShortText("failed");
                     Log.d("xiaoyu", "--onTokenIncorrect");
                 }
 
                 @Override
                 public void onSuccess(String userid) {
-                    ToastUtil.makeShortText("µ«¬Ω≥…π¶");
+                    ToastUtil.makeShortText("success");
                     ActivityMain.open(ActivityLogin.this);
                     finish();
                 }
 
                 @Override
                 public void onError(RongIMClient.ErrorCode errorCode) {
-                    ToastUtil.makeShortText("µ«¬º ß∞‹");
+                    ToastUtil.makeShortText("ÔøΩÔøΩ¬º ßÔøΩÔøΩ");
                 }
             });
         }
@@ -285,6 +285,63 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
         System.out.println(res);
         System.out.println("------User Name ---------" + platform.getDb().getUserName());
         System.out.println("------User ID ---------" + platform.getDb().getUserId());
+        String avatar = platform.getDb().getUserIcon();
+        String name = platform.getDb().getUserName();
+        String userId = platform.getDb().getUserId();
+        String token = platform.getDb().getToken();
+        thirdLogin(avatar, name, userId, token);
+    }
+
+    //Á¨¨‰∏âÊñπÁôªÈôÜÊé•Âè£
+    private void thirdLogin(String avatar, String name, String userid, String token) {
+        Account account = CustomApplication.getInstance().getAccount();
+        account.avatar = avatar;
+        account.userName = name;
+        account.userId = userid;
+        account.saveMeInfoToPreference();
+        Map<String, String> params = new HashMap<>();
+        params.put("userType", "0");
+        params.put("nickName", name);
+        params.put("imagepath", avatar);
+        params.put("ucode", token);
+        params.put("flag", "1");
+        DialogUtil.getInstance().showLoading(this);
+        PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.THIRD_LOGIN, params);
+        OkHttpUtils.post()
+                .params(params)
+                .url(ServerConfig.BASE_URL + ServerConfig.THIRD_LOGIN)
+                .tag(this)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e) {
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
+                        ToastUtil.makeShortText("failed");
+                    }
+
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("xiaoyu","response:"+response);
+                        DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
+                        getChatToken();
+//                        UserInfoModel userInfoModel = GsonUtil.transModel(response, UserInfoModel.class);
+//                        if ("1".equals(userInfoModel.result)) {
+//                            Account account = CustomApplication.getInstance().getAccount();
+//                            account.password = pwdStr;
+//                            account.phoneNumber = phoneStr;
+//                            account.userId = userInfoModel.user_id;
+//                            account.userName = userInfoModel.nickname;
+//                            account.address = userInfoModel.address;
+//                            account.age = userInfoModel.age;
+//                            account.introduce = userInfoModel.introduce;
+//                            account.userType = userInfoModel.usertype;
+//                            account.saveMeInfoToPreference();
+//                            getChatToken();
+//                        } else {
+//                            ToastUtil.makeShortText(userInfoModel.message);
+//                        }
+                    }
+                });
     }
 
     @Override
@@ -304,13 +361,13 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
 
     @Override
     public boolean handleMessage(Message message) {
-        switch(message.what) {
+        switch (message.what) {
             case MSG_USERID_FOUND: {
-                Toast.makeText(this, "”√ªß–≈œ¢“—¥Ê‘⁄£¨’˝‘⁄Ã¯◊™µ«¬º≤Ÿ◊˜", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ÔøΩ√ªÔøΩÔøΩÔøΩœ¢ÔøΩ—¥ÔøΩÔøΩ⁄£ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ◊™ÔøΩÔøΩ¬ºÔøΩÔøΩÔøΩÔøΩ", Toast.LENGTH_SHORT).show();
             }
             break;
             case MSG_LOGIN: {
-                Toast.makeText(this, "µ«¬º÷–", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ÔøΩÔøΩ¬ºÔøΩÔøΩ", Toast.LENGTH_SHORT).show();
                 System.out.println("---------------");
 
 //				Builder builder = new Builder(this);
@@ -321,17 +378,17 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
             }
             break;
             case MSG_AUTH_CANCEL: {
-                Toast.makeText(this, " ⁄»®»°œ˚", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ÔøΩÔøΩ»®»°ÔøΩÔøΩ", Toast.LENGTH_SHORT).show();
                 System.out.println("-------MSG_AUTH_CANCEL--------");
             }
             break;
             case MSG_AUTH_ERROR: {
-                Toast.makeText(this, " ⁄»® ß∞‹", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ÔøΩÔøΩ»® ßÔøΩÔøΩ", Toast.LENGTH_SHORT).show();
                 System.out.println("-------MSG_AUTH_ERROR--------");
             }
             break;
             case MSG_AUTH_COMPLETE: {
-                Toast.makeText(this, " ⁄»®≥…π¶", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "ÔøΩÔøΩ»®ÔøΩ…πÔøΩ", Toast.LENGTH_SHORT).show();
                 System.out.println("--------MSG_AUTH_COMPLETE-------");
             }
             break;
