@@ -361,19 +361,21 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
         oks.setTitle("某人艺术");
         // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
-        oks.setTitleUrl("http://sharesdk.cn");
+        oks.setTitleUrl("http://www.wandoujia.com/apps/com.xy.shuhua");//豌豆荚的下载地址
         // text是分享文本，所有平台都需要这个字段
-        oks.setText("默认艺术，专注作家的平台");
+        oks.setText("某人艺术，专注书画作家的平台");
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+//        oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+        //下面这句话必须加上，不然微信分享就是一句话，不是一个连接
+        oks.setImageUrl("http://img.wdjimg.com/mms/icon/v1/e/b3/1c0177a447f3db4d13ee8b3fa2351b3e_256_256.png");//豌豆荚上面的app图标
         // url仅在微信（包括好友和朋友圈）中使用
-        oks.setUrl("http://sharesdk.cn");
+        oks.setUrl("http://www.wandoujia.com/apps/com.xy.shuhua");
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用
 //        oks.setComment("我是测试评论文本");
         // site是分享此内容的网站名称，仅在QQ空间使用
         oks.setSite(getString(R.string.app_name));
         // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl("http://sharesdk.cn");
+        oks.setSiteUrl("http://www.wandoujia.com/apps/com.xy.shuhua");
 
         // 启动分享GUI
         oks.show(this);
