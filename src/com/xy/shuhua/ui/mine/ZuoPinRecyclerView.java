@@ -114,7 +114,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
         start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("userid", userId);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN, params);
         OkHttpUtils.get()
@@ -146,6 +146,8 @@ public class ZuoPinRecyclerView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });
@@ -155,7 +157,7 @@ public class ZuoPinRecyclerView extends FrameLayout {
         start_num++;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("userid", userId);
         OkHttpUtils.get()
                 .params(params)
@@ -187,6 +189,8 @@ public class ZuoPinRecyclerView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });

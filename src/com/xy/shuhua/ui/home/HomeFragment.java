@@ -62,20 +62,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if(kRefresh.equals(action)){
+            if (kRefresh.equals(action)) {
                 refreshData();
             }
         }
     };
 
-    private void register(){
+    private void register() {
         LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
         IntentFilter intentFilter = new IntentFilter(kRefresh);
-        manager.registerReceiver(receiver,intentFilter);
+        manager.registerReceiver(receiver, intentFilter);
     }
 
-    private void unRegister(){
-        if(receiver != null){
+    private void unRegister() {
+        if (receiver != null) {
             LocalBroadcastManager manager = LocalBroadcastManager.getInstance(CustomApplication.getInstance());
             manager.unregisterReceiver(receiver);
         }
@@ -140,7 +140,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.HOME_QUERY_ART)
@@ -168,11 +168,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             artGoodsModels.addAll(homeInfoModel.artlist);
                             Log.d("xiaoyu", "size--:" + artGoodsModels.size());
                             goodsAdapter.notifyDataSetChanged();
-                            if (homeInfoModel.artlist.size() < 20) {//没有更多了
+                            if (homeInfoModel.artlist.size() < limit) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        } else {
+                            recyclerView.hasMore(false);
                         }
                     }
                 });
@@ -182,7 +184,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         start_num++;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         OkHttpUtils.get()
                 .params(params)
                 .url(ServerConfig.BASE_URL + ServerConfig.HOME_QUERY_ART)
@@ -208,11 +210,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         if (homeInfoModel.artlist != null) {
                             artGoodsModels.addAll(homeInfoModel.artlist);
                             goodsAdapter.notifyDataSetChanged();
-                            if (homeInfoModel.artlist.size() < 20) {//没有更多了
+                            if (homeInfoModel.artlist.size() < limit) {//没有更多了
                                 recyclerView.hasMore(false);
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        } else {
+                            recyclerView.hasMore(false);
                         }
                     }
                 });

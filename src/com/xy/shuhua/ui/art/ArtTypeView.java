@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.xy.shuhua.R;
 import com.xy.shuhua.common_background.ServerConfig;
-import com.xy.shuhua.ui.art.model.ArtGoodsItemModel;
-import com.xy.shuhua.ui.art.model.ArtGoodsListModel;
 import com.xy.shuhua.ui.art.model.AuthorModelWithZuoPin;
 import com.xy.shuhua.util.GsonUtil;
 import com.xy.shuhua.util.ToastUtil;
@@ -105,7 +103,7 @@ public class ArtTypeView extends FrameLayout {
         start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("categary", category);
         OkHttpUtils.get()
                 .params(params)
@@ -136,6 +134,8 @@ public class ArtTypeView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });
@@ -145,7 +145,7 @@ public class ArtTypeView extends FrameLayout {
         start_num++;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("categary", category);
         OkHttpUtils.get()
                 .params(params)
@@ -177,6 +177,8 @@ public class ArtTypeView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });

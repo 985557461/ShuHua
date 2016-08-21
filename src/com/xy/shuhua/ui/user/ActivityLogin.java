@@ -14,7 +14,6 @@ import android.widget.Toast;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qzone.QZone;
 import cn.sharesdk.wechat.friends.Wechat;
 import com.mob.tools.utils.UIHandler;
@@ -144,20 +143,20 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 authorize(new Wechat(this));
                 break;
             case R.id.sinaLoginView:
-                authorize(new SinaWeibo(this));
+//                authorize(new SinaWeibo(this));
                 break;
         }
     }
 
     private void authorize(Platform plat) {
-        if (plat.isValid()) {
-            String userId = plat.getDb().getUserId();
-            if (!TextUtils.isEmpty(userId)) {
-                UIHandler.sendEmptyMessage(MSG_USERID_FOUND, this);
-                login(plat.getName(), userId, null);
-                return;
-            }
-        }
+//        if (plat.isValid()) {
+//            String userId = plat.getDb().getUserId();
+//            if (!TextUtils.isEmpty(userId)) {
+//                UIHandler.sendEmptyMessage(MSG_USERID_FOUND, this);
+//                login(plat.getName(), userId, null);
+//                return;
+//            }
+//        }
         plat.setPlatformActionListener(this);
         plat.SSOSetting(false);
         plat.showUser(null);
@@ -224,9 +223,17 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     private void getChatToken() {
         Account account = CustomApplication.getInstance().getAccount();
         Map<String, String> params = new HashMap<>();
+        String userName = "";
+        if(!TextUtils.isEmpty(account.userName)){
+            userName = account.userName;
+        }
+        String avatar = "";
+        if(!TextUtils.isEmpty(account.avatar)){
+            avatar = account.avatar;
+        }
         params.put("userId", account.userId);
-        params.put("userName", account.userName);
-        params.put("portraitUri", account.avatar);
+        params.put("userName", userName);
+        params.put("portraitUri", avatar);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.GET_CHAT_TOKEN, params);
         OkHttpUtils.post()
                 .params(params)
@@ -236,14 +243,14 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
-                        ToastUtil.makeShortText(getString(R.string.login_failed));
+                        ToastUtil.makeShortText(getString(R.string.login_chat_failed));
                     }
 
                     @Override
                     public void onResponse(String response) {
                         Log.d("xiaoyu", response);
                         if (TextUtils.isEmpty(response)) {
-                            ToastUtil.makeShortText(getString(R.string.login_failed));
+                            ToastUtil.makeShortText(getString(R.string.login_chat_failed));
                             return;
                         }
                         response = response.replaceAll("\\\\", "");
@@ -256,7 +263,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                             account.saveMeInfoToPreference();
                             connect(tokenModel.token);
                         } else {
-                            ToastUtil.makeShortText(getString(R.string.login_failed));
+                            ToastUtil.makeShortText(getString(R.string.login_chat_failed));
                         }
                     }
                 });
@@ -289,10 +296,10 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
 
     @Override
     public void onComplete(Platform platform, int action, HashMap<String, Object> res) {
-        if (action == Platform.ACTION_USER_INFOR) {
-            UIHandler.sendEmptyMessage(MSG_AUTH_COMPLETE, this);
-            login(platform.getName(), platform.getDb().getUserId(), res);
-        }
+//        if (action == Platform.ACTION_USER_INFOR) {
+//            UIHandler.sendEmptyMessage(MSG_AUTH_COMPLETE, this);
+//            login(platform.getName(), platform.getDb().getUserId(), res);
+//        }
         System.out.println(res);
         System.out.println("------User Name ---------" + platform.getDb().getUserName());
         System.out.println("------User ID ---------" + platform.getDb().getUserId());
@@ -309,7 +316,7 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
     }
 
     //第三方登陆接口
-    private void thirdLogin(String avatar, String name, String token) {
+    private void thirdLogin(final String avatar, final String name, String token) {
         Map<String, String> params = new HashMap<>();
         params.put("userType", "0");
         params.put("nickName", name);
@@ -326,8 +333,9 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e) {
+                        e.printStackTrace();
                         DialogUtil.getInstance().dismissLoading(ActivityLogin.this);
-                        ToastUtil.makeShortText(getString(R.string.login_failed));
+                        ToastUtil.makeShortText(getString(R.string.failed_error));
                     }
 
                     @Override
@@ -338,14 +346,14 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
                         if (userInfoModel != null && "1".equals(userInfoModel.result)) {
                             Account account = CustomApplication.getInstance().getAccount();
                             account.userId = userInfoModel.userid;
-                            account.userName = userInfoModel.nickname;
-                            account.avatar = userInfoModel.imageurl;
+                            account.userName = name;
+                            account.avatar = avatar;
                             account.saveMeInfoToPreference();
-                            //getChatToken();
-                            ActivityMain.open(ActivityLogin.this);
-                            finish();
+                            getChatToken();
+//                            ActivityMain.open(ActivityLogin.this);
+//                            finish();
                         } else {
-                            ToastUtil.makeShortText(getString(R.string.login_failedd));
+                            ToastUtil.makeShortText(getString(R.string.failed_error));
                         }
                     }
                 });
@@ -375,12 +383,6 @@ public class ActivityLogin extends ActivityBaseNoSliding implements View.OnClick
             case MSG_LOGIN: {
                 Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show();
                 System.out.println("---------------");
-
-//				Builder builder = new Builder(this);
-//				builder.setTitle(R.string.if_register_needed);
-//				builder.setMessage(R.string.after_auth);
-//				builder.setPositiveButton(R.string.ok, null);
-//				builder.create().show();
             }
             break;
             case MSG_AUTH_CANCEL: {

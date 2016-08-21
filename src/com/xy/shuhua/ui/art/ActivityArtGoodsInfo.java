@@ -359,7 +359,7 @@ public class ActivityArtGoodsInfo extends ActivityBaseNoSliding implements View.
         // 分享时Notification的图标和文字  2.5.9以后的版本不调用此方法
         //oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
         // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
-        oks.setTitle("某人艺术");
+        oks.setTitle("大步浏览");
         // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
         oks.setTitleUrl("http://www.wandoujia.com/apps/com.xy.shuhua");//豌豆荚的下载地址
         // text是分享文本，所有平台都需要这个字段

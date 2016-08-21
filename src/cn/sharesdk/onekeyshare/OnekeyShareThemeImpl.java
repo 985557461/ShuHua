@@ -1,9 +1,9 @@
 /*
  * 官网地站:http://www.mob.com
- * �?术支持QQ: 4006852216
- * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第�?时间通过微信将版本更新内容推送给您�?�如果使用过程中有任何问题，也可以�?�过微信与我们取得联系，我们将会�?24小时内给予回复）
+ * 技术支持QQ: 4006852216
+ * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
  *
- * Copyright (c) 2013�? mob.com. All rights reserved.
+ * Copyright (c) 2013年 mob.com. All rights reserved.
  */
 
 package cn.sharesdk.onekeyshare;
@@ -31,6 +31,7 @@ import cn.sharesdk.framework.ShareSDK;
 import com.mob.tools.utils.R;
 import com.mob.tools.utils.UIHandler;
 
+/** 快捷分享的主题样式的实现父类 */
 public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Callback {
 	protected boolean dialogMode;
 	protected HashMap<String, Object> shareParamsMap;
@@ -81,9 +82,9 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 	public final void show(Context context) {
 		this.context = context;
 
-		// 显示方式是由platform和silent两个字段控制�?
+		// 显示方式是由platform和silent两个字段控制的
 		// 如果platform设置了，则无须显示九宫格，否则都会显示；
-		// 如果silent为true，表示不进入编辑页面，否则会进入�?
+		// 如果silent为true，表示不进入编辑页面，否则会进入。
 		if (shareParamsMap.containsKey("platform")) {
 			String name = String.valueOf(shareParamsMap.get("platform"));
 			Platform platform = ShareSDK.getPlatform(name);
@@ -99,6 +100,7 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 		}
 	}
 
+	/** 判断指定平台是否只能使用客户端分享 */
 	final boolean isUseClientToShare(Platform platform) {
 		String name = platform.getName();
 		if ("Wechat".equals(name) || "WechatMoments".equals(name)
@@ -121,10 +123,17 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 			}
 		} else if ("SinaWeibo".equals(name)) {
 			if ("true".equals(platform.getDevinfo("ShareByAppClient"))) {
+
 				Intent test = new Intent(Intent.ACTION_SEND);
 				test.setPackage("com.sina.weibo");
 				test.setType("image/*");
 				ResolveInfo ri = platform.getContext().getPackageManager().resolveActivity(test, 0);
+				if(ri == null) {
+					test = new Intent(Intent.ACTION_SEND);
+					test.setPackage("com.sina.weibog3");
+					test.setType("image/*");
+					ri = platform.getContext().getPackageManager().resolveActivity(test, 0);
+				}
 				return (ri != null);
 			}
 		}
@@ -153,7 +162,7 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 		if (formateShareData(platform)) {
 			ShareParams sp = shareDataToShareParams(platform);
 			if (sp != null) {
-				// 编辑分享内容的统�?
+				// 编辑分享内容的统计
 				ShareSDK.logDemoEvent(3, null);
 				if (customizeCallback != null) {
 					customizeCallback.onShare(platform, sp);
@@ -165,12 +174,6 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 
 	final boolean formateShareData(Platform plat) {
 		String name = plat.getName();
-
-		boolean isGooglePlus = "GooglePlus".equals(name);
-		if (isGooglePlus && !plat.isClientValid()) {
-			toast("ssdk_google_plus_client_inavailable");
-			return false;
-		}
 
 		boolean isAlipay = "Alipay".equals(name);
 		if (isAlipay && !plat.isClientValid()) {
@@ -346,7 +349,7 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 		msg.obj = t;
 		UIHandler.sendMessage(msg, this);
 
-		// 分享失败的统�?
+		// 分享失败的统计
 		ShareSDK.logDemoEvent(4, platform);
 	}
 
@@ -357,7 +360,7 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 		msg.obj = platform;
 		UIHandler.sendMessage(msg, this);
 
-		// 分享失败的统�?
+		// 分享失败的统计
 		ShareSDK.logDemoEvent(5, platform);
 	}
 

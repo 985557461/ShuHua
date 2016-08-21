@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">某人艺术</string>
+    <string name="app_name">大步浏览</string>
 
     <!--选择图片相关 开始-->
     <string name="photo_file_delete">照片已被删除</string>
@@ -44,4 +44,6 @@
     <string name="login">登陆</string>
     <string name="login_success">登陆成功</string>
     <string name="login_failedd">登陆失败</string>
+    <string name="failed_error">后台第三方登陆接口报错</string>
+    <string name="login_chat_failed">登陆聊天服务器报错</string>
 </resources>

@@ -150,13 +150,13 @@
                     android:id="@+id/qqLoginView"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/icon_qq_login"
-                    android:layout_marginRight="50dp"/>
+                    android:src="@drawable/icon_qq_login"/>
             <ImageView
                     android:id="@+id/sinaLoginView"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/icon_weibo_login"/>
+                    android:src="@drawable/icon_weibo_login"
+                    android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

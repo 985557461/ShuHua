@@ -141,7 +141,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("userid", userid);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.MY_ZUOPIN, params);
         OkHttpUtils.get()
@@ -173,6 +173,8 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });
@@ -182,7 +184,7 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
         start_num++;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("userid", userid);
         OkHttpUtils.get()
                 .params(params)
@@ -214,6 +216,8 @@ public class ActivityAllZuoPin extends ActivityBaseNoSliding implements View.OnC
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });

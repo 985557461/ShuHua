@@ -28,15 +28,6 @@
     
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 
-    <SinaWeibo
-        Id="1"
-        SortId="1"
-        AppKey="2574985184"
-        AppSecret="d1f9c8eb20401d4bb7fd3b1f2cc25aa7"
-        RedirectUrl="http://www.sharesdk.cn"
-        ShareByAppClient="true"
-        Enable="true" />
-
     <QZone
         Id="3"
         SortId="3"

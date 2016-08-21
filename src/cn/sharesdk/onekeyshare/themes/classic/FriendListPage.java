@@ -1,9 +1,9 @@
 /*
  * 官网地站:http://www.mob.com
- * �?术支持QQ: 4006852216
- * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第�?时间通过微信将版本更新内容推送给您�?�如果使用过程中有任何问题，也可以�?�过微信与我们取得联系，我们将会�?24小时内给予回复）
+ * 技术支持QQ: 4006852216
+ * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
  *
- * Copyright (c) 2013�? mob.com. All rights reserved.
+ * Copyright (c) 2013年 mob.com. All rights reserved.
  */
 
 package cn.sharesdk.onekeyshare.themes.classic;
@@ -28,7 +28,7 @@ import cn.sharesdk.onekeyshare.OnekeySharePage;
 import cn.sharesdk.onekeyshare.OnekeyShareThemeImpl;
 import cn.sharesdk.onekeyshare.themes.classic.FriendAdapter.Following;
 
-import com.mob.tools.gui.PullToRefreshView;
+import com.mob.tools.gui.PullToRequestView;
 import com.mob.tools.utils.R;
 
 public abstract class FriendListPage extends OnekeySharePage implements OnClickListener, OnItemClickListener {
@@ -79,8 +79,7 @@ public abstract class FriendListPage extends OnekeySharePage implements OnClickL
 		flPage.setLayoutParams(lpFl);
 		llPage.addView(flPage);
 
-		// 关注（或朋友）列�?
-		PullToRefreshView followList = new PullToRefreshView(getContext());
+		PullToRequestView followList = new PullToRequestView(getContext());
 		FrameLayout.LayoutParams lpLv = new FrameLayout.LayoutParams(
 				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		followList.setLayoutParams(lpLv);
@@ -92,8 +91,7 @@ public abstract class FriendListPage extends OnekeySharePage implements OnClickL
 		adapter.setOnItemClickListener(this);
 		followList.setAdapter(adapter);
 
-		// 请求数据
-		followList.performPulling(true);
+		followList.performPullingDown(true);
 	}
 
 	protected abstract float getRatio();

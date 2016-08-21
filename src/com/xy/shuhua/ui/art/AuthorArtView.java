@@ -83,7 +83,7 @@ public class AuthorArtView extends FrameLayout {
         refreshContainer.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView, header);
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, recyclerView.getRecyclerView(), header);
             }
 
             @Override
@@ -108,7 +108,7 @@ public class AuthorArtView extends FrameLayout {
         start_num = 0;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("status", status + "");
         params.put("category", category);
         PrintHttpUrlUtil.printUrl(ServerConfig.BASE_URL + ServerConfig.QUERY_ARTS, params);
@@ -141,6 +141,8 @@ public class AuthorArtView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });
@@ -150,7 +152,7 @@ public class AuthorArtView extends FrameLayout {
         start_num++;
         Map<String, String> params = new HashMap<>();
         params.put("limit", limit + "");
-        params.put("start_num", start_num + "");
+        params.put("start_num", (start_num * limit) + "");
         params.put("status", status + "");
         params.put("category", category);
         OkHttpUtils.get()
@@ -183,6 +185,8 @@ public class AuthorArtView extends FrameLayout {
                             } else {//也许还有更多
                                 recyclerView.hasMore(true);
                             }
+                        }else{
+                            recyclerView.hasMore(false);
                         }
                     }
                 });

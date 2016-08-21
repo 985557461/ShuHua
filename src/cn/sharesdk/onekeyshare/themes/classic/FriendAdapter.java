@@ -1,9 +1,9 @@
 /*
  * 官网地站:http://www.mob.com
- * �?术支持QQ: 4006852216
- * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第�?时间通过微信将版本更新内容推送给您�?�如果使用过程中有任何问题，也可以�?�过微信与我们取得联系，我们将会�?24小时内给予回复）
+ * 技术支持QQ: 4006852216
+ * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
  *
- * Copyright (c) 2013�? mob.com. All rights reserved.
+ * Copyright (c) 2013年 mob.com. All rights reserved.
  */
 
 package cn.sharesdk.onekeyshare.themes.classic;
@@ -17,32 +17,26 @@ import android.os.Message;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.LinearLayout;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 
-import com.mob.tools.gui.PullToRefreshListAdapter;
-import com.mob.tools.gui.PullToRefreshView;
+import com.mob.tools.gui.PullToRequestListAdapter;
+import com.mob.tools.gui.PullToRequestView;
 import com.mob.tools.utils.UIHandler;
 
-/** 好友列表的�?�配�? */
-public class FriendAdapter extends PullToRefreshListAdapter implements PlatformActionListener {
+public class FriendAdapter extends PullToRequestListAdapter implements PlatformActionListener {
 	private FriendListPage activity;
 	private boolean hasNext;
 	private Platform platform;
-	/** 请求好友列表时，每页15�? */
 	private final int pageCount = 15;
-	/** 当前的好友列表是第几�? */
 	private int curPage;
-	/** 好友列表数据 */
 	private ArrayList<Following> follows;
-	/** 判断当前的好友列表数据与请求的新数据是否有重�? */
 	private HashMap<String, Boolean> map;
-	/** 好友列表的头部View */
 	private PRTHeader llHeader;
-	/** 根据设计，按照比例来布局，以此来适配�?有手�? */
 	private float ratio;
 
-	public FriendAdapter(FriendListPage activity, PullToRefreshView view) {
+	public FriendAdapter(FriendListPage activity, PullToRequestView view) {
 		super(view);
 		this.activity = activity;
 
@@ -239,7 +233,7 @@ public class FriendAdapter extends PullToRefreshListAdapter implements PlatformA
 		llHeader.onPullDown(percent);
 	}
 
-	public void onRequest() {
+	public void onRefresh() {
 		llHeader.onRequest();
 		curPage = -1;
 		hasNext = true;
@@ -277,6 +271,12 @@ public class FriendAdapter extends PullToRefreshListAdapter implements PlatformA
 	private static class FollowersResult {
 		public ArrayList<Following> list;
 		public boolean hasNextPage = false;
+	}
+
+	public View getFooterView() {
+		LinearLayout footerView = new LinearLayout(getContext());
+		footerView.setMinimumHeight(10);
+		return footerView;
 	}
 
 }

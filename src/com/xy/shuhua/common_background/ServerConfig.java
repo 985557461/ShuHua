@@ -5,9 +5,9 @@ package com.xy.shuhua.common_background;
  */
 public class ServerConfig {
     // 测试环境
-    public static String BASE_URL_TEST = "http://182.92.67.140:80/";
+    public static String BASE_URL_TEST = "http://101.200.220.253:80/";
     // 正式环境
-    public static String BASE_URL_OFFICAL = "http://182.92.67.140:80/";
+    public static String BASE_URL_OFFICAL = "http://101.200.220.253:80/";
 
     public static String BASE_URL = BASE_URL_OFFICAL;
 
